@@ -1,0 +1,46 @@
+{
+  "name": "react-components",
+  "version": "1.0.0",
+  "description": "My React components built utilizing MUI v5.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "vite build && tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/benbeck764/react-components.git"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "Ben Beck",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/benbeck764/react-components/issues"
+  },
+  "homepage": "https://github.com/benbeck764/react-components#readme",
+  "devDependencies": {
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@mui/icons-material": "^5.11.9",
+    "@mui/material": "5.11.10",
+    "@mui/styled-engine-sc": "^5.11.9",
+    "@mui/x-date-pickers": "^6.3.0",
+    "@types/react": "^18.2.22",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "typescript": "^5.2.2",
+    "vite": "^4.4.9"
+  },
+  "peerDependencies": {
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@mui/icons-material": "^5.11.9",
+    "@mui/material": "5.11.10",
+    "@mui/styled-engine-sc": "^5.11.9",
+    "@mui/x-date-pickers": "^6.3.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
