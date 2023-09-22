@@ -12,4 +12,10 @@ export default defineConfig ({
       external: ["react"],
     },
   },
+  resolve: {
+    alias: {
+      "@common": resolve(__dirname, "src/_common/index.ts"),
+      "@utilities": resolve(__dirname, "src/_utilities/index.ts")
+    }
+  }
 });

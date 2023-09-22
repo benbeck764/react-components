@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "vite build && tsc"
+    "build": "vite build && tsc",
+    "clean": "rimraf node_modules"
   },
   "repository": {
     "type": "git",
@@ -28,8 +29,15 @@
     "@mui/styled-engine-sc": "^5.11.9",
     "@mui/x-date-pickers": "^6.3.0",
     "@types/react": "^18.2.22",
+    "@types/react-dom": "^18.2.7",
+    "moment": "^2.29.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-dropzone": "^14.2.3",
+    "react-image-crop": "^10.1.8",
+    "react-quill": "^2.0.0",
+    "react-virtuoso": "^4.6.0",
+    "rimraf": "^5.0.1",
     "typescript": "^5.2.2",
     "vite": "^4.4.9"
   },
@@ -40,7 +48,12 @@
     "@mui/material": "5.11.10",
     "@mui/styled-engine-sc": "^5.11.9",
     "@mui/x-date-pickers": "^6.3.0",
+    "moment": "^2.29.4",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-dropzone": "^14.2.3",
+    "react-image-crop": "^10.1.8",
+    "react-virtuoso": "^4.6.0",
+    "react-quill": "^2.0.0"
   }
 }
