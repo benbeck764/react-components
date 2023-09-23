@@ -1,35 +1,37 @@
-import { styled, Breadcrumbs, Chip, Link, emphasize } from "@mui/material";
+import { styled, Breadcrumbs, Link } from "@mui/material";
 
 export const StyledBreadcrumbs = styled(Breadcrumbs)(({ theme }) => ({
-  "& .MuiBreadcrumbs-separator": {
-    marginLeft: theme.spacing(1),
-    marginRight: theme.spacing(1),
+  [theme.breakpoints.up("xs")]: {
+    "& .MuiBreadcrumbs-separator": {
+      marginLeft: theme.spacing(0.25),
+      marginRight: theme.spacing(0.25),
+    },
+  },
+  [theme.breakpoints.up("md")]: {
+    "& .MuiBreadcrumbs-separator": {
+      marginLeft: theme.spacing(0.5),
+      marginRight: theme.spacing(0.5),
+    },
+  },
+  [theme.breakpoints.up("lg")]: {
+    "& .MuiBreadcrumbs-separator": {
+      marginLeft: theme.spacing(1),
+      marginRight: theme.spacing(1),
+    },
+  },
+  "& .MuiBreadcrumbs-ol": {
+    flexWrap: "nowrap",
+  },
+  "& .MuiBreadcrumbs-li": {
+    whiteSpace: "nowrap",
+  },
+  "& .MuiBreadcrumbs-li:last-of-type": {
+    overflow: "hidden",
+    textOverflow: "ellipsis",
   },
   paddingTop: theme.spacing(2),
   paddingBottom: theme.spacing(2),
 }));
-
-export const StyledBreadcrumb = styled(Chip)(({ theme }) => {
-  const backgroundColor =
-    theme.palette.mode === "light"
-      ? theme.palette.grey[100]
-      : theme.palette.grey[800];
-  return {
-    height: theme.spacing(4),
-    color: theme.palette.text.primary,
-    fontWeight: theme.typography.fontWeightRegular,
-    "&:hover, &:focus": {
-      backgroundColor: emphasize(backgroundColor, 0.06),
-    },
-    "&:active": {
-      boxShadow: theme.shadows[1],
-      backgroundColor: emphasize(backgroundColor, 0.12),
-    },
-    [theme.breakpoints.down("xl")]: {
-      marginBottom: theme.spacing(0.5),
-    },
-  };
-}) as typeof Chip; // TypeScript only: need a type cast here because https://github.com/Microsoft/TypeScript/issues/26591
 
 export const StyledLink = styled(Link)(({ theme }) => ({
   color: theme.palette.common.black,

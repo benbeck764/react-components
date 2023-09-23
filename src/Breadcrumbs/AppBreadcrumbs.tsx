@@ -1,18 +1,17 @@
 import { FC } from "react";
 import { Typography } from "@mui/material";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import {
-  StyledBreadcrumb,
-  StyledBreadcrumbs,
-  StyledLink,
-} from "./AppBreadcrumbs.styles";
+import { StyledBreadcrumbs, StyledLink } from "./AppBreadcrumbs.styles";
 import { isString } from "@utilities";
 import { AppBreadcrumbsProps, BreadcrumbItem } from "./AppBreadcrumbs.props";
+import { BreakpointDevice, useBreakpoint } from "@common";
 
 const AppBreadcrumbs: FC<AppBreadcrumbsProps> = (
   props: AppBreadcrumbsProps
 ) => {
-  const { breadcrumbs, sx, allowLinkableFirst, variant, onNavigate } = props;
+  const { breadcrumbs, sx, allowLinkableFirst, homeSettings, onNavigate } =
+    props;
+  const { device } = useBreakpoint();
 
   const replaceParams = (
     path: string,
@@ -24,6 +23,19 @@ const AppBreadcrumbs: FC<AppBreadcrumbsProps> = (
     return path;
   };
 
+  const getQueryParamsString = (
+    obj:
+      | string
+      | Record<string, string>
+      | URLSearchParams
+      | string[][]
+      | undefined
+  ): string => {
+    const result = new URLSearchParams(obj).toString();
+    if (!result) return "";
+    return "?" + result;
+  };
+
   const handleLinkClick = (breadcrumb: BreadcrumbItem): void => {
     let path = breadcrumb.path;
     if (breadcrumb.params && breadcrumb.params?.keys.length > 0) {
@@ -31,9 +43,7 @@ const AppBreadcrumbs: FC<AppBreadcrumbsProps> = (
     }
 
     if (breadcrumb.queryParams) {
-      const queryParams =
-        "?" + new URLSearchParams(breadcrumb.queryParams).toString();
-      path += queryParams;
+      path += getQueryParamsString(breadcrumb.queryParams);
     }
 
     onNavigate?.(path);
@@ -51,41 +61,39 @@ const AppBreadcrumbs: FC<AppBreadcrumbsProps> = (
       aria-label="breadcrumb"
       sx={sx}
     >
+      {homeSettings?.include === true &&
+        ((homeSettings?.mobile && device !== BreakpointDevice.Desktop) ||
+          device === BreakpointDevice.Desktop) &&
+        !allowLinkableFirst && (
+          <Typography variant="paragraphBold">
+            {homeSettings.displayName ?? "Home"}
+          </Typography>
+        )}
+      {homeSettings?.include === true &&
+        ((homeSettings?.mobile && device !== BreakpointDevice.Desktop) ||
+          device === BreakpointDevice.Desktop) &&
+        allowLinkableFirst && (
+          <StyledLink
+            variant="paragraph"
+            onClick={() =>
+              handleLinkClick({
+                displayName: homeSettings.displayName ?? "Home",
+                path: homeSettings.path ?? "",
+              })
+            }
+          >
+            {homeSettings.displayName ?? "Home"}
+          </StyledLink>
+        )}
       {breadcrumbs.map((breadcrumb: BreadcrumbItem, index: number) => {
-        const isFirst = index === 0;
         const isLast = index === breadcrumbs.length - 1;
         const key = isString(breadcrumb.displayName)
           ? (breadcrumb.displayName as string)
           : index;
-        return isLast || (isFirst && !allowLinkableFirst) ? (
-          variant === "chip" ? (
-            <StyledBreadcrumb
-              key={key}
-              clickable={false}
-              label={
-                <Typography variant="paragraphBold">
-                  {breadcrumb.displayName}
-                </Typography>
-              }
-              icon={breadcrumb.icon}
-            ></StyledBreadcrumb>
-          ) : (
-            <Typography key={key} variant="paragraphBold">
-              {breadcrumb.displayName}
-            </Typography>
-          )
-        ) : variant === "chip" ? (
-          <StyledBreadcrumb
-            key={key}
-            clickable
-            label={
-              <StyledLink variant="paragraph">
-                {breadcrumb.displayName}
-              </StyledLink>
-            }
-            icon={breadcrumb.icon}
-            onClick={() => handleLinkClick(breadcrumb)}
-          ></StyledBreadcrumb>
+        return isLast ? (
+          <Typography key={key} variant="paragraphBold">
+            {breadcrumb.displayName}
+          </Typography>
         ) : (
           <StyledLink
             key={key}
@@ -98,10 +106,6 @@ const AppBreadcrumbs: FC<AppBreadcrumbsProps> = (
       })}
     </StyledBreadcrumbs>
   );
-};
-
-AppBreadcrumbs.defaultProps = {
-  variant: "text",
 };
 
 export default AppBreadcrumbs;

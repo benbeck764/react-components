@@ -8,12 +8,15 @@ export type BreadcrumbItem = {
   icon?: React.ReactElement;
 };
 
-type AppBreadCrumbVariant = "text" | "chip";
-
 export interface AppBreadcrumbsProps extends Omit<BreadcrumbsProps, "onClick"> {
   breadcrumbs: BreadcrumbItem[];
   sx?: SxProps<Theme>;
   allowLinkableFirst?: boolean;
-  variant?: AppBreadCrumbVariant;
+  homeSettings?: {
+    include?: boolean;
+    mobile?: boolean;
+    path?: string;
+    displayName?: string;
+  };
   onNavigate?: (fullPath: string) => void;
 }
