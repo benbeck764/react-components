@@ -4,7 +4,7 @@ import { BreakpointDevice, useBreakpoint } from "@common";
 
 export interface AppButtonProps extends ButtonProps {}
 
-export const AppButton = forwardRef<HTMLButtonElement, AppButtonProps>(
+const AppButton = forwardRef<HTMLButtonElement, AppButtonProps>(
   (props: AppButtonProps, ref: ForwardedRef<HTMLButtonElement>) => {
     const { ...buttonProps } = props;
     const { device } = useBreakpoint();
@@ -18,3 +18,5 @@ export const AppButton = forwardRef<HTMLButtonElement, AppButtonProps>(
     return <Button ref={ref} {...buttonPropsAugmented}></Button>;
   }
 );
+
+export default AppButton;

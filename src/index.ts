@@ -1,4 +1,6 @@
-export * from "./Button/AppButton";
+export { default as AppButton } from "./Button/AppButton";
+export { default as AppToggleButton } from "./Button/AppToggleButton";
+export { default as AppToggleButtonGroup } from "./Button/AppToggleButtonGroup";
 export * from "./Card/AppCard";
 export * from "./Checkbox/AppCheckbox";
 export * from "./Checkbox/CheckboxList/AppCheckboxList";
@@ -15,7 +17,7 @@ export * from "./Grid/AppGrid.props";
 export * from "./Grid/container/AppGridContainer";
 export * from "./ImageCropper/AppImageCropper";
 export * from "./Loader/AppContentLoader";
-export * from "./Loader/AppPageLoader";
+export { default as AppPageLoader } from "./Loader/AppPageLoader";
 export * from "./Menu/AppMenu";
 export * from "./Menu/components/AppMenuItem/AppMenuItem";
 export * from "./Pagination/AppPagination";
