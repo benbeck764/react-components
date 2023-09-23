@@ -1,6 +1,5 @@
 import { SxProps, Theme } from "@mui/material";
-import {
-  AppPagination,
+import AppPagination, {
   AppPaginationProps,
   defaultPageSizeOptions,
 } from "../../Pagination/AppPagination";

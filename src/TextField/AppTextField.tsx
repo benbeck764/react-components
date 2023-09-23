@@ -35,9 +35,7 @@ export type AppTextFieldProps = AppTextFieldRefProps &
     containerRef?: Ref<any> | undefined;
   };
 
-export const AppTextField: FC<AppTextFieldProps> = (
-  props: AppTextFieldProps
-) => {
+const AppTextField: FC<AppTextFieldProps> = (props: AppTextFieldProps) => {
   const {
     inlineLabel,
     inputLabel,
@@ -233,3 +231,5 @@ export const AppTextField: FC<AppTextFieldProps> = (
 AppTextField.defaultProps = {
   fullWidth: true,
 };
+
+export default AppTextField;

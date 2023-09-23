@@ -1,8 +1,8 @@
 import { SxProps, Theme } from "@mui/material";
-import { SelectItem } from "../common/SelectItem";
 import { StyledMultiSelectMenuItem } from "./AppMultiSelect.styles";
-import { AppCheckbox } from "../../Checkbox/AppCheckbox";
 import { CheckboxItem } from "../../Checkbox/AppCheckbox.props";
+import AppCheckbox from "../../Checkbox/AppCheckbox";
+import { SelectItem } from "../common/SelectItem";
 
 export type AppMultiSelectMenuItemProps<TItem> = {
   item: SelectItem<TItem>;
@@ -11,7 +11,7 @@ export type AppMultiSelectMenuItemProps<TItem> = {
   sx?: SxProps<Theme>;
 };
 
-export function AppMultiSelectMenuItem<TItem>(
+function AppMultiSelectMenuItem<TItem>(
   props: AppMultiSelectMenuItemProps<TItem>
 ) {
   const { item, checked, onChange, sx } = props;
@@ -48,3 +48,5 @@ export function AppMultiSelectMenuItem<TItem>(
     </StyledMultiSelectMenuItem>
   );
 }
+
+export default AppMultiSelectMenuItem;

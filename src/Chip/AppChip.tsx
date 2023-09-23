@@ -13,7 +13,7 @@ type AppChipProps = {
   onDelete?: (index?: number) => void;
 };
 
-export const AppChip: FC<AppChipProps> = (props: AppChipProps) => {
+const AppChip: FC<AppChipProps> = (props: AppChipProps) => {
   const { label, index, sx, icon, onEdit, onDelete } = props;
   const isLabelString = typeof label === "string";
 
@@ -49,3 +49,5 @@ export const AppChip: FC<AppChipProps> = (props: AppChipProps) => {
     />
   );
 };
+
+export default AppChip;

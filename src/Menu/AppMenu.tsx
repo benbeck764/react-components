@@ -276,3 +276,5 @@ AppMenu.defaultProps = {
   mode: "menu",
   menuWidthRelativeToInput: 1,
 };
+
+export default AppMenu;

@@ -17,9 +17,7 @@ type AppTextEditorProps = {
   error?: boolean;
 };
 
-export const AppTextEditor: FC<AppTextEditorProps> = (
-  props: AppTextEditorProps
-) => {
+const AppTextEditor: FC<AppTextEditorProps> = (props: AppTextEditorProps) => {
   const {
     defaultValue,
     resetRef,
@@ -97,3 +95,5 @@ export const AppTextEditor: FC<AppTextEditorProps> = (
     </>
   );
 };
+
+export default AppTextEditor;

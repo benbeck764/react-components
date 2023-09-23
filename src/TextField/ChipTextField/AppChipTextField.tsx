@@ -5,6 +5,7 @@ import {
   IconButton,
   InputProps,
   Stack,
+  Theme,
   Typography,
   useTheme,
 } from "@mui/material";
@@ -19,8 +20,8 @@ import {
   StyledChipsInputEndAdornment,
   StyledInputAdornment,
 } from "../AppTextField.styles";
-import { AppChip } from "../../Chip/AppChip";
 import { CloseButton } from "@common";
+import AppChip from "../../Chip/AppChip";
 
 export type AppChipTextFieldProps = AppTextFieldRefProps &
   Omit<InputProps, "onChange"> & {
@@ -267,7 +268,7 @@ export const AppChipTextField: FC<AppChipTextFieldProps> = (
                 gap={spacing ?? 0.5}
                 sx={{
                   overflowY: "auto",
-                  pr: (theme) =>
+                  pr: (theme: Theme) =>
                     showClearButton ? theme.spacing(5) : theme.spacing(1),
                 }}
               >
@@ -277,10 +278,12 @@ export const AppChipTextField: FC<AppChipTextFieldProps> = (
                     label={chip}
                     index={index}
                     sx={{
-                      backgroundColor: (theme) => theme.palette.grey[100],
+                      backgroundColor: (theme: Theme) =>
+                        theme.palette.grey[100],
                       ...(index === editableChipIndex && {
-                        backgroundColor: (theme) => theme.palette.coolGrey[400],
-                        border: (theme) =>
+                        backgroundColor: (theme: Theme) =>
+                          theme.palette.coolGrey[400],
+                        border: (theme: Theme) =>
                           `1px dashed ${theme.palette.common.black}`,
                       }),
                     }}
@@ -339,3 +342,5 @@ export const AppChipTextField: FC<AppChipTextFieldProps> = (
 AppChipTextField.defaultProps = {
   fullWidth: true,
 };
+
+export default AppChipTextField;

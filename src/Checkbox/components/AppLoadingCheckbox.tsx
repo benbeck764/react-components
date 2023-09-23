@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { SxProps, Theme, Box, Skeleton } from "@mui/material";
-import { AppCheckbox } from "../AppCheckbox";
+import AppCheckbox from "../AppCheckbox";
 import { AppCheckboxSize } from "../AppCheckbox.props";
 
 type AppLoadingCheckboxProps = {

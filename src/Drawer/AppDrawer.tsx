@@ -39,7 +39,7 @@ export interface AppDrawerProps {
   closeButtonContainer?: HTMLElement | null;
 }
 
-export const AppDrawer: FC<PropsWithChildren<AppDrawerProps>> = (
+const AppDrawer: FC<PropsWithChildren<AppDrawerProps>> = (
   props: PropsWithChildren<AppDrawerProps>
 ) => {
   const [open, setOpen] = useState<boolean>(
@@ -161,3 +161,5 @@ export const AppDrawer: FC<PropsWithChildren<AppDrawerProps>> = (
     </>
   );
 };
+
+export default AppDrawer;

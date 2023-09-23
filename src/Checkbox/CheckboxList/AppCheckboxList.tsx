@@ -1,7 +1,7 @@
 import { FC, useState } from "react";
 import { SxProps, Theme, Box, Collapse, Typography } from "@mui/material";
 import { ExpandLess, ExpandMore } from "@mui/icons-material";
-import { AppCheckbox } from "../AppCheckbox";
+import AppCheckbox from "../AppCheckbox";
 import {
   CheckboxItem,
   AppCheckboxVariant,
@@ -27,7 +27,7 @@ export type AppCheckboxListProps = {
   inputLabel?: string | React.ReactNode;
 };
 
-export const AppCheckboxList: FC<AppCheckboxListProps> = (
+const AppCheckboxList: FC<AppCheckboxListProps> = (
   props: AppCheckboxListProps
 ) => {
   const [isExpanded, setIsExpanded] = useState<boolean>(false);
@@ -131,3 +131,5 @@ AppCheckboxList.defaultProps = {
   icon: "check",
   length: 6,
 };
+
+export default AppCheckboxList;

@@ -11,7 +11,7 @@ import { AppLoadingCheckbox } from "./components/AppLoadingCheckbox";
 import { isString } from "@utilities";
 import { AppCheckboxProps, CheckboxItem } from "./AppCheckbox.props";
 
-export const AppCheckbox: FC<AppCheckboxProps> = (props: AppCheckboxProps) => {
+const AppCheckbox: FC<AppCheckboxProps> = (props: AppCheckboxProps) => {
   const [isChecked, setIsChecked] = useState<boolean>(
     Boolean(props.item.checked)
   );
@@ -129,3 +129,5 @@ export const AppCheckbox: FC<AppCheckboxProps> = (props: AppCheckboxProps) => {
     />
   );
 };
+
+export default AppCheckbox;

@@ -3,11 +3,12 @@ import {
   FormControl,
   Select,
   SelectProps,
+  Theme,
   Typography,
 } from "@mui/material";
 import { Ref, useEffect, useImperativeHandle, useState } from "react";
 import { StyledLabelBox } from "../../_common/styles/common-ui.styles";
-import { AppSelectMenuItem } from "../common/AppSelectMenuItem";
+import AppSelectMenuItem from "../common/AppSelectMenuItem";
 import { SelectItem } from "../common/SelectItem";
 
 export type AppSelectInputSizes = "small" | "medium" | "large";
@@ -30,7 +31,7 @@ type AppSelectProps<TItem> = Omit<
   };
 };
 
-export function AppSelect<TItem>(props: AppSelectProps<TItem>): JSX.Element {
+function AppSelect<TItem>(props: AppSelectProps<TItem>): JSX.Element {
   const {
     inputRef,
     resetRef,
@@ -77,7 +78,7 @@ export function AppSelect<TItem>(props: AppSelectProps<TItem>): JSX.Element {
           item: undefined,
         }}
         key="clear-item"
-        sx={{ color: (theme) => theme.palette.coolGrey[400] }}
+        sx={{ color: (theme: Theme) => theme.palette.coolGrey[400] }}
         onSelect={() => {
           setOpen(false);
           setSelectedItem(undefined);
@@ -162,3 +163,5 @@ export function AppSelect<TItem>(props: AppSelectProps<TItem>): JSX.Element {
     </FormControl>
   );
 }
+
+export default AppSelect;

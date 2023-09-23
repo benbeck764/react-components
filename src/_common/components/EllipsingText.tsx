@@ -11,7 +11,7 @@ type EllipsingTextContainerProps = {
     }
 );
 
-export const StyledEllipsingTextContainer = styled(Box, {
+const StyledEllipsingTextContainer = styled(Box, {
   shouldForwardProp: (prop) =>
     prop !== "lines" && prop !== "reserveHeight" && prop !== "variant",
 })<EllipsingTextContainerProps>(
@@ -29,3 +29,5 @@ export const StyledEllipsingTextContainer = styled(Box, {
       : {}),
   })
 );
+
+export default StyledEllipsingTextContainer;

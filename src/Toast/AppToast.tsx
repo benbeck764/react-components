@@ -20,7 +20,7 @@ export type AppToastProps = {
   sx?: SxProps<Theme>;
 };
 
-export const AppToast: FC<PropsWithChildren<AppToastProps>> = (
+const AppToast: FC<PropsWithChildren<AppToastProps>> = (
   props: PropsWithChildren<AppToastProps>
 ) => {
   const setBackgroundColor = (theme: Theme) => {
@@ -92,3 +92,5 @@ export const AppToast: FC<PropsWithChildren<AppToastProps>> = (
     </StyledSnackbar>
   );
 };
+
+export default AppToast;

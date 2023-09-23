@@ -16,7 +16,7 @@ import {
   StyledDialogFooter,
   StyledDialogButton,
 } from "./AppDialog.styles";
-import { AppContentLoader } from "../Loader/AppContentLoader";
+import AppContentLoader from "../Loader/AppContentLoader";
 
 type AppDialogProps = {
   open: boolean;

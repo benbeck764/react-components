@@ -1,6 +1,6 @@
 import { Box, Typography, CardContent, Stack } from "@mui/material";
 import { useCallback, useRef, useState } from "react";
-import { AppGrid } from "../AppGrid";
+import AppGrid from "../AppGrid";
 import { AppGridComponentContainers } from "../AppGrid.props";
 import { AppGridContainerProps } from "./AppGridContainer.props";
 import {
@@ -10,7 +10,7 @@ import {
   StyledControlsContainer,
 } from "./AppGridContainer.styles";
 
-export function AppGridContainer<TItem>(
+function AppGridContainer<TItem>(
   props: AppGridContainerProps<TItem>
 ): JSX.Element {
   const {
@@ -125,3 +125,5 @@ export function AppGridContainer<TItem>(
     </>
   );
 }
+
+export default AppGridContainer;

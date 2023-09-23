@@ -40,9 +40,7 @@ export interface AppPaginationProps {
   sx?: SxProps<Theme>;
 }
 
-export const AppPagination: FC<AppPaginationProps> = (
-  props: AppPaginationProps
-) => {
+const AppPagination: FC<AppPaginationProps> = (props: AppPaginationProps) => {
   const { breakpoint } = useBreakpoint();
   const pageSizeOptions = props.pageSizeOptions ?? defaultPageSizeOptions;
   const selectedPageSize =
@@ -208,3 +206,5 @@ export const AppPagination: FC<AppPaginationProps> = (
     </Grid>
   );
 };
+
+export default AppPagination;

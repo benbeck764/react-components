@@ -28,7 +28,7 @@ export interface AppDropdownProps {
   disableHeaderClick?: boolean;
 }
 
-export const AppDropdown: FC<PropsWithChildren<AppDropdownProps>> = (
+const AppDropdown: FC<PropsWithChildren<AppDropdownProps>> = (
   props: PropsWithChildren<AppDropdownProps>
 ) => {
   const [isOpen, setIsOpen] = useState(!props.renderClosed ?? true);
@@ -165,3 +165,5 @@ export const AppDropdown: FC<PropsWithChildren<AppDropdownProps>> = (
 AppDropdown.defaultProps = {
   variant: "header",
 };
+
+export default AppDropdown;

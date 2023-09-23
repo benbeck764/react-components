@@ -8,9 +8,9 @@ import {
 } from "@mui/material";
 import { Ref, useEffect, useImperativeHandle, useState } from "react";
 import { StyledLabelBox } from "../../_common/styles/common-ui.styles";
-import { AppMultiSelectMenuItem } from "./AppMultiSelectMenuItem";
+import AppMultiSelectMenuItem from "./AppMultiSelectMenuItem";
+import AppChip from "../../Chip/AppChip";
 import { SelectItem } from "../common/SelectItem";
-import { AppChip } from "../../Chip/AppChip";
 
 type AppSelectProps<TItem> = {
   inputRef?: React.MutableRefObject<HTMLInputElement | null>;
@@ -24,9 +24,7 @@ type AppSelectProps<TItem> = {
   sx?: SxProps<Theme>;
 };
 
-export function AppMultiSelect<TItem>(
-  props: AppSelectProps<TItem>
-): JSX.Element {
+function AppMultiSelect<TItem>(props: AppSelectProps<TItem>): JSX.Element {
   const {
     inputRef,
     resetRef,
@@ -115,7 +113,8 @@ export function AppMultiSelect<TItem>(
                   <AppChip
                     sx={{
                       zIndex: 2,
-                      backgroundColor: (theme) => theme.palette.grey[100],
+                      backgroundColor: (theme: Theme) =>
+                        theme.palette.grey[100],
                       "&:not(:last-child)": {
                         mr: 0.5,
                       },
@@ -129,7 +128,9 @@ export function AppMultiSelect<TItem>(
             );
           } else {
             return (
-              <Typography sx={{ color: (theme) => theme.palette.grey[300] }}>
+              <Typography
+                sx={{ color: (theme: Theme) => theme.palette.grey[300] }}
+              >
                 {placeholder}
               </Typography>
             );
@@ -137,7 +138,7 @@ export function AppMultiSelect<TItem>(
         }}
         sx={{
           ...sx,
-          backgroundColor: (theme) => theme.palette.common.white,
+          backgroundColor: (theme: Theme) => theme.palette.common.white,
           "&.MuiInputBase-root": {
             minHeight: 40,
             height: "auto",
@@ -153,3 +154,5 @@ export function AppMultiSelect<TItem>(
     </FormControl>
   );
 }
+
+export default AppMultiSelect;

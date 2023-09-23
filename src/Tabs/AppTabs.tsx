@@ -27,7 +27,7 @@ export interface AppTabsProps extends TabsProps {
   uncontrolledInput?: boolean;
 }
 
-export const AppTabs: FC<AppTabsProps> = (props: AppTabsProps) => {
+const AppTabs: FC<AppTabsProps> = (props: AppTabsProps) => {
   const {
     tabs,
     onChange,
@@ -119,3 +119,5 @@ function getPanelControlProps(index: number) {
     "aria-labelledby": `app-tab-${index}`,
   };
 }
+
+export default AppTabs;

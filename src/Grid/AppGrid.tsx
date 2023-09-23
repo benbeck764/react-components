@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
 import { useRef } from "react";
 import ReactDOM from "react-dom";
-import { AppTextField } from "../TextField/AppTextField";
+import AppTextField from "../TextField/AppTextField";
 import {
   AppGridDataRequest,
   AppGridDataRequestChangeType,
@@ -14,9 +14,9 @@ import { AppGridCardView } from "./card/AppGridCardView";
 import { AppGridLoadMore } from "./common/AppGridLoadMore";
 import { useBreakpoint } from "@common";
 import { SelectItem } from "../Select/common/SelectItem";
-import { AppSelect } from "../Select/Select/AppSelect";
+import AppSelect from "../Select/Select/AppSelect";
 
-export function AppGrid<TItem>(props: AppGridProps<TItem>): JSX.Element {
+function AppGrid<TItem>(props: AppGridProps<TItem>): JSX.Element {
   const breakpointProperties = useBreakpoint();
   const filterInputRef = useRef<HTMLInputElement | null>(null);
   const sortInputRef = useRef<HTMLInputElement | null>(null);
@@ -187,3 +187,5 @@ export function AppGrid<TItem>(props: AppGridProps<TItem>): JSX.Element {
     </>
   );
 }
+
+export default AppGrid;

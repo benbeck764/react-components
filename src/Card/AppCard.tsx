@@ -8,7 +8,7 @@ export interface AppCardProps extends CardProps {
   cardSx?: SxProps<Theme>;
 }
 
-export const AppCard: FC<PropsWithChildren<AppCardProps>> = (
+const AppCard: FC<PropsWithChildren<AppCardProps>> = (
   props: PropsWithChildren<AppCardProps>
 ) => {
   const [elevation, setElevation] = useState<number | undefined>(undefined);
@@ -35,3 +35,5 @@ export const AppCard: FC<PropsWithChildren<AppCardProps>> = (
     </StyledPaper>
   );
 };
+
+export default AppCard;

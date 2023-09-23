@@ -9,7 +9,7 @@ export type AppSelectMenuItemProps<TItem> = {
   sx?: SxProps<Theme>;
 };
 
-export function AppSelectMenuItem<TItem>(
+function AppSelectMenuItem<TItem>(
   props: PropsWithChildren<AppSelectMenuItemProps<TItem>>
 ) {
   const { onSelect, item, sx } = props;
@@ -37,3 +37,5 @@ export function AppSelectMenuItem<TItem>(
     </StyledMenuItem>
   );
 }
+
+export default AppSelectMenuItem;

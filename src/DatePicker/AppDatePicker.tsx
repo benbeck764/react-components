@@ -30,9 +30,7 @@ export type AppDatePickerProps = {
   sx?: SxProps<Theme>;
 };
 
-export const AppDatePicker: FC<AppDatePickerProps> = (
-  props: AppDatePickerProps
-) => {
+const AppDatePicker: FC<AppDatePickerProps> = (props: AppDatePickerProps) => {
   const {
     value,
     onChange,
@@ -168,3 +166,5 @@ export const AppDatePicker: FC<AppDatePickerProps> = (
     </FormControl>
   );
 };
+
+export default AppDatePicker;

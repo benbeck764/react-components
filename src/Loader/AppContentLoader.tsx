@@ -8,7 +8,7 @@ export interface AppContentLoaderProps {
   sx?: SxProps<Theme>;
 }
 
-export const AppContentLoader: FC<AppContentLoaderProps> = (
+const AppContentLoader: FC<AppContentLoaderProps> = (
   props: AppContentLoaderProps
 ) => {
   return (
@@ -19,3 +19,5 @@ export const AppContentLoader: FC<AppContentLoaderProps> = (
     </StyledOverlayBox>
   );
 };
+
+export default AppContentLoader;
