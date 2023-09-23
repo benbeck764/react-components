@@ -24,7 +24,7 @@ import {
   StyledPopper,
   StyledPopperArrow,
 } from "./AppMenu.styles";
-import { AppButton } from "../Button/AppButton";
+import AppButton from "../Button/AppButton";
 
 export type AppMenuMode = "menu" | "panel";
 export type AppMenuDividerVariant = "flush" | undefined;
