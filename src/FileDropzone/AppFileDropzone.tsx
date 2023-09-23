@@ -11,16 +11,7 @@ import {
 } from "./AppFileDropzone.styles";
 import { StyledLabelBox } from "../_common/styles/common-ui.styles";
 import AppFileDropzoneImageTooltip from "./components/AppFileDropzoneImageTooltip";
-
-export type DropzoneDefaultFile = {
-  id: string;
-  url: string;
-};
-
-export interface DropzoneFile extends File {
-  id?: string;
-  preview: string;
-}
+import { DropzoneDefaultFile, DropzoneFile } from "./AppFileDropzone.types";
 
 type AppFileDropzoneProps = DropzoneOptions & {
   defaultFiles?: DropzoneDefaultFile[];
