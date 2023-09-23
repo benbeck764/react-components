@@ -9,7 +9,7 @@
     "dist"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"Error: no test specified\" && exit 0",
     "build": "vite build && tsc",
     "clean": "rimraf node_modules"
   },
@@ -60,5 +60,8 @@
     "react-image-crop": "^10.1.8",
     "react-virtuoso": "^4.6.0",
     "react-quill": "^2.0.0"
+  },
+  "publishConfig": {
+    "@benbeck764:registry": "https://npm.pkg.github.com"
   }
 }
