@@ -14,7 +14,6 @@ export default defineConfig({
         "@emotion/styled",
         "@mui/icons-material",
         "@mui/material",
-        "@mui/styled-engine-sc",
         "@mui/x-date-pickers",
         "moment",
         "react",
