@@ -12,7 +12,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 0",
     "build": "vite build && tsc",
-    "clean": "rimraf node_modules"
+    "clean": "rimraf node_modules",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "repository": {
     "type": "git",
@@ -27,12 +29,23 @@
     "url": "https://github.com/benbeck764/react-components/issues"
   },
   "homepage": "https://github.com/benbeck764/react-components#readme",
+  "resolutions": {
+    "jackspeak": "2.1.1"
+  },
   "devDependencies": {
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
     "@mui/icons-material": "^5.11.9",
     "@mui/material": "5.11.10",
     "@mui/x-date-pickers": "^6.3.0",
+    "@storybook/addon-essentials": "7.4.4",
+    "@storybook/addon-interactions": "7.4.4",
+    "@storybook/addon-links": "7.4.4",
+    "@storybook/addon-onboarding": "1.0.8",
+    "@storybook/blocks": "7.4.4",
+    "@storybook/react": "7.4.4",
+    "@storybook/react-vite": "7.4.4",
+    "@storybook/testing-library": "0.2.1",
     "@types/react": "^18.2.22",
     "@types/react-dom": "^18.2.7",
     "moment": "^2.29.4",
@@ -43,6 +56,7 @@
     "react-quill": "^2.0.0",
     "react-virtuoso": "^4.6.0",
     "rimraf": "^5.0.1",
+    "storybook": "^7.4.4",
     "typescript": "^5.2.2",
     "vite": "^4.4.9"
   },
@@ -57,8 +71,8 @@
     "react-dom": "^18.2.0",
     "react-dropzone": "^14.2.3",
     "react-image-crop": "^10.1.8",
-    "react-virtuoso": "^4.6.0",
-    "react-quill": "^2.0.0"
+    "react-quill": "^2.0.0",
+    "react-virtuoso": "^4.6.0"
   },
   "publishConfig": {
     "@benbeck764:registry": "https://npm.pkg.github.com"
