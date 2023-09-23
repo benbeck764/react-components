@@ -7,6 +7,6 @@ export const StyledCard = styled(Card)(({ theme }) => ({
     borderColor: theme.palette.coolGrey[300],
     borderStyle: "solid",
     borderWidth: 1,
-    padding: theme.custom.spacing * 2 - 1,
+    padding: `calc(${theme.spacing(2)} - 1px)`,
   },
 }));

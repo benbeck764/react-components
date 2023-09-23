@@ -123,7 +123,7 @@ export const AppDrawer: FC<PropsWithChildren<AppDrawerProps>> = (
                 ? {}
                 : {
                     marginBottom: (theme) =>
-                      `${theme.custom.headerHeights[`xs`]}px`,
+                      `${theme.custom?.headerHeights?.[`xs`]}px` ?? 0,
                   }
             }
             {...props.listProps}

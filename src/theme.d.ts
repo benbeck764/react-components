@@ -8,22 +8,14 @@ import {
 } from "@mui/material";
 
 export type HeaderHeights = { [key in Breakpoint]: number };
-export type FooterHeights = { [key in Breakpoint]: number };
-export type PageNotificationHeights = { [key in Breakpoint]: number };
 export type ContentWidths = { [key in Breakpoint]: number };
-export type PageWidths = { [key in Breakpoint]: number };
 
 export interface CustomThemeOptions {
-  headerHeights: HeaderHeights;
-  footerHeights: FooterHeights;
-  contentWidths: ContentWidths;
-  pageContentMargin: number;
-  pageWidths: PageWidths;
-  lineHeights: { [key in keyof TypographyVariants]: number };
-  spacing: number;
+  headerHeights?: HeaderHeights;
+  contentWidths?: ContentWidths;
 }
 
-// Utilize TypeScript Module Augmentation to Augment Custom Theme Colors
+// Utilize TypeScript Module Augmentation to Augment Custom Theme Variables
 declare module "@mui/material/styles" {
   interface Theme {
     custom: CustomThemeOptions;
@@ -61,7 +53,6 @@ declare module "@mui/material/styles" {
     mobileParagraphSmallBold: React.CSSProperties;
     mobileLabel: React.CSSProperties;
 
-    iconExtraSmall: React.CSSProperties;
     iconSmall: React.CSSProperties;
     iconMedium: React.CSSProperties;
     iconLarge: React.CSSProperties;
@@ -85,53 +76,9 @@ declare module "@mui/material/styles" {
     mobileParagraphSmallBold: React.CSSProperties;
     mobileLabel: React.CSSProperties;
 
-    iconExtraSmall: React.CSSProperties;
     iconSmall: React.CSSProperties;
     iconMedium: React.CSSProperties;
     iconLarge: React.CSSProperties;
-  }
-}
-
-declare module "@mui/material/Button" {
-  interface ButtonPropsColorOverrides {
-    tertiary: true;
-  }
-
-  interface ButtonPropsSizeOverrides {
-    extraSmall: true;
-    extraLarge: true;
-  }
-
-  interface ToggleButtonPropsSizeOverrides {
-    extraSmall: true;
-    extraLarge: true;
-  }
-}
-
-declare module "@mui/material/CircularProgress" {
-  interface CircularProgressPropsColorOverrides {
-    tertiary: true;
-  }
-}
-
-declare module "@mui/material/Icon" {
-  interface IconPropsSizeOverrides {
-    extraSmall: true;
-  }
-}
-
-declare module "@mui/material/InputBase" {
-  interface InputBasePropsSizeOverrides {
-    extraSmall: true;
-    large: true;
-    extraLarge: true;
-  }
-}
-
-declare module "@mui/material/TextField" {
-  interface TextFieldPropsSizeOverrides {
-    extraSmall: true;
-    large: true;
   }
 }
 
@@ -150,13 +97,22 @@ declare module "@mui/material/Typography" {
     mobileParagraphBold: true;
     mobileParagraphSmall: true;
     mobileParagraphSmallBold: true;
-    mobileParagraphExtraSmall: true;
-    mobileParagraphExtraSmallBold: true;
     mobileLabel: true;
 
-    iconExtraSmall: true;
     iconSmall: true;
     iconMedium: true;
     iconLarge: true;
+  }
+}
+
+declare module "@mui/material/InputBase" {
+  interface InputBasePropsSizeOverrides {
+    large: true;
+  }
+}
+
+declare module "@mui/material/TextField" {
+  interface TextFieldPropsSizeOverrides {
+    large: true;
   }
 }

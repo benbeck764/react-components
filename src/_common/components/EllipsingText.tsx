@@ -4,12 +4,10 @@ type EllipsingTextContainerProps = {
   lines: number;
 } & (
   | {
-      reserveHeight: boolean;
-      variant: keyof TypographyVariants;
+      reserveHeight: number;
     }
   | {
       reserveHeight?: never;
-      variant?: never;
     }
 );
 
@@ -17,12 +15,7 @@ export const StyledEllipsingTextContainer = styled(Box, {
   shouldForwardProp: (prop) =>
     prop !== "lines" && prop !== "reserveHeight" && prop !== "variant",
 })<EllipsingTextContainerProps>(
-  ({
-    lines: $lines,
-    reserveHeight: $reserveHeight,
-    variant: $variant,
-    theme,
-  }) => ({
+  ({ lines: $lines, reserveHeight: $reserveHeight }) => ({
     overflow: "hidden",
     textOverflow: "ellipsis",
     display: "-webkit-box",
@@ -30,8 +23,8 @@ export const StyledEllipsingTextContainer = styled(Box, {
     WebkitBoxOrient: "vertical",
     ...($reserveHeight
       ? {
-          height: theme.custom.lineHeights[$variant] * $lines,
-          minHeight: theme.custom.lineHeights[$variant] * $lines,
+          height: $reserveHeight * $lines,
+          minHeight: $reserveHeight * $lines,
         }
       : {}),
   })

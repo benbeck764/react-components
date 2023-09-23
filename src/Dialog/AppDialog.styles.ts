@@ -5,19 +5,19 @@ export const StyledDialog = styled(Dialog)(({ theme }: { theme: Theme }) => ({
     borderRadius: 8,
 
     [theme.breakpoints.up("xs")]: {
-      maxWidth: theme.custom?.contentWidths?.["xs"] ?? "",
+      maxWidth: theme.custom?.contentWidths?.["xs"] ?? 327,
     },
     [theme.breakpoints.up("sm")]: {
-      maxWidth: theme.custom?.contentWidths?.["sm"] ?? "",
+      maxWidth: theme.custom?.contentWidths?.["sm"] ?? 366,
     },
     [theme.breakpoints.up("md")]: {
-      maxWidth: theme.custom?.contentWidths?.["md"] ?? "",
+      maxWidth: theme.custom?.contentWidths?.["md"] ?? 381,
     },
     [theme.breakpoints.up("lg")]: {
-      maxWidth: theme.custom?.contentWidths?.["lg"] ?? "",
+      maxWidth: theme.custom?.contentWidths?.["lg"] ?? 744,
     },
     [theme.breakpoints.up("xl")]: {
-      maxWidth: theme.custom?.contentWidths?.["xl"] ?? "",
+      maxWidth: theme.custom?.contentWidths?.["xl"] ?? 1232,
     },
   },
 }));
