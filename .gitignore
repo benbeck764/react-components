@@ -1,5 +1,6 @@
+.DS_Store
 /dist
 /types
-.DS_Store
 /node_modules
 /.vscode
+.npmrc
