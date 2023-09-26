@@ -1,11 +1,12 @@
-// Export theme
-export * from "./_theme";
+// Export Theme
+export * from "./_theme/theme";
+export * from "./_theme/CustomThemeProvider";
 
-// Export common utilities
+// Export Common Utilities
 export * from "./_common/hooks/useBreakpoint";
 export * from "./_common/hooks/useTimer";
 
-// Export all custom components
+// Export all Custom Components
 export * from "./_common/styles/common-ui.styles";
 export { default as CloseButton } from "./_common/components/CloseButton";
 export { default as StyledEllipsingTextContainer } from "./_common/components/EllipsingText";
