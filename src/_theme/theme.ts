@@ -5,6 +5,8 @@ import {
   Theme,
 } from "@mui/material";
 
+export type CustomTheme = Theme;
+
 export type HeaderHeights = { [key in Breakpoint]: number };
 export type ContentWidths = { [key in Breakpoint]: number };
 
@@ -114,5 +116,3 @@ declare module "@mui/material/TextField" {
     large: true;
   }
 }
-
-export type CustomTheme = Theme;

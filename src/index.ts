@@ -1,6 +1,6 @@
 // Export Theme
 export * from "./_theme/theme";
-export * from "./_theme/CustomThemeProvider";
+export { default as CustomThemeProvider } from "./_theme/CustomThemeProvider";
 
 // Export Common Utilities
 export * from "./_common/hooks/useBreakpoint";
