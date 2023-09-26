@@ -114,7 +114,10 @@ const AppDatePicker: FC<AppDatePickerProps> = (props: AppDatePickerProps) => {
       {inputLabel && (
         <StyledLabelBox>
           {typeof inputLabel === "string" && (
-            <Typography sx={{ color: (theme) => theme.palette.grey[700] }}>
+            <Typography
+              variant="paragraph"
+              sx={{ color: (theme) => theme.palette.grey[700] }}
+            >
               {inputLabel}
             </Typography>
           )}

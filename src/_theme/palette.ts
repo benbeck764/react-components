@@ -47,7 +47,7 @@ export const paletteOptions: PaletteOptions = {
   },
   action: {
     disabled: "#C1C7CD",
-    focus: "#000000",
+    focus: "#004B66",
   },
   text: {
     primary: "#000000",

@@ -17,6 +17,7 @@
     "noFallthroughCasesInSwitch": true,
     "paths": {
       "@common": ["./src/_common/index.ts"],
+      "@theme": ["./src/_theme/index.ts"],
       "@utilities": ["./src/_utilities/index.ts"]
     }
   },

@@ -9,9 +9,9 @@ export const getMUITheme = (themeBaseOptions: ThemeOptions): ThemeOptions => {
   const buttonPadding: { X: number; Y: ButtonSizes } = {
     X: 14,
     Y: {
-      small: 5.25,
-      medium: 8,
-      large: 13.25,
+      small: 13.375,
+      medium: 17.375,
+      large: 21.375,
     },
   };
 
@@ -45,11 +45,12 @@ export const getMUITheme = (themeBaseOptions: ThemeOptions): ThemeOptions => {
       },
       MuiTypography: {
         defaultProps: {
+          variant: "paragraph",
           variantMapping: {
-            body1: "p",
-            body2: "p",
-            subtitle1: "p",
-            subtitle2: "p",
+            body1: "paragraph",
+            body2: "paragraph",
+            subtitle1: "paragraph",
+            subtitle2: "paragraph",
           },
         },
       },
@@ -131,16 +132,16 @@ export const getMUITheme = (themeBaseOptions: ThemeOptions): ThemeOptions => {
             paddingLeft: buttonPadding.X,
             paddingRight: buttonPadding.X,
             "&.MuiButton-sizeSmall": {
-              paddingTop: buttonPadding.Y.small - 2.75,
-              paddingBottom: buttonPadding.Y.small - 2.75,
+              paddingTop: buttonPadding.Y.small + 0.5,
+              paddingBottom: buttonPadding.Y.small + 0.5,
             },
             "&.MuiButton-sizeMedium": {
-              paddingTop: buttonPadding.Y.medium - 1.5,
-              paddingBottom: buttonPadding.Y.medium - 1.5,
+              paddingTop: buttonPadding.Y.medium + 0.5,
+              paddingBottom: buttonPadding.Y.medium + 0.5,
             },
             "&.MuiButton-sizeLarge": {
-              paddingTop: buttonPadding.Y.large,
-              paddingBottom: buttonPadding.Y.large,
+              paddingTop: buttonPadding.Y.large + 0.5,
+              paddingBottom: buttonPadding.Y.large + 0.5,
             },
             "&.MuiButton-outlinedPrimary": {
               borderColor: themeBase.palette.primary.main,

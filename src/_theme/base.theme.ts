@@ -215,7 +215,6 @@ export const defaultThemeOptions: ThemeOptions = {
     paragraphSmallBold: {
       ...paragraphSmallBold,
     },
-
     mobileParagraph: {
       ...mobileParagraph,
     },

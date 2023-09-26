@@ -66,7 +66,10 @@ const AppCheckboxList: FC<AppCheckboxListProps> = (
       {props.inputLabel && (
         <StyledLabelBox>
           {typeof props.inputLabel === "string" && (
-            <Typography sx={{ color: (theme) => theme.palette.grey[700] }}>
+            <Typography
+              variant="paragraph"
+              sx={{ color: (theme) => theme.palette.grey[700] }}
+            >
               {props.inputLabel}
             </Typography>
           )}

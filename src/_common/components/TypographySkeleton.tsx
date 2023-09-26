@@ -34,7 +34,7 @@ const TypographySkeleton: FC<TypographySkeletonProps> = (
         <Typography
           key={num}
           sx={{ ...sx, width: `${fullCharCount / lineCount}ch` }}
-          variant={variant ?? "body1"}
+          variant={variant ?? "paragraph"}
           display="block"
         >
           <Skeleton />
