@@ -15,9 +15,13 @@ const CustomThemeProvider: FC<PropsWithChildren<CustomThemeProviderProps>> = (
   const { theme, children } = props;
 
   const defaultTheme = createTheme(getMUITheme(defaultThemeOptions));
-  const themeToUse = deepmerge(defaultTheme, theme);
+  const mergedTheme = deepmerge(defaultTheme, theme);
 
-  return <ThemeProvider theme={themeToUse}>{children}</ThemeProvider>;
+  console.log(theme);
+  console.log(defaultTheme);
+  console.log(mergedTheme);
+
+  return <ThemeProvider theme={mergedTheme}>{children}</ThemeProvider>;
 };
 
 export default CustomThemeProvider;
