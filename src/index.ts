@@ -1,3 +1,4 @@
+export * from "./_theme";
 export { default as CloseButton } from "./_common/components/CloseButton";
 export { default as StyledEllipsingTextContainer } from "./_common/components/EllipsingText";
 export { default as TypographySkeleton } from "./_common/components/TypographySkeleton";
