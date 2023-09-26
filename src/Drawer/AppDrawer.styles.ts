@@ -24,10 +24,10 @@ export const StyledDrawer = styled(Drawer, {
         zIndex: 100,
         "& .MuiDrawer-paper": {
           [theme.breakpoints.up("xs")]: {
-            top: theme.custom?.headerHeights?.["xs"] ?? 0,
+            top: theme.headerHeights?.["xs"] ?? 0,
           },
           [theme.breakpoints.up("xl")]: {
-            top: theme.custom?.headerHeights?.["xl"] ?? 0,
+            top: theme.headerHeights?.["xl"] ?? 0,
           },
         },
       }),

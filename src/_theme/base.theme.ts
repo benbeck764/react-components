@@ -155,12 +155,6 @@ const contentWidths: { [key in Breakpoint]: number } = {
 };
 
 export const defaultThemeOptions: ThemeOptions = {
-  custom: {
-    headerHeights: {
-      ...headerHeights,
-    },
-    contentWidths: contentWidths,
-  },
   spacing,
   palette: paletteOptions,
   typography: {
@@ -267,4 +261,8 @@ export const defaultThemeOptions: ThemeOptions = {
     borderRadius: 4,
   },
   breakpoints: breakPointsOptions,
+  headerHeights: {
+    ...headerHeights,
+  },
+  contentWidths: contentWidths,
 };

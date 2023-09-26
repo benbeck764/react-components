@@ -5,20 +5,16 @@ export type CustomTheme = Theme;
 export type HeaderHeights = { [key in Breakpoint]: number };
 export type ContentWidths = { [key in Breakpoint]: number };
 
-export interface CustomThemeOptions {
-  headerHeights?: HeaderHeights;
-  contentWidths?: ContentWidths;
-  [key: string]: unknown;
-}
-
 // Utilize TypeScript Module Augmentation to Augment Custom Theme Variables
 declare module "@mui/material/styles" {
   interface Theme {
-    custom: CustomThemeOptions;
+    headerHeights?: HeaderHeights;
+    contentWidths?: ContentWidths;
   }
 
   interface ThemeOptions {
-    custom: CustomThemeOptions;
+    headerHeights?: HeaderHeights;
+    contentWidths?: ContentWidths;
   }
 
   interface Palette {

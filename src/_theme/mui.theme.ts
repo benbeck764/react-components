@@ -377,8 +377,7 @@ export const getMUITheme = (themeBaseOptions: ThemeOptions): ThemeOptions => {
         },
       },
     },
-    custom: {
-      ...themeBaseOptions.custom,
-    },
+    headerHeights: themeBaseOptions.headerHeights,
+    contentWidths: themeBaseOptions.contentWidths,
   };
 };

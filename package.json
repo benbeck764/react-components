@@ -1,6 +1,6 @@
 {
   "name": "@benbeck764/react-components",
-  "version": "1.0.31",
+  "version": "1.0.32",
   "description": "React components built utilizing MUI v5.",
   "main": "dist/index.umd.js",
   "module": "dist/index.mjs",

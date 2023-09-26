@@ -14,27 +14,22 @@ export const StyledSnackbar = styled(Snackbar)(({ theme }) => ({
   maxWidth: `calc(100% - ${theme.spacing(3)})`,
   [theme.breakpoints.up("xs")]: {
     top:
-      (theme.custom?.headerHeights?.["xs"] ?? 0) +
-      +theme.spacing(1).replace("px", ""),
+      (theme.headerHeights?.["xs"] ?? 0) + +theme.spacing(1).replace("px", ""),
   },
   [theme.breakpoints.up("sm")]: {
     top:
-      (theme.custom?.headerHeights?.["sm"] ?? 0) +
-      +theme.spacing(1).replace("px", ""),
+      (theme.headerHeights?.["sm"] ?? 0) + +theme.spacing(1).replace("px", ""),
   },
   [theme.breakpoints.up("md")]: {
     top:
-      (theme.custom?.headerHeights?.["md"] ?? 0) +
-      +theme.spacing(1).replace("px", ""),
+      (theme.headerHeights?.["md"] ?? 0) + +theme.spacing(1).replace("px", ""),
   },
   [theme.breakpoints.up("lg")]: {
     top:
-      (theme.custom?.headerHeights?.["lg"] ?? 0) +
-      +theme.spacing(1).replace("px", ""),
+      (theme.headerHeights?.["lg"] ?? 0) + +theme.spacing(1).replace("px", ""),
   },
   [theme.breakpoints.up("xl")]: {
     top:
-      (theme.custom?.headerHeights?.["xl"] ?? 0) +
-      +theme.spacing(1).replace("px", ""),
+      (theme.headerHeights?.["xl"] ?? 0) + +theme.spacing(1).replace("px", ""),
   },
 }));
