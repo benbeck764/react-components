@@ -15,7 +15,7 @@ jobs:
       - uses: pnpm/action-setup@v2
         with:
           version: 8
-      - run: pnpm install
+      - run: pnpm install --no-frozen-lockfile
       - run: pnpm test
 
   publish-gpr:
@@ -33,7 +33,7 @@ jobs:
       - uses: pnpm/action-setup@v2
         with:
           version: 8
-      - run: pnpm install
+      - run: pnpm install --no-frozen-lockfile
       - run: pnpm build
       - run: pnpm publish
         env:
