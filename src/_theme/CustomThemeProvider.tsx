@@ -1,8 +1,9 @@
 import { FC, PropsWithChildren } from "react";
-import { ThemeProvider, createTheme } from "@mui/material";
+import { Theme, ThemeProvider, createTheme } from "@mui/material";
 import { CustomTheme } from "./overrides.theme";
 import { getMUITheme } from "./mui.theme";
 import { defaultThemeOptions } from "./base.theme";
+import deepmerge from "deepmerge";
 
 type CustomThemeProviderProps = {
   theme: CustomTheme;
@@ -13,10 +14,8 @@ const CustomThemeProvider: FC<PropsWithChildren<CustomThemeProviderProps>> = (
 ) => {
   const { theme, children } = props;
 
-  const themeToUse = {
-    ...createTheme(getMUITheme(defaultThemeOptions)),
-    ...theme,
-  };
+  const defaultTheme = createTheme(getMUITheme(defaultThemeOptions));
+  const themeToUse = deepmerge(defaultTheme, theme);
 
   return <ThemeProvider theme={themeToUse}>{children}</ThemeProvider>;
 };
