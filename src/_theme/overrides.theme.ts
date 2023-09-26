@@ -1,9 +1,4 @@
-import {
-  Breakpoint,
-  PaletteColor,
-  PaletteColorOptions,
-  Theme,
-} from "@mui/material";
+import { Breakpoint, Theme } from "@mui/material";
 
 export type CustomTheme = Theme;
 
@@ -27,12 +22,10 @@ declare module "@mui/material/styles" {
 
   interface Palette {
     coolGrey: Palette["grey"];
-    tertiary: PaletteColor;
   }
 
   interface PaletteOptions {
     coolGrey: PaletteOptions["grey"];
-    tertiary?: PaletteColorOptions;
   }
 
   interface TypographyVariants {
@@ -42,16 +35,11 @@ declare module "@mui/material/styles" {
     paragraphLarge: React.CSSProperties;
     paragraphSmall: React.CSSProperties;
     paragraphSmallBold: React.CSSProperties;
-    paragraphSmallLink: React.CSSProperties;
-    numberedList: React.CSSProperties;
 
     mobileParagraph: React.CSSProperties;
     mobileParagraphBold: React.CSSProperties;
-    mobileParagraphExtraSmall: React.CSSProperties;
-    mobileParagraphExtraSmallBold: React.CSSProperties;
     mobileParagraphSmall: React.CSSProperties;
     mobileParagraphSmallBold: React.CSSProperties;
-    mobileLabel: React.CSSProperties;
 
     iconSmall: React.CSSProperties;
     iconMedium: React.CSSProperties;
@@ -65,16 +53,11 @@ declare module "@mui/material/styles" {
     paragraphLarge: React.CSSProperties;
     paragraphSmall: React.CSSProperties;
     paragraphSmallBold: React.CSSProperties;
-    paragraphSmallLink: React.CSSProperties;
-    numberedList: React.CSSProperties;
 
     mobileParagraph: React.CSSProperties;
     mobileParagraphBold: React.CSSProperties;
-    mobileParagraphExtraSmall: React.CSSProperties;
-    mobileParagraphExtraSmallBold: React.CSSProperties;
     mobileParagraphSmall: React.CSSProperties;
     mobileParagraphSmallBold: React.CSSProperties;
-    mobileLabel: React.CSSProperties;
 
     iconSmall: React.CSSProperties;
     iconMedium: React.CSSProperties;
@@ -90,14 +73,11 @@ declare module "@mui/material/Typography" {
     paragraphLarge: true;
     paragraphSmall: true;
     paragraphSmallBold: true;
-    paragraphSmallLink: true;
-    numberedList: true;
 
     mobileParagraph: true;
     mobileParagraphBold: true;
     mobileParagraphSmall: true;
     mobileParagraphSmallBold: true;
-    mobileLabel: true;
 
     iconSmall: true;
     iconMedium: true;

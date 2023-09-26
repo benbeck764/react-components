@@ -67,7 +67,7 @@ const AppToast: FC<PropsWithChildren<AppToastProps>> = (
           gap={2}
         >
           {props.icon}
-          <Typography variant="body1">{props.message}</Typography>
+          <Typography variant="paragraph">{props.message}</Typography>
           {props.onClose && (
             <>
               <Divider

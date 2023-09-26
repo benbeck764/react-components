@@ -1,5 +1,5 @@
 // Export Theme
-export * from "./_theme/theme";
+export * from "./_theme/overrides.theme";
 export { default as CustomThemeProvider } from "./_theme/CustomThemeProvider";
 
 // Export Common Utilities

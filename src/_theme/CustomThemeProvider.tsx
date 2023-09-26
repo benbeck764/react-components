@@ -1,6 +1,8 @@
-import React, { FC, PropsWithChildren } from "react";
-import { ThemeProvider } from "@mui/material";
-import { CustomTheme } from "./theme";
+import { FC, PropsWithChildren } from "react";
+import { ThemeProvider, createTheme } from "@mui/material";
+import { CustomTheme } from "./overrides.theme";
+import { getMUITheme } from "./mui.theme";
+import { defaultThemeOptions } from "./base.theme";
 
 type CustomThemeProviderProps = {
   theme: CustomTheme;
@@ -11,7 +13,12 @@ const CustomThemeProvider: FC<PropsWithChildren<CustomThemeProviderProps>> = (
 ) => {
   const { theme, children } = props;
 
-  return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
+  const themeToUse = {
+    ...createTheme(getMUITheme(defaultThemeOptions)),
+    ...theme,
+  };
+
+  return <ThemeProvider theme={themeToUse}>{children}</ThemeProvider>;
 };
 
 export default CustomThemeProvider;
