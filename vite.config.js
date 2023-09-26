@@ -3,15 +3,6 @@ import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
 
 export default defineConfig({
-  optimizeDeps: {
-    include: [
-      "@emotion/react",
-      "@emotion/styled",
-      "@mui/icons-material",
-      "@mui/material",
-      "@mui/x-date-pickers",
-    ],
-  },
   build: {
     lib: {
       entry: resolve(__dirname, "src/index.ts"),
@@ -20,6 +11,11 @@ export default defineConfig({
     },
     rollupOptions: {
       external: [
+        "@emotion/react",
+        "@emotion/styled",
+        "@mui/icons-material",
+        "@mui/material",
+        "@mui/x-date-pickers",
         "moment",
         "react",
         "react-dom",
@@ -33,8 +29,8 @@ export default defineConfig({
   resolve: {
     alias: {
       "@common": resolve(__dirname, "src/_common/index.ts"),
+      "@theme": resolve(__dirname, "src/_theme/index.ts"),
       "@utilities": resolve(__dirname, "src/_utilities/index.ts"),
-      "@mui/material": "@mui/material",
     },
   },
   plugins: [dts()],

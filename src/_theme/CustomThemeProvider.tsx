@@ -1,16 +1,17 @@
 import React, { FC, PropsWithChildren } from "react";
-import { ThemeProvider, Theme } from "@mui/material";
+import { ThemeProvider } from "@mui/material";
+import { CustomTheme } from "./theme";
 
-type CustomComponentsProviderProps = {
-  theme: Theme;
+type CustomThemeProviderProps = {
+  theme: CustomTheme;
 };
 
-const CustomComponentsProvider: FC<
-  PropsWithChildren<CustomComponentsProviderProps>
-> = (props: PropsWithChildren<CustomComponentsProviderProps>) => {
+const CustomThemeProvider: FC<PropsWithChildren<CustomThemeProviderProps>> = (
+  props: PropsWithChildren<CustomThemeProviderProps>
+) => {
   const { theme, children } = props;
 
   return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
 };
 
-export default CustomComponentsProvider;
+export default CustomThemeProvider;

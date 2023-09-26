@@ -1,10 +1,8 @@
 import {
   Breakpoint,
-  createTheme,
   PaletteColor,
   PaletteColorOptions,
   Theme,
-  TypographyVariants,
 } from "@mui/material";
 
 export type HeaderHeights = { [key in Breakpoint]: number };
@@ -116,3 +114,5 @@ declare module "@mui/material/TextField" {
     large: true;
   }
 }
+
+export type CustomTheme = Theme;

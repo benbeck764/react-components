@@ -1,8 +1,3 @@
-// Re-export dependencies
-export * from "@mui/material";
-export * as MuiIcons from "@mui/icons-material";
-export * from "@mui/x-date-pickers";
-
 // Export theme
 export * from "./_theme";
 
