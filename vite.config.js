@@ -1,7 +1,11 @@
 import { resolve } from "path";
 import { defineConfig } from "vite";
+import dts from "vite-plugin-dts";
 
 export default defineConfig({
+  optimizeDeps: {
+    include: ["@mui/material"],
+  },
   build: {
     lib: {
       entry: resolve(__dirname, "src/index.ts"),
@@ -25,4 +29,5 @@ export default defineConfig({
       "@utilities": resolve(__dirname, "src/_utilities/index.ts"),
     },
   },
+  plugins: [dts()],
 });

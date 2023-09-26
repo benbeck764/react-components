@@ -1,6 +1,6 @@
 {
   "name": "@benbeck764/react-components",
-  "version": "1.0.22",
+  "version": "1.0.23",
   "description": "React components built utilizing MUI v5.",
   "main": "dist/index.umd.js",
   "module": "dist/index.mjs",
@@ -11,7 +11,7 @@
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 0",
-    "build": "vite build && tsc",
+    "build": "vite build",
     "clean": "rimraf node_modules",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
@@ -31,6 +31,13 @@
   "homepage": "https://github.com/benbeck764/react-components#readme",
   "resolutions": {
     "jackspeak": "2.1.1"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.umd.js",
+      "types": "./dist/index.d.ts"
+    }
   },
   "dependencies": {
     "@emotion/react": "^11.10.6",
@@ -60,7 +67,8 @@
     "rimraf": "^5.0.1",
     "storybook": "^7.4.4",
     "typescript": "^5.2.2",
-    "vite": "^4.4.9"
+    "vite": "^4.4.9",
+    "vite-plugin-dts": "^3.5.4"
   },
   "peerDependencies": {
     "react": "^18.2.0",
