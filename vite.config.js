@@ -10,12 +10,6 @@ export default defineConfig({
     },
     rollupOptions: {
       external: [
-        "@emotion/react",
-        "@emotion/styled",
-        "@mui/icons-material",
-        "@mui/material",
-        "@mui/x-date-pickers",
-        "moment",
         "react",
         "react-dom",
         "react-dropzone",

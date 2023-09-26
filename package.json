@@ -1,6 +1,6 @@
 {
   "name": "@benbeck764/react-components",
-  "version": "1.0.21",
+  "version": "1.0.22",
   "description": "React components built utilizing MUI v5.",
   "main": "dist/index.umd.js",
   "module": "dist/index.mjs",
@@ -32,12 +32,15 @@
   "resolutions": {
     "jackspeak": "2.1.1"
   },
-  "devDependencies": {
+  "dependencies": {
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
     "@mui/icons-material": "^5.11.9",
     "@mui/material": "5.11.10",
     "@mui/x-date-pickers": "^6.3.0",
+    "moment": "^2.29.4"
+  },
+  "devDependencies": {
     "@storybook/addon-essentials": "7.4.4",
     "@storybook/addon-interactions": "7.4.4",
     "@storybook/addon-links": "7.4.4",
@@ -48,7 +51,6 @@
     "@storybook/testing-library": "0.2.1",
     "@types/react": "^18.2.22",
     "@types/react-dom": "^18.2.7",
-    "moment": "^2.29.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-dropzone": "^14.2.3",
@@ -61,32 +63,14 @@
     "vite": "^4.4.9"
   },
   "peerDependencies": {
-    "@emotion/react": "^11.10.6",
-    "@emotion/styled": "^11.10.6",
-    "@mui/icons-material": "^5.11.9",
-    "@mui/material": "5.11.10",
-    "@mui/x-date-pickers": "^6.3.0",
-    "moment": "^2.29.4",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "optionalDependencies": {
     "react-dropzone": "^14.2.3",
     "react-image-crop": "^10.1.8",
     "react-quill": "^2.0.0",
     "react-virtuoso": "^4.6.0"
-  },
-  "peerDependenciesMeta": {
-    "react-dropzone": {
-      "optional": true
-    },
-    "react-image-crop": {
-      "optional": true
-    },
-    "react-quill": {
-      "optional": true
-    },
-    "react-virtuoso": {
-      "optional": true
-    }
   },
   "publishConfig": {
     "@benbeck764:registry": "https://npm.pkg.github.com"
