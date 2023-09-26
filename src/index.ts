@@ -1,10 +1,20 @@
+// Re-export dependencies
+export * from "@mui/material";
+export * as MuiIcons from "@mui/icons-material";
+export * from "@mui/x-date-pickers";
+
+// Export theme
 export * from "./_theme";
+
+// Export common utilities
+export * from "./_common/hooks/useBreakpoint";
+export * from "./_common/hooks/useTimer";
+
+// Export all custom components
+export * from "./_common/styles/common-ui.styles";
 export { default as CloseButton } from "./_common/components/CloseButton";
 export { default as StyledEllipsingTextContainer } from "./_common/components/EllipsingText";
 export { default as TypographySkeleton } from "./_common/components/TypographySkeleton";
-export * from "./_common/styles/common-ui.styles";
-export * from "./_common/hooks/useBreakpoint";
-export * from "./_common/hooks/useTimer";
 export { default as AppBreadcrumbs } from "./Breadcrumbs/AppBreadcrumbs";
 export * from "./Breadcrumbs/AppBreadcrumbs.props";
 export { default as AppButton } from "./Button/AppButton";

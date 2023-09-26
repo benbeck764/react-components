@@ -1,6 +1,6 @@
 {
   "name": "@benbeck764/react-components",
-  "version": "1.0.23",
+  "version": "1.0.24",
   "description": "React components built utilizing MUI v5.",
   "main": "dist/index.umd.js",
   "module": "dist/index.mjs",
@@ -44,8 +44,7 @@
     "@emotion/styled": "^11.10.6",
     "@mui/icons-material": "^5.11.9",
     "@mui/material": "5.11.10",
-    "@mui/x-date-pickers": "^6.3.0",
-    "moment": "^2.29.4"
+    "@mui/x-date-pickers": "^6.3.0"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "7.4.4",
@@ -58,6 +57,7 @@
     "@storybook/testing-library": "0.2.1",
     "@types/react": "^18.2.22",
     "@types/react-dom": "^18.2.7",
+    "moment": "^2.29.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-dropzone": "^14.2.3",
@@ -75,6 +75,7 @@
     "react-dom": "^18.2.0"
   },
   "optionalDependencies": {
+    "moment": "^2.29.4",
     "react-dropzone": "^14.2.3",
     "react-image-crop": "^10.1.8",
     "react-quill": "^2.0.0",

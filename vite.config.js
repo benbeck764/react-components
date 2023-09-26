@@ -4,7 +4,13 @@ import dts from "vite-plugin-dts";
 
 export default defineConfig({
   optimizeDeps: {
-    include: ["@mui/material"],
+    include: [
+      "@emotion/react",
+      "@emotion/styled",
+      "@mui/icons-material",
+      "@mui/material",
+      "@mui/x-date-pickers",
+    ],
   },
   build: {
     lib: {
@@ -14,6 +20,7 @@ export default defineConfig({
     },
     rollupOptions: {
       external: [
+        "moment",
         "react",
         "react-dom",
         "react-dropzone",
