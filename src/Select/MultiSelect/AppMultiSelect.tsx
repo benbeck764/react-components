@@ -129,7 +129,10 @@ function AppMultiSelect<TItem>(props: AppSelectProps<TItem>): JSX.Element {
           } else {
             return (
               <Typography
-                sx={{ color: (theme: Theme) => theme.palette.grey[300] }}
+                sx={{
+                  color: (theme: Theme) => theme.palette.grey[300],
+                  lineHeight: "inherit",
+                }}
               >
                 {placeholder}
               </Typography>

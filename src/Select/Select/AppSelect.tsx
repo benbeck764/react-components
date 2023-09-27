@@ -140,7 +140,10 @@ function AppSelect<TItem>(props: AppSelectProps<TItem>): JSX.Element {
           if (typeof selectedItem !== "undefined") {
             return (
               <Typography
-                sx={{ color: (theme) => theme.palette.common.black, mt: 0.25 }}
+                sx={{
+                  color: (theme) => theme.palette.common.black,
+                  lineHeight: "inherit",
+                }}
               >
                 {renderValue?.label}
               </Typography>
@@ -148,7 +151,10 @@ function AppSelect<TItem>(props: AppSelectProps<TItem>): JSX.Element {
           } else {
             return (
               <Typography
-                sx={{ color: (theme) => theme.palette.grey[300], mt: 0.25 }}
+                sx={{
+                  color: (theme) => theme.palette.grey[300],
+                  lineHeight: "inherit",
+                }}
               >
                 {emptyValueOptions?.placeholder}
               </Typography>
