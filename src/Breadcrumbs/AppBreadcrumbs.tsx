@@ -38,7 +38,7 @@ const AppBreadcrumbs: FC<AppBreadcrumbsProps> = (
 
   const handleLinkClick = (breadcrumb: BreadcrumbItem): void => {
     let path = breadcrumb.path;
-    if (breadcrumb.params && breadcrumb.params?.keys.length > 0) {
+    if (breadcrumb.params && breadcrumb.params?.keys?.length > 0) {
       path = replaceParams(breadcrumb.path, breadcrumb.params);
     }
 

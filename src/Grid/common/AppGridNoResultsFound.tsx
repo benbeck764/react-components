@@ -1,6 +1,7 @@
 import { Box, Typography, Theme, styled, SxProps } from "@mui/material";
 import { ReactNode } from "react";
 import { AppGridDisplayMode } from "../AppGrid.props";
+import { isString } from "../../_utilities/string";
 
 export interface AppGridNoResultsFoundProps {
   message?: ReactNode;
@@ -20,9 +21,17 @@ export const AppGridNoResultsFound = (
         ...props.sx,
       }}
     >
-      <Typography variant="paragraph">
-        {props.message ? props.message : "No items found"}
-      </Typography>
+      {props.message ? (
+        <>
+          {isString(props.message) ? (
+            <Typography variant="paragraph">{props.message}</Typography>
+          ) : (
+            <>{props.message}</>
+          )}
+        </>
+      ) : (
+        <Typography variant="paragraph">No items found</Typography>
+      )}
     </StyledBox>
   );
 };

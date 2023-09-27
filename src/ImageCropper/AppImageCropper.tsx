@@ -22,15 +22,16 @@ const AppImageCropper: FC<AppImageCropperProps> = (
   const [crop, setCrop] = useState<Crop>(
     cropConfig ?? { unit: "px", x: 0, y: 0, width: 300, height: 300 }
   );
+  const [imageUrl, setImageUrl] = useState<string>();
 
   const imageRef = useRef<HTMLImageElement>(null);
-  const imageUrl = URL.createObjectURL(image);
 
   useEffect(() => {
+    setImageUrl(URL.createObjectURL(image));
     return () => {
-      URL.revokeObjectURL(imageUrl);
+      if (imageUrl) URL.revokeObjectURL(imageUrl);
     };
-  }, []);
+  }, [image]);
 
   useImperativeHandle(cropImageRef, () => ({
     async cropImage() {
