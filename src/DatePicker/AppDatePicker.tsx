@@ -61,6 +61,7 @@ const AppDatePicker: FC<AppDatePickerProps> = (props: AppDatePickerProps) => {
 
   let height = "32px";
   let inputFont = theme.typography.paragraphSmall;
+  let iconSize = "0.8em";
   switch (inputSize) {
     case "small":
       height = "32px !important";
@@ -68,10 +69,12 @@ const AppDatePicker: FC<AppDatePickerProps> = (props: AppDatePickerProps) => {
     case "medium":
       height = "40px !important";
       inputFont = theme.typography.paragraph;
+      iconSize = "0.9em";
       break;
     case "large":
       height = "40px !important";
       inputFont = theme.typography.mobileParagraph;
+      iconSize = "1em";
       break;
   }
 
@@ -90,21 +93,26 @@ const AppDatePicker: FC<AppDatePickerProps> = (props: AppDatePickerProps) => {
       "&.Mui-error": {
         border: `2px solid ${theme.palette.error.main}`,
       },
-    },
-    "& > .MuiInputBase-input": {
-      paddingTop: 0,
-      paddingBottom: 0,
-      WebKitTextFillColor: "currentcolor", // iOS/Safari issue fix
-      opacity: 1,
-      paddingX: theme.spacing(spacing || 1),
-      fontSize: inputFont.fontSize,
-      fontWeight: inputFont.fontWeight,
-      lineHeight: inputFont.lineHeight,
-      letterSpacing: inputFont.letterSpacing,
+
+      "& > input": {
+        paddingTop: 0,
+        paddingBottom: 0,
+        WebKitTextFillColor: "currentcolor", // iOS/Safari issue fix
+        opacity: 1,
+        paddingX: theme.spacing(spacing || 1),
+        fontSize: inputFont.fontSize,
+        fontWeight: inputFont.fontWeight,
+        lineHeight: inputFont.lineHeight,
+        letterSpacing: inputFont.letterSpacing,
+      },
     },
 
     "& .MuiOutlinedInput-notchedOutline": {
       border: "none",
+    },
+
+    "button > svg": {
+      fontSize: iconSize,
     },
   };
   const augmentedInputSx = { ...inputSx, ...sx };
