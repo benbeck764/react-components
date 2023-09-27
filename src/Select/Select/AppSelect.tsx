@@ -139,13 +139,17 @@ function AppSelect<TItem>(props: AppSelectProps<TItem>): JSX.Element {
         renderValue={(renderValue: SelectItem<TItem>) => {
           if (typeof selectedItem !== "undefined") {
             return (
-              <Typography sx={{ color: (theme) => theme.palette.common.black }}>
+              <Typography
+                sx={{ color: (theme) => theme.palette.common.black, mt: 0.25 }}
+              >
                 {renderValue?.label}
               </Typography>
             );
           } else {
             return (
-              <Typography sx={{ color: (theme) => theme.palette.grey[300] }}>
+              <Typography
+                sx={{ color: (theme) => theme.palette.grey[300], mt: 0.25 }}
+              >
                 {emptyValueOptions?.placeholder}
               </Typography>
             );
