@@ -29,11 +29,9 @@ const lineHeights: { [key in keyof TypographyVariants]: number } = {
   paragraphLarge: 1.25,
   paragraphSmall: 1.25,
   paragraphSmallBold: 1.25,
+  paragraphExtraSmall: 1.25,
+  paragraphExtraSmallBold: 1.25,
 
-  body1: 1.25,
-  body2: 1.25,
-  subtitle1: 1.25,
-  subtitle2: 1.25,
   button: 1.25,
 
   mobileParagraph: 1.25,
@@ -56,6 +54,10 @@ const lineHeights: { [key in keyof TypographyVariants]: number } = {
   fontWeightBold: -1,
   htmlFontSize: -1,
   pxToRem: -1,
+  body1: -1,
+  body2: -1,
+  subtitle1: -1,
+  subtitle2: -1,
 };
 
 const paragraph = {
@@ -97,6 +99,20 @@ const paragraphSmallBold = {
   fontSize: 11,
   fontWeight: 700,
   lineHeight: lineHeights.paragraphSmallBold + "px",
+  letterSpacing: 0,
+};
+
+const paragraphExtraSmall = {
+  fontSize: 12,
+  fontWeight: 400,
+  lineHeight: lineHeights.paragraphExtraSmall + "px",
+  letterSpacing: 0,
+};
+
+const paragraphExtraSmallBold = {
+  fontSize: 11,
+  fontWeight: 700,
+  lineHeight: lineHeights.paragraphExtraSmallBold + "px",
   letterSpacing: 0,
 };
 
@@ -215,6 +231,12 @@ export const defaultThemeOptions: ThemeOptions = {
     paragraphSmallBold: {
       ...paragraphSmallBold,
     },
+    paragraphExtraSmall: {
+      ...paragraphExtraSmall,
+    },
+    paragraphExtraSmallBold: {
+      ...paragraphExtraSmallBold,
+    },
     mobileParagraph: {
       ...mobileParagraph,
     },
@@ -239,22 +261,14 @@ export const defaultThemeOptions: ThemeOptions = {
       fontSize: 26,
       lineHeight: lineHeights.iconLarge,
     },
-    body1: {
-      ...paragraph,
-    },
-    body2: {
-      ...paragraphBold,
-    },
-    subtitle1: {
-      ...paragraphSmall,
-    },
-    subtitle2: {
-      ...paragraphSmallBold,
-    },
     button: {
       ...paragraphBold,
       textTransform: "none",
     },
+    body1: undefined,
+    body2: undefined,
+    subtitle1: undefined,
+    subtitle2: undefined,
   },
   shape: {
     borderRadius: 4,

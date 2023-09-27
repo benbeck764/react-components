@@ -37,6 +37,8 @@ declare module "@mui/material/styles" {
     mobileParagraphBold: React.CSSProperties;
     mobileParagraphSmall: React.CSSProperties;
     mobileParagraphSmallBold: React.CSSProperties;
+    paragraphExtraSmall: React.CSSProperties;
+    paragraphExtraSmallBold: React.CSSProperties;
 
     iconSmall: React.CSSProperties;
     iconMedium: React.CSSProperties;
@@ -50,6 +52,8 @@ declare module "@mui/material/styles" {
     paragraphLarge: React.CSSProperties;
     paragraphSmall: React.CSSProperties;
     paragraphSmallBold: React.CSSProperties;
+    paragraphExtraSmall: React.CSSProperties;
+    paragraphExtraSmallBold: React.CSSProperties;
 
     mobileParagraph: React.CSSProperties;
     mobileParagraphBold: React.CSSProperties;
@@ -70,6 +74,8 @@ declare module "@mui/material/Typography" {
     paragraphLarge: true;
     paragraphSmall: true;
     paragraphSmallBold: true;
+    paragraphExtraSmall: true;
+    paragraphExtraSmallBold: true;
 
     mobileParagraph: true;
     mobileParagraphBold: true;

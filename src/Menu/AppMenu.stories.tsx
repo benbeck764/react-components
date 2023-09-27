@@ -76,7 +76,7 @@ ImageMenu.args = {
     ),
   },
   menuWidth: 150,
-  toolTipTitle: "Account",
+  toolTipTitle: "Account Settings",
 };
 
 const meta: Meta<typeof AppMenu> = {
