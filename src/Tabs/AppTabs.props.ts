@@ -1,18 +1,18 @@
 import { TabsProps, SxProps, Theme } from "@mui/material";
 
-export interface TabItem {
+export type TabItem = {
   label: string;
   children?: React.ReactNode;
   disabled?: boolean;
-}
+};
 
-export interface AppTabsProps extends TabsProps {
+export type AppTabsProps = Omit<TabsProps, "onChange"> & {
   tabs: TabItem[];
   onChange?: (event: React.SyntheticEvent, index: number) => void;
+  reverseIndicator?: boolean;
   smallDivider?: boolean;
-  tabsetPrefix?: React.ReactNode;
-  tabsetSuffix?: React.ReactNode;
   containerSx?: SxProps<Theme>;
+  dividerSx?: SxProps<Theme>;
   hideDivider?: boolean;
   uncontrolledInput?: boolean;
-}
+};

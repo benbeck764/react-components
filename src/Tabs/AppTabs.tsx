@@ -1,26 +1,19 @@
 import { FC, useEffect, useState } from "react";
-import {
-  SxProps,
-  Theme,
-  Box,
-  Tabs,
-  TabsProps,
-  Tab,
-  Typography,
-} from "@mui/material";
-import { StyledAppBar, StyledHeaderBox, StyledDivider } from "./AppTabs.styles";
+import { Box, Tab, Typography, Stack, Divider } from "@mui/material";
+import { StyledDivider, StyledTabs } from "./AppTabs.styles";
 import { AppTabsProps, TabItem } from "./AppTabs.props";
 
 const AppTabs: FC<AppTabsProps> = (props: AppTabsProps) => {
   const {
     tabs,
     onChange,
+    reverseIndicator = false,
     smallDivider,
-    tabsetPrefix,
-    tabsetSuffix,
-    containerSx: sx,
+    containerSx,
+    dividerSx,
     hideDivider,
     uncontrolledInput,
+    orientation = "horizontal",
     ...rest
   } = props;
 
@@ -36,18 +29,38 @@ const AppTabs: FC<AppTabsProps> = (props: AppTabsProps) => {
   };
 
   return (
-    <Box sx={sx}>
-      <StyledHeaderBox pb={1}>
-        {tabsetPrefix && tabsetPrefix}
-        <StyledAppBar
-          position="static"
-          sx={{ width: smallDivider ? "fit-content" : "100%" }}
-        >
-          <Tabs
-            {...rest}
+    <Box sx={containerSx}>
+      <Stack direction={orientation === "vertical" ? "row" : "column"}>
+        {reverseIndicator && (
+          <Box>
+            {!hideDivider && (
+              <StyledDivider
+                orientation={orientation}
+                reverse={reverseIndicator}
+                sx={{
+                  ...dividerSx,
+                  ...(smallDivider && { width: "fit-content" }),
+                }}
+              />
+            )}
+          </Box>
+        )}
+        <Box>
+          <StyledTabs
             value={currentTab}
             onChange={handleChange}
             aria-label="app-tabs"
+            {...rest}
+            orientation={orientation}
+            reverse={reverseIndicator}
+            TabIndicatorProps={{
+              sx: {
+                ...(reverseIndicator &&
+                  orientation === "horizontal" && { top: 0 }),
+                ...(reverseIndicator &&
+                  orientation === "vertical" && { left: 0 }),
+              },
+            }}
           >
             {tabs.map((item: TabItem, index: number) => {
               return (
@@ -68,23 +81,38 @@ const AppTabs: FC<AppTabsProps> = (props: AppTabsProps) => {
                 />
               );
             })}
-          </Tabs>
-          {!hideDivider && <StyledDivider />}
-        </StyledAppBar>
-        {tabsetSuffix && tabsetSuffix}
-      </StyledHeaderBox>
-      {tabs.map((item: TabItem, index: number) => {
-        return (
-          <Box
-            key={index}
-            role="tabpanel"
-            hidden={index !== currentTab}
-            {...getPanelControlProps(index)}
-          >
-            {currentTab === index && item.children}
+          </StyledTabs>
+        </Box>
+        {!reverseIndicator && (
+          <Box>
+            {!hideDivider && (
+              <StyledDivider
+                orientation={orientation}
+                reverse={reverseIndicator}
+                sx={{
+                  ...dividerSx,
+                  ...(smallDivider && { width: "fit-content" }),
+                }}
+              />
+            )}
           </Box>
-        );
-      })}
+        )}
+        <Box>
+          {tabs.map((item: TabItem, index: number) => {
+            return (
+              <Box
+                key={index}
+                role="tabpanel"
+                hidden={index !== currentTab}
+                pt={1}
+                {...getPanelControlProps(index)}
+              >
+                {currentTab === index && item.children}
+              </Box>
+            );
+          })}
+        </Box>
+      </Stack>
     </Box>
   );
 };
@@ -103,5 +131,10 @@ function getPanelControlProps(index: number) {
     "aria-labelledby": `app-tab-${index}`,
   };
 }
+
+AppTabs.defaultProps = {
+  orientation: "horizontal",
+  reverseIndicator: false,
+};
 
 export default AppTabs;
