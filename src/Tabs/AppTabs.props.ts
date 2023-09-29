@@ -12,7 +12,8 @@ export type AppTabsProps = Omit<TabsProps, "onChange"> & {
   reverseIndicator?: boolean;
   smallDivider?: boolean;
   containerSx?: SxProps<Theme>;
-  dividerColor?: string;
-  selectedColor?: string;
+  dividerColor?: (theme: Theme) => string;
+  selectedColor?: (theme: Theme) => string;
+  hoverColor?: (theme: Theme) => string;
   hideDivider?: boolean;
 };

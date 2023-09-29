@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react";
 import AppTabs from "./AppTabs";
-import { Box, Stack, Typography, createTheme } from "@mui/material";
+import { Box, Stack, Theme, Typography, createTheme } from "@mui/material";
 import { getMUITheme, defaultThemeOptions } from "@theme";
 import CustomThemeProvider from "../_theme/CustomThemeProvider";
 import { AppTabsProps, TabItem } from "./AppTabs.props";
@@ -57,12 +57,11 @@ export const Tabs: Story = (args: AppTabsStoryProps) => {
 Tabs.args = {
   tabs: tabItems,
   smallDivider: true,
+  hoverColor: (theme: Theme) => theme.palette.coolGrey[200],
 };
 
 const meta: Meta<typeof AppTabs> = {
   component: AppTabs,
   title: "AppTabs",
-  args: {},
-  argTypes: {},
 };
 export default meta;

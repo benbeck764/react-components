@@ -12,6 +12,7 @@ const AppTabs: FC<AppTabsProps> = (props: AppTabsProps) => {
     containerSx,
     dividerColor,
     selectedColor,
+    hoverColor,
     hideDivider,
     orientation = "horizontal",
     ...rest
@@ -55,6 +56,7 @@ const AppTabs: FC<AppTabsProps> = (props: AppTabsProps) => {
             reverse={reverseIndicator}
             dividerColor={dividerColor}
             selectedColor={selectedColor}
+            hoverColor={hoverColor}
             TabIndicatorProps={{
               sx: {
                 ...(reverseIndicator &&
