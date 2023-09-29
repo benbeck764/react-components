@@ -1,5 +1,5 @@
 import { FC, useEffect, useState } from "react";
-import { Box, Tab, Typography, Stack, Divider } from "@mui/material";
+import { Box, Tab, Typography, Stack } from "@mui/material";
 import { StyledDivider, StyledTabs } from "./AppTabs.styles";
 import { AppTabsProps, TabItem } from "./AppTabs.props";
 
@@ -10,9 +10,9 @@ const AppTabs: FC<AppTabsProps> = (props: AppTabsProps) => {
     reverseIndicator = false,
     smallDivider,
     containerSx,
-    dividerSx,
+    dividerColor,
+    selectedColor,
     hideDivider,
-    uncontrolledInput,
     orientation = "horizontal",
     ...rest
   } = props;
@@ -24,7 +24,7 @@ const AppTabs: FC<AppTabsProps> = (props: AppTabsProps) => {
   }, [props.value]);
 
   const handleChange = (event: React.SyntheticEvent, index: number) => {
-    if (!uncontrolledInput) setCurrentTab(index);
+    setCurrentTab(index);
     onChange?.(event, index);
   };
 
@@ -37,8 +37,8 @@ const AppTabs: FC<AppTabsProps> = (props: AppTabsProps) => {
               <StyledDivider
                 orientation={orientation}
                 reverse={reverseIndicator}
+                dividerColor={dividerColor}
                 sx={{
-                  ...dividerSx,
                   ...(smallDivider && { width: "fit-content" }),
                 }}
               />
@@ -53,6 +53,8 @@ const AppTabs: FC<AppTabsProps> = (props: AppTabsProps) => {
             {...rest}
             orientation={orientation}
             reverse={reverseIndicator}
+            dividerColor={dividerColor}
+            selectedColor={selectedColor}
             TabIndicatorProps={{
               sx: {
                 ...(reverseIndicator &&
@@ -89,8 +91,8 @@ const AppTabs: FC<AppTabsProps> = (props: AppTabsProps) => {
               <StyledDivider
                 orientation={orientation}
                 reverse={reverseIndicator}
+                dividerColor={dividerColor}
                 sx={{
-                  ...dividerSx,
                   ...(smallDivider && { width: "fit-content" }),
                 }}
               />

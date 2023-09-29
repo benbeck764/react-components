@@ -3,10 +3,12 @@ import { styled, Tabs, Divider } from "@mui/material/";
 export const StyledTabs = styled(Tabs)<{
   orientation?: "horizontal" | "vertical";
   reverse?: boolean;
-}>(() => ({ theme, orientation, reverse }) => ({
+  dividerColor?: string;
+  selectedColor?: string;
+}>(() => ({ theme, orientation, reverse, dividerColor, selectedColor }) => ({
   "& .MuiButtonBase-root": {
     textTransform: "capitalize",
-    color: theme.palette.common.black,
+    color: theme.palette.text.primary,
     fontWeight: 400,
     paddingTop: "12px",
     paddingBottom: "12px",
@@ -15,24 +17,24 @@ export const StyledTabs = styled(Tabs)<{
     margin: 0,
     ...(orientation === "horizontal" &&
       !reverse && {
-        borderBottom: `2px solid ${theme.palette.grey[300]}`,
+        borderBottom: `2px solid ${dividerColor ?? theme.palette.grey[300]}`,
       }),
     ...(orientation === "vertical" &&
       !reverse && {
-        borderRight: `2px solid ${theme.palette.grey[300]}`,
+        borderRight: `2px solid ${dividerColor ?? theme.palette.grey[300]}`,
       }),
     ...(orientation === "horizontal" &&
       reverse && {
-        borderTop: `2px solid ${theme.palette.grey[300]}`,
+        borderTop: `2px solid ${dividerColor ?? theme.palette.grey[300]}`,
       }),
     ...(orientation === "vertical" &&
       reverse && {
-        borderLeft: `2px solid ${theme.palette.grey[300]}`,
+        borderLeft: `2px solid ${dividerColor ?? theme.palette.grey[300]}`,
       }),
 
     "&:hover": {
-      color: theme.palette.common.black,
-      backgroundColor: theme.palette.coolGrey[200],
+      color: theme.palette.text.primary,
+      backgroundColor: selectedColor ?? theme.palette.coolGrey[200],
 
       "> p": {
         fontWeight: 700,
@@ -40,17 +42,18 @@ export const StyledTabs = styled(Tabs)<{
     },
   },
   "& .Mui-selected": {
-    color: theme.palette.common.black,
+    color: theme.palette.text.primary,
     fontWeight: 700,
-    backgroundColor: theme.palette.coolGrey[200],
+    backgroundColor: selectedColor ?? theme.palette.coolGrey[200],
   },
 }));
 
 export const StyledDivider = styled(Divider)<{
   orientation?: "horizontal" | "vertical";
   reverse?: boolean;
-}>(() => ({ theme, orientation, reverse }) => ({
-  borderColor: theme.palette.grey[300],
+  dividerColor?: string;
+}>(() => ({ theme, orientation, reverse, dividerColor }) => ({
+  borderColor: dividerColor ?? theme.palette.grey[300],
   ...(!reverse && {
     borderBottomWidth: orientation === "horizontal" ? "2px" : 0,
     marginTop: orientation === "horizontal" ? "-2px" : 0,
