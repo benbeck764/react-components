@@ -32,21 +32,21 @@ const AppTabs: FC<AppTabsProps> = (props: AppTabsProps) => {
   return (
     <Box sx={containerSx}>
       <Stack direction={orientation === "vertical" ? "row" : "column"}>
-        {reverseIndicator && (
-          <Box>
-            {!hideDivider && (
-              <StyledDivider
-                orientation={orientation}
-                reverse={reverseIndicator}
-                dividerColor={dividerColor}
-                sx={{
-                  ...(smallDivider && { width: "fit-content" }),
-                }}
-              />
-            )}
-          </Box>
-        )}
         <Box>
+          {reverseIndicator && (
+            <Box>
+              {!hideDivider && (
+                <StyledDivider
+                  orientation={orientation}
+                  reverse={reverseIndicator}
+                  dividerColor={dividerColor}
+                  sx={{
+                    ...(smallDivider && { width: "fit-content" }),
+                  }}
+                />
+              )}
+            </Box>
+          )}
           <StyledTabs
             value={currentTab}
             onChange={handleChange}
@@ -86,21 +86,22 @@ const AppTabs: FC<AppTabsProps> = (props: AppTabsProps) => {
               );
             })}
           </StyledTabs>
+          {!reverseIndicator && (
+            <Box>
+              {!hideDivider && (
+                <StyledDivider
+                  orientation={orientation}
+                  reverse={reverseIndicator}
+                  dividerColor={dividerColor}
+                  sx={{
+                    ...(smallDivider && { width: "fit-content" }),
+                  }}
+                />
+              )}
+            </Box>
+          )}
         </Box>
-        {!reverseIndicator && (
-          <Box>
-            {!hideDivider && (
-              <StyledDivider
-                orientation={orientation}
-                reverse={reverseIndicator}
-                dividerColor={dividerColor}
-                sx={{
-                  ...(smallDivider && { width: "fit-content" }),
-                }}
-              />
-            )}
-          </Box>
-        )}
+
         <Box>
           {tabs.map((item: TabItem, index: number) => {
             return (

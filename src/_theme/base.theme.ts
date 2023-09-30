@@ -17,25 +17,25 @@ const breakpointValues: { [key in Breakpoint]: number } = {
 const breakPointsOptions: BreakpointsOptions = { values: breakpointValues };
 
 const lineHeights: { [key in keyof TypographyVariants]: number } = {
-  h1: 1.3,
-  h2: 1.3,
-  h3: 1.25,
-  h4: 1.25,
-  h5: 1.2,
-  h6: 1.2,
-  paragraph: 1.25,
-  paragraphBold: 1.25,
-  paragraphLink: 1.25,
-  paragraphLarge: 1.25,
-  paragraphSmall: 1.25,
-  paragraphSmallBold: 1.25,
-  paragraphExtraSmall: 1.25,
-  paragraphExtraSmallBold: 1.25,
+  h1: 1.2,
+  h2: 1.2,
+  h3: 1.15,
+  h4: 1.15,
+  h5: 1.1,
+  h6: 1.1,
+  paragraph: 1.05,
+  paragraphBold: 1.05,
+  paragraphLink: 1.05,
+  paragraphLarge: 1.05,
+  paragraphSmall: 1.05,
+  paragraphSmallBold: 1.05,
+  paragraphExtraSmall: 1.05,
+  paragraphExtraSmallBold: 1.05,
 
-  button: 1.25,
+  button: 1.05,
 
-  mobileParagraph: 1.25,
-  mobileParagraphBold: 1.25,
+  mobileParagraph: 1.05,
+  mobileParagraphBold: 1.05,
   mobileParagraphSmall: 18,
   mobileParagraphSmallBold: 18,
 
@@ -63,84 +63,84 @@ const lineHeights: { [key in keyof TypographyVariants]: number } = {
 const paragraph = {
   fontSize: 14,
   fontWeight: 400,
-  lineHeight: lineHeights.paragraph + "px",
+  lineHeight: lineHeights.paragraph,
   letterSpacing: 0,
 };
 
 const paragraphBold = {
   fontSize: 14,
   fontWeight: 700,
-  lineHeight: lineHeights.paragraphBold + "px",
+  lineHeight: lineHeights.paragraphBold,
   letterSpacing: 0,
 };
 
 const paragraphLink = {
   fontSize: 14,
   fontWeight: 700,
-  lineHeight: lineHeights.paragraphLink + "px",
+  lineHeight: lineHeights.paragraphLink,
   letterSpacing: 0,
 };
 
 const paragraphSmall = {
   fontSize: 12,
   fontWeight: 400,
-  lineHeight: lineHeights.paragraphSmall + "px",
+  lineHeight: lineHeights.paragraphSmall,
   letterSpacing: 0,
 };
 
 const paragraphLarge = {
   fontSize: 16,
   fontWeight: 400,
-  lineHeight: lineHeights.paragraphLarge + "px",
+  lineHeight: lineHeights.paragraphLarge,
   letterSpacing: 0,
 };
 
 const paragraphSmallBold = {
   fontSize: 11,
   fontWeight: 700,
-  lineHeight: lineHeights.paragraphSmallBold + "px",
+  lineHeight: lineHeights.paragraphSmallBold,
   letterSpacing: 0,
 };
 
 const paragraphExtraSmall = {
   fontSize: 12,
   fontWeight: 400,
-  lineHeight: lineHeights.paragraphExtraSmall + "px",
+  lineHeight: lineHeights.paragraphExtraSmall,
   letterSpacing: 0,
 };
 
 const paragraphExtraSmallBold = {
   fontSize: 11,
   fontWeight: 700,
-  lineHeight: lineHeights.paragraphExtraSmallBold + "px",
+  lineHeight: lineHeights.paragraphExtraSmallBold,
   letterSpacing: 0,
 };
 
 const mobileParagraph = {
   fontSize: 16,
   fontWeight: 400,
-  lineHeight: lineHeights.mobileParagraph + "px",
+  lineHeight: lineHeights.mobileParagraph,
   letterSpacing: 0,
 };
 
 const mobileParagraphBold = {
   fontSize: 16,
   fontWeight: 700,
-  lineHeight: lineHeights.mobileParagraphBold + "px",
+  lineHeight: lineHeights.mobileParagraphBold,
   letterSpacing: 0,
 };
 
 const mobileParagraphSmall = {
   fontSize: 14,
   fontWeight: 400,
-  lineHeight: lineHeights.mobileParagraphSmall + "px",
+  lineHeight: lineHeights.mobileParagraphSmall,
   letterSpacing: 0,
 };
 
 const mobileParagraphSmallBold = {
   fontSize: 14,
   fontWeight: 700,
-  lineHeight: lineHeights.mobileParagraphSmallBold + "px",
+  lineHeight: lineHeights.mobileParagraphSmallBold,
   letterSpacing: 0,
 };
 

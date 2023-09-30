@@ -8,32 +8,33 @@ import { AppTabsProps, TabItem } from "./AppTabs.props";
 type AppTabsStoryProps = AppTabsProps;
 type Story = StoryObj<typeof AppTabs>;
 
-const tabItems: TabItem[] = [
-  {
-    label: "Tab #1",
-    children: (
-      <Box>
-        <Typography>This is the contents of Tab #1.</Typography>
-      </Box>
-    ),
-  },
-  {
-    label: "Tab #2",
-    children: (
-      <Box>
-        <Typography>This is the contents of Tab #2.</Typography>
-      </Box>
-    ),
-  },
-  {
-    label: "Tab #3",
-    children: (
-      <Box>
-        <Typography>This is the contents of Tab #3.</Typography>
-      </Box>
-    ),
-  },
-];
+const generateTabItems = (numTabs: number): TabItem[] => {
+  return Array.from(Array(numTabs).keys()).map((num: number) => {
+    return {
+      label: `Tab #${num}`,
+      children: (
+        <Box>
+          <Typography>{`This is the contents of Tab #${num}.`}</Typography>
+        </Box>
+      ),
+    };
+  });
+};
+
+const generateOverflowTabItems = (numTabs: number): TabItem[] => {
+  return Array.from(Array(numTabs).keys()).map((num: number) => {
+    return {
+      label: `Tab #${num}`,
+      children: (
+        <Box sx={{ overflowY: "auto", maxHeight: "300px" }}>
+          {Array.from(Array(24).keys()).map((index: number) => (
+            <Typography key={index}>Here is some content...</Typography>
+          ))}
+        </Box>
+      ),
+    };
+  });
+};
 
 export const Tabs: Story = (args: AppTabsStoryProps) => {
   const theme = createTheme(getMUITheme(defaultThemeOptions));
@@ -55,9 +56,29 @@ export const Tabs: Story = (args: AppTabsStoryProps) => {
   );
 };
 Tabs.args = {
-  tabs: tabItems,
+  tabs: generateTabItems(3),
   smallDivider: true,
   hoverColor: (theme: Theme) => theme.palette.coolGrey[200],
+};
+
+export const OverflowTabs: Story = (args: AppTabsStoryProps) => {
+  const theme = createTheme(getMUITheme(defaultThemeOptions));
+  return (
+    <CustomThemeProvider theme={theme}>
+      <Typography variant="h5" mb={4}>
+        Vertical Overflow Tabs
+      </Typography>
+      <Stack direction="row" gap={4}>
+        <AppTabs {...args} orientation="vertical" />
+        <AppTabs {...args} orientation="vertical" reverseIndicator={true} />
+      </Stack>
+    </CustomThemeProvider>
+  );
+};
+OverflowTabs.args = {
+  tabs: generateOverflowTabItems(5),
+  hoverColor: (theme: Theme) => theme.palette.coolGrey[200],
+  smallDivider: true,
 };
 
 const meta: Meta<typeof AppTabs> = {
