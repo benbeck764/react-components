@@ -9,7 +9,7 @@ import { paletteOptions } from "./palette";
 const breakpointValues: { [key in Breakpoint]: number } = {
   xs: 0,
   sm: 330,
-  md: 400,
+  md: 414,
   lg: 768,
   xl: 1200,
 };

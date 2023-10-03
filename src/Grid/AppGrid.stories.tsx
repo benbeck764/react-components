@@ -55,7 +55,8 @@ VirtualizedCardGrid.args = {
         return (
           <Box
             sx={{
-              width: 184,
+              p: 1,
+              width: 144,
               height: 200,
               backgroundColor: (theme) => theme.palette.grey[300],
               border: (theme) => `1px solid ${theme.palette.grey[600]}`,
@@ -71,7 +72,8 @@ VirtualizedCardGrid.args = {
         );
       },
       columnCount: 4,
-      rowSpacing: 2,
+      columnSpacing: 5,
+      rowSpacing: 5,
     },
   },
   displayMode: "card",

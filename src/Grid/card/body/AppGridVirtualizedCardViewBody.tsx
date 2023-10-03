@@ -57,12 +57,7 @@ export function AppGridCardViewVirtualizedBody<TItem>(props: {
       useWindowScroll={virtualizedProps?.useWindowScroll}
       data={rows}
       itemContent={(_index, row) => (
-        <Box
-          ml={props.cardViewDefinition.columnSpacing ?? 2}
-          mb={props.cardViewDefinition.rowSpacing ?? 2}
-        >
-          {row.content}
-        </Box>
+        <Box mb={props.cardViewDefinition.rowSpacing}>{row.content}</Box>
       )}
     />
   );
