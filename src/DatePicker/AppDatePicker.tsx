@@ -73,7 +73,7 @@ const AppDatePicker: FC<AppDatePickerProps> = (props: AppDatePickerProps) => {
       break;
     case "large":
       height = "40px !important";
-      inputFont = theme.typography.mobileParagraph;
+      inputFont = theme.typography.paragraph;
       iconSize = "1em";
       break;
   }

@@ -42,10 +42,4 @@ const StyledBox = styled(Box)(({ theme }) => ({
   justifyContent: "center",
   width: "100%",
   textAlign: "center",
-  [theme.breakpoints.up("xs")]: {
-    height: theme.typography.mobileParagraph.lineHeight,
-  },
-  [theme.breakpoints.up("xl")]: {
-    height: theme.typography.paragraph.lineHeight,
-  },
 }));

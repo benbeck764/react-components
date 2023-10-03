@@ -34,11 +34,6 @@ const lineHeights: { [key in keyof TypographyVariants]: number } = {
 
   button: 1.05,
 
-  mobileParagraph: 1.05,
-  mobileParagraphBold: 1.05,
-  mobileParagraphSmall: 18,
-  mobileParagraphSmallBold: 18,
-
   iconSmall: 18,
   iconMedium: 20,
   iconLarge: 29,
@@ -113,34 +108,6 @@ const paragraphExtraSmallBold = {
   fontSize: 11,
   fontWeight: 700,
   lineHeight: lineHeights.paragraphExtraSmallBold,
-  letterSpacing: 0,
-};
-
-const mobileParagraph = {
-  fontSize: 16,
-  fontWeight: 400,
-  lineHeight: lineHeights.mobileParagraph,
-  letterSpacing: 0,
-};
-
-const mobileParagraphBold = {
-  fontSize: 16,
-  fontWeight: 700,
-  lineHeight: lineHeights.mobileParagraphBold,
-  letterSpacing: 0,
-};
-
-const mobileParagraphSmall = {
-  fontSize: 14,
-  fontWeight: 400,
-  lineHeight: lineHeights.mobileParagraphSmall,
-  letterSpacing: 0,
-};
-
-const mobileParagraphSmallBold = {
-  fontSize: 14,
-  fontWeight: 700,
-  lineHeight: lineHeights.mobileParagraphSmallBold,
   letterSpacing: 0,
 };
 
@@ -236,18 +203,6 @@ export const defaultThemeOptions: ThemeOptions = {
     },
     paragraphExtraSmallBold: {
       ...paragraphExtraSmallBold,
-    },
-    mobileParagraph: {
-      ...mobileParagraph,
-    },
-    mobileParagraphBold: {
-      ...mobileParagraphBold,
-    },
-    mobileParagraphSmall: {
-      ...mobileParagraphSmall,
-    },
-    mobileParagraphSmallBold: {
-      ...mobileParagraphSmallBold,
     },
     iconSmall: {
       fontSize: 14,

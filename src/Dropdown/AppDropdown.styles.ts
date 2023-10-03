@@ -14,10 +14,5 @@ export const StyledHeader = styled(Typography)(({ theme }) => ({
 
 export const StyledSubheader = styled(Typography)(({ theme }) => ({
   color: theme.palette.primary.main,
-  [theme.breakpoints.up("xs")]: {
-    ...theme.typography.mobileParagraphSmallBold,
-  },
-  [theme.breakpoints.up("xl")]: {
-    ...theme.typography.paragraphSmallBold,
-  },
+  ...theme.typography.paragraphSmallBold,
 }));

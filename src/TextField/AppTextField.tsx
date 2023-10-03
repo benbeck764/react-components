@@ -83,7 +83,7 @@ const AppTextField: FC<AppTextFieldProps> = (props: AppTextFieldProps) => {
       break;
     case "large":
       height = "40px";
-      font = theme.typography.mobileParagraph;
+      font = theme.typography.paragraph;
       break;
   }
   if (rest.multiline) height = "";

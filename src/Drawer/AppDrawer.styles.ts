@@ -39,26 +39,3 @@ export const StyledButton = styled(Button)(({ theme }) => ({
     paddingBottom: theme.spacing(1),
   },
 }));
-
-export const StyledMenuLabel = styled(Typography)(({ theme }) => ({
-  [theme.breakpoints.up("xs")]: {
-    ...theme.typography.mobileParagraph,
-  },
-  [theme.breakpoints.up("xl")]: {
-    ...theme.typography.paragraph,
-  },
-}));
-
-export const StyledContent = styled(Typography)<{ $selected?: boolean }>(
-  ({ $selected, theme }) => ({
-    ...($selected
-      ? {
-          "&": { ...theme.typography.mobileParagraphBold },
-          color: theme.palette.primary.main,
-        }
-      : {
-          "&": { ...theme.typography.mobileParagraph },
-          color: theme.palette.grey[900],
-        }),
-  })
-);

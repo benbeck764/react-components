@@ -149,7 +149,7 @@ const AppDropdown: FC<PropsWithChildren<AppDropdownProps>> = (
           </Box>
         )}
       </StyledHeaderBox>
-      <Typography variant="mobileParagraphSmall">{props.subTitle}</Typography>
+      <Typography variant="paragraphSmall">{props.subTitle}</Typography>
       <Collapse in={isOpen}>
         <Box display={isOpen ? "hidden" : ""} sx={props.childrenBoxSx}>
           {props.children}

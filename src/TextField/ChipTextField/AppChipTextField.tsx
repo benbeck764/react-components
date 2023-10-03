@@ -97,7 +97,7 @@ export const AppChipTextField: FC<AppChipTextFieldProps> = (
       break;
     case "large":
       height = "40px";
-      font = theme.typography.mobileParagraph;
+      font = theme.typography.paragraph;
       break;
   }
 
