@@ -1,6 +1,8 @@
 import { resolve } from "path";
 import { defineConfig } from "vite";
+import pkg from "./package.json";
 import dts from "vite-plugin-dts";
+import { visualizer } from "rollup-plugin-visualizer";
 
 export default defineConfig({
   build: {
@@ -10,20 +12,7 @@ export default defineConfig({
       fileName: "index",
     },
     rollupOptions: {
-      external: [
-        "@emotion/react",
-        "@emotion/styled",
-        "@mui/icons-material",
-        "@mui/material",
-        "@mui/x-date-pickers",
-        "moment",
-        "react",
-        "react-dom",
-        "react-dropzone",
-        "react-image-crop",
-        "react-virtuoso",
-        "react-quill",
-      ],
+      external: [...Object.keys(pkg.peerDependencies)],
     },
   },
   resolve: {
@@ -33,5 +22,5 @@ export default defineConfig({
       "@utilities": resolve(__dirname, "src/_utilities/index.ts"),
     },
   },
-  plugins: [dts()],
+  plugins: [dts(), visualizer()],
 });

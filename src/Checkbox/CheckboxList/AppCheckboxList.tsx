@@ -1,6 +1,7 @@
 import { FC, useState } from "react";
 import { SxProps, Theme, Box, Collapse, Typography } from "@mui/material";
-import { ExpandLess, ExpandMore } from "@mui/icons-material";
+import ExpandLessIcon from "@mui/icons-material/ExpandLess";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import AppCheckbox from "../AppCheckbox";
 import {
   CheckboxItem,
@@ -110,13 +111,13 @@ const AppCheckboxList: FC<AppCheckboxListProps> = (
             View {isExpanded ? "Less" : "More"}
           </StyledViewMore>
           {isExpanded ? (
-            <ExpandLess
+            <ExpandLessIcon
               fontSize="small"
               sx={{ paddingLeft: 1 }}
               color="primary"
             />
           ) : (
-            <ExpandMore
+            <ExpandMoreIcon
               fontSize="small"
               sx={{ paddingLeft: 1 }}
               color="primary"

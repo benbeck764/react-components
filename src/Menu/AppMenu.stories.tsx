@@ -4,7 +4,8 @@ import { Avatar, Stack, Theme, Typography, createTheme } from "@mui/material";
 import { getMUITheme, defaultThemeOptions } from "@theme";
 import CustomThemeProvider from "../_theme/CustomThemeProvider";
 import AppMenuItem from "./components/AppMenuItem/AppMenuItem";
-import { AccountCircle, CardMembership } from "@mui/icons-material";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import CardMembershipIcon from "@mui/icons-material/CardMembership";
 
 type AppMenuStoryProps = AppMenuProps;
 type Story = StoryObj<typeof AppMenu>;
@@ -13,7 +14,7 @@ const MenuOptions = (
   <>
     <AppMenuItem>
       <Stack direction="row" alignItems="center" spacing={1}>
-        <AccountCircle
+        <AccountCircleIcon
           fontSize="small"
           sx={{ color: (theme: Theme) => theme.palette.grey[600] }}
         />
@@ -22,7 +23,7 @@ const MenuOptions = (
     </AppMenuItem>
     <AppMenuItem>
       <Stack direction="row" alignItems="center" spacing={1}>
-        <CardMembership
+        <CardMembershipIcon
           fontSize="small"
           sx={{ color: (theme: Theme) => theme.palette.grey[600] }}
         />

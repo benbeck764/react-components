@@ -1,6 +1,7 @@
 import React, { FC, PropsWithChildren, useState } from "react";
 import { Box, Collapse, Typography, SxProps, Theme } from "@mui/material";
-import { ExpandLess, ExpandMore } from "@mui/icons-material";
+import ExpandLessIcon from "@mui/icons-material/ExpandLess";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import {
   StyledHeaderBox,
   StyledHeader,
@@ -90,14 +91,14 @@ const AppDropdown: FC<PropsWithChildren<AppDropdownProps>> = (
             )}
             {!Boolean(props.hideCaret) &&
               (isOpen ? (
-                <ExpandLess
+                <ExpandLessIcon
                   fontSize={props.caretSize ?? "small"}
                   color="primary"
                   sx={{ position: "absolute", right: 0, ...props.caretSx }}
                   onClick={() => toggleIsOpen()}
                 />
               ) : (
-                <ExpandMore
+                <ExpandMoreIcon
                   fontSize={props.caretSize ?? "small"}
                   color="primary"
                   sx={{ position: "absolute", right: 0, ...props.caretSx }}
@@ -132,14 +133,14 @@ const AppDropdown: FC<PropsWithChildren<AppDropdownProps>> = (
             )}
             {!Boolean(props.hideCaret) &&
               (isOpen ? (
-                <ExpandLess
+                <ExpandLessIcon
                   fontSize={props.caretSize ?? "small"}
                   color="primary"
                   sx={{ position: "absolute", right: 0, ...props.caretSx }}
                   onClick={() => toggleIsOpen()}
                 />
               ) : (
-                <ExpandMore
+                <ExpandMoreIcon
                   fontSize={props.caretSize ?? "small"}
                   color="primary"
                   sx={{ position: "absolute", right: 0, ...props.caretSx }}

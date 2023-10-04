@@ -1,5 +1,6 @@
+import Box from "@mui/material/Box/Box";
+import Snackbar from "@mui/material/Snackbar/Snackbar";
 import { styled } from "@mui/material/styles";
-import { Box, Snackbar } from "@mui/material/";
 
 export const StyledToastBox = styled(Box)(({ theme }) => ({
   color: theme.palette.common.white,

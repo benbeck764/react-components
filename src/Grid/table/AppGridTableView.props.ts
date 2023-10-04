@@ -1,10 +1,10 @@
-import { ReactNode } from 'react'
+import { ReactNode } from "react";
 import {
   AppGridColumnDefinition,
   AppGridValueGetterProps,
-} from '../AppGrid.props'
+} from "../AppGrid.props";
 
 export interface ValueGetter<TItem> {
-  column: AppGridColumnDefinition<TItem>
-  getValue: (props: AppGridValueGetterProps<TItem>) => ReactNode
+  column: AppGridColumnDefinition<TItem>;
+  getValue: (props: AppGridValueGetterProps<TItem>) => ReactNode;
 }
