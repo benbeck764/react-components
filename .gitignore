@@ -1,7 +1,13 @@
+dist
+node_modules
+
+
+# General
 .DS_Store
-/dist
 /types
-/node_modules
 /.vscode
 stats.html
 .npmrc
+
+# Packages
+packages/**/dist/*

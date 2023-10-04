@@ -9,7 +9,7 @@ import {
   StyledCloseButton,
   StyledDropzone,
 } from "./AppFileDropzone.styles";
-import { StyledLabelBox } from "../_common/styles/common-ui.styles";
+import { StyledLabelBox } from "@react-components/common";
 import AppFileDropzoneImageTooltip from "./components/AppFileDropzoneImageTooltip";
 import { DropzoneDefaultFile, DropzoneFile } from "./AppFileDropzone.types";
 

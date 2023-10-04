@@ -1,9 +1,10 @@
 {
-  "name": "@benbeck764/react-components-date-picker",
+  "name": "@react-components/date-picker",
   "version": "1.1.0",
   "description": "Dropzone component built utilizing MUI v5 & @mui/x-date-pickers.",
   "main": "./src/index.ts",
   "scripts": {
+    "build": "vite build",
     "test": "echo \"Error: no test specified\" && exit 0",
     "clean": "rimraf node_modules"
   },
@@ -28,6 +29,9 @@
       "types": "./dist/index.d.ts"
     }
   },
+  "dependencies": {
+    "@react-components/common": "workspace:*"
+  },
   "devDependencies": {
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
@@ -35,6 +39,7 @@
     "@mui/x-date-pickers": "^6.3.0",
     "@types/react": "^18.2.22",
     "@types/react-dom": "^18.2.7",
+    "moment": "^2.29.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rimraf": "^5.0.1",
@@ -45,6 +50,7 @@
     "@emotion/styled": "^11.10.6",
     "@mui/material": "5.11.10",
     "@mui/x-date-pickers": "^6.3.0",
+    "moment": "^2.29.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

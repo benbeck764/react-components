@@ -2,9 +2,12 @@ import { FC } from "react";
 import { Typography } from "@mui/material";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import { StyledBreadcrumbs, StyledLink } from "./AppBreadcrumbs.styles";
-import { isString } from "@utilities";
+import {
+  isString,
+  BreakpointDevice,
+  useBreakpoint,
+} from "@react-components/common";
 import { AppBreadcrumbsProps, BreadcrumbItem } from "./AppBreadcrumbs.props";
-import { BreakpointDevice, useBreakpoint } from "@common";
 
 const AppBreadcrumbs: FC<AppBreadcrumbsProps> = (
   props: AppBreadcrumbsProps

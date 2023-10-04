@@ -2,9 +2,9 @@ import { Typography, SxProps, Theme } from "@mui/material";
 import { FC, useState, Ref, useImperativeHandle } from "react";
 import ReactQuill, { UnprivilegedEditor } from "react-quill";
 import "react-quill/dist/quill.snow.css";
-import { StyledLabelBox } from "@common";
 import { editorFormats, toolbarOptions } from "./AppTextEditor.config";
 import { StyledQuillWrapper } from "./AppTextEditor.styles";
+import { StyledLabelBox } from "@react-components/common";
 
 type AppTextEditorProps = {
   defaultValue?: string;

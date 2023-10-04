@@ -10,7 +10,6 @@ import {
   useTheme,
 } from "@mui/material";
 import WarningAmberIcon from "@mui/icons-material/WarningAmber";
-import { StyledLabelBox } from "../../_common/styles/common-ui.styles";
 import {
   AppTextFieldRefProps,
   AppTextFieldPropSizes,
@@ -20,7 +19,7 @@ import {
   StyledChipsInputEndAdornment,
   StyledInputAdornment,
 } from "../AppTextField.styles";
-import { CloseButton } from "@common";
+import { CloseButton, StyledLabelBox } from "@react-components/common";
 import AppChip from "../../Chip/AppChip";
 
 export type AppChipTextFieldProps = AppTextFieldRefProps &

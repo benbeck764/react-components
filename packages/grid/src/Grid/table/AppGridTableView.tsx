@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import { AppBreakpoint } from "@common";
+import { AppBreakpoint } from "@react-components/common";
 import {
   AppGridColumnDefinition,
   AppGridProps,

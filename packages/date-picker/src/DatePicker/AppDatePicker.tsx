@@ -14,7 +14,11 @@ import {
   Typography,
   useTheme,
 } from "@mui/material";
-import { useBreakpoint, BreakpointDevice, StyledLabelBox } from "@common";
+import {
+  useBreakpoint,
+  BreakpointDevice,
+  StyledLabelBox,
+} from "@react-components/common";
 import { AppTextFieldPropSizes } from "../TextField/AppTextField.common.props";
 
 export type AppDatePickerProps = {

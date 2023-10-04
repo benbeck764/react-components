@@ -1,6 +1,6 @@
 import { FC, ReactElement } from "react";
 import { Box, Tooltip } from "@mui/material";
-import AppCard from "../../Card/AppCard";
+import AppCard from "@react-components/base";
 
 type AppFileDropzoneImageTooltipProps = {
   children: ReactElement<any, any>;

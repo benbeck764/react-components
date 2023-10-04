@@ -1,7 +1,6 @@
 import { Box } from "@mui/material";
 import { useRef } from "react";
 import ReactDOM from "react-dom";
-import AppTextField from "../TextField/AppTextField";
 import {
   AppGridDataRequest,
   AppGridDataRequestChangeType,
@@ -12,9 +11,8 @@ import { AppGridTableView } from "./table/AppGridTableView";
 import { getLastPage } from "./utility/grid-helpers";
 import { AppGridCardView } from "./card/AppGridCardView";
 import { AppGridLoadMore } from "./common/AppGridLoadMore";
-import { useBreakpoint } from "@common";
-import { SelectItem } from "../Select/common/SelectItem";
-import AppSelect from "../Select/Select/AppSelect";
+import { useBreakpoint } from "@react-components/common";
+import { SelectItem, AppSelect, AppTextField } from "@react-components/base";
 
 function AppGrid<TItem>(props: AppGridProps<TItem>): JSX.Element {
   const breakpointProperties = useBreakpoint();

@@ -12,7 +12,7 @@ import {
 import { StyledFormGroup, StyledViewMore } from "./AppCheckboxList.styles";
 import { AppSelectAllCheckbox } from "../components/AppSelectAllCheckbox";
 import { StyledLabel } from "../AppCheckbox.styles";
-import { StyledLabelBox } from "@common";
+import { StyledLabelBox } from "@react-components/common";
 
 export type AppCheckboxListProps = {
   items: CheckboxItem[];

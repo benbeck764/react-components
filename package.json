@@ -14,8 +14,7 @@
     "types"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 0",
-    "build": "vite build",
+    "build": "pnpm -r --filter=\"./packages/*\" run build",
     "clean": "rimraf node_modules",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"

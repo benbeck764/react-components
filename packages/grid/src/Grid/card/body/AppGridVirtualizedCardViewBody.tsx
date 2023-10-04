@@ -7,7 +7,7 @@ import {
 } from "../../AppGrid.props";
 import { AppGridNoResultsFound } from "../../common/AppGridNoResultsFound";
 import { getHasItems, getItems } from "../../utility/grid-helpers";
-import { getChunks } from "@utilities";
+import { getChunks } from "@react-components/common";
 import { getCardRowData } from "./common";
 
 export function AppGridCardViewVirtualizedBody<TItem>(props: {
