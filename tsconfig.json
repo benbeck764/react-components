@@ -14,12 +14,7 @@
     "emitDeclarationOnly": true,
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
-    "paths": {
-      "@common": ["./src/_common/index.ts"],
-      "@theme": ["./src/_theme/index.ts"],
-      "@utilities": ["./src/_utilities/index.ts"]
-    }
+    "noFallthroughCasesInSwitch": true
   },
   "include": ["src"],
   "exclude": ["dist", "node_modules"]
