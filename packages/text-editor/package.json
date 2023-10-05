@@ -1,10 +1,10 @@
 {
   "name": "@benbeck764/react-components-texteditor",
-  "version": "1.1.1-beta.1",
+  "version": "1.1.1-beta.2",
   "description": "React Text Editor component built utilizing MUI v5 & react-quill.",
   "main": "dist/texteditor.ts",
   "module": "dist/texteditor.mjs",
-  "types:": "dist/index.d.ts",
+  "types:": "dist/text-editor/src/index.d.ts",
   "scripts": {
     "build": "vite build",
     "test": "echo \"Error: no test specified\" && exit 0",
@@ -28,7 +28,7 @@
     ".": {
       "import": "./dist/texteditor.mjs",
       "require": "./dist/texteditor.umd.js",
-      "types": "./dist/index.d.ts"
+      "types": "./dist/text-editor/src/index.d.ts"
     }
   },
   "dependencies": {

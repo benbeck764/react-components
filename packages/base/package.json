@@ -1,10 +1,10 @@
 {
   "name": "@benbeck764/react-components",
-  "version": "1.1.1-beta.1",
+  "version": "1.1.1-beta.2",
   "description": "Base components built utilizing MUI v5.",
   "main": "dist/base.ts",
   "module": "dist/base.mjs",
-  "types:": "dist/base.d.ts",
+  "types:": "dist/base/src/index.d.ts",
   "scripts": {
     "build": "vite build",
     "test": "echo \"Error: no test specified\" && exit 0",
@@ -28,7 +28,7 @@
     ".": {
       "import": "./dist/base.mjs",
       "require": "./dist/base.umd.js",
-      "types": "./dist/index.d.ts"
+      "types": "./dist/base/src/index.d.ts"
     }
   },
   "dependencies": {
