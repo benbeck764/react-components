@@ -1,5 +1,5 @@
 {
-  "name": "@benbeck764/react-components",
+  "name": "@benbeck764/@react-components",
   "version": "0.0.0",
   "private": true,
   "workspaces": [
@@ -15,7 +15,7 @@
   ],
   "scripts": {
     "build": "pnpm -r --filter=\"./packages/*\" run build",
-    "clean": "rimraf node_modules",
+    "clean": "pnpm -r --filter=\"./packages/*\" run clean && rimraf node_modules",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },

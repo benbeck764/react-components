@@ -1,12 +1,14 @@
 {
-  "name": "@react-components/grid",
+  "name": "@benbeck764/@react-components/grid",
   "version": "1.1.0",
   "description": "Grid components built utilizing MUI v5 & react-virtuoso.",
-  "main": "./src/index.ts",
+  "main": "dist/grid.ts",
+  "module": "dist/grid.mjs",
+  "types:": "dist/index.d.ts",
   "scripts": {
     "build": "vite build",
     "test": "echo \"Error: no test specified\" && exit 0",
-    "clean": "rimraf node_modules"
+    "clean": "rimraf dist && rimraf node_modules"
   },
   "repository": {
     "type": "git",
@@ -24,14 +26,14 @@
   "homepage": "https://github.com/benbeck764/react-components#readme",
   "exports": {
     ".": {
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.umd.js",
+      "import": "./dist/grid.mjs",
+      "require": "./dist/grid.umd.js",
       "types": "./dist/index.d.ts"
     }
   },
   "dependencies": {
-    "@react-components/base": "workspace:*",
-    "@react-components/common": "workspace:*"
+    "@benbeck764/@react-components/base": "workspace:*",
+    "@benbeck764/@react-components/common": "workspace:*"
   },
   "devDependencies": {
     "@emotion/react": "^11.10.6",

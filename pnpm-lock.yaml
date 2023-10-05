@@ -56,7 +56,7 @@ importers:
 
   packages/base:
     dependencies:
-      '@react-components/common':
+      '@benbeck764/@react-components/common':
         specifier: workspace:*
         version: link:../common
     devDependencies:
@@ -129,7 +129,7 @@ importers:
 
   packages/date-picker:
     dependencies:
-      '@react-components/common':
+      '@benbeck764/@react-components/common':
         specifier: workspace:*
         version: link:../common
     devDependencies:
@@ -169,10 +169,10 @@ importers:
 
   packages/dropzone:
     dependencies:
-      '@react-components/base':
+      '@benbeck764/@react-components/base':
         specifier: workspace:*
         version: link:../base
-      '@react-components/common':
+      '@benbeck764/@react-components/common':
         specifier: workspace:*
         version: link:../common
     devDependencies:
@@ -209,10 +209,10 @@ importers:
 
   packages/grid:
     dependencies:
-      '@react-components/base':
+      '@benbeck764/@react-components/base':
         specifier: workspace:*
         version: link:../base
-      '@react-components/common':
+      '@benbeck764/@react-components/common':
         specifier: workspace:*
         version: link:../common
     devDependencies:
@@ -282,7 +282,7 @@ importers:
 
   packages/text-editor:
     dependencies:
-      '@react-components/common':
+      '@benbeck764/@react-components/common':
         specifier: workspace:*
         version: link:../common
     devDependencies:

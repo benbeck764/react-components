@@ -1,4 +1,4 @@
-import { FC } from "react";
+import React, { FC } from "react";
 import {
   Skeleton,
   SxProps,
@@ -8,7 +8,7 @@ import {
 } from "@mui/material";
 import { OverridableStringUnion } from "@mui/types";
 import { Variant } from "@mui/material/styles/createTypography";
-import { getRandomNumberWithVariance } from "@utilities";
+import { getRandomNumberWithVariance } from "../utilities";
 
 type TypographySkeletonProps = {
   charCount: number;

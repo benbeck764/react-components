@@ -20,7 +20,7 @@ import {
   StyledPanelBox,
   StyledDrawer,
 } from "./AppDrawer.styles";
-import { CloseButton } from "@react-components/common";
+import { CloseButton } from "@benbeck764/@react-components/common";
 
 export type AppDrawerMode = "menu" | "panel";
 

@@ -14,12 +14,5 @@ export default defineConfig({
       external: [...Object.keys(pkg.peerDependencies)],
     },
   },
-  resolve: {
-    alias: {
-      "@components": resolve(__dirname, "src/components/index.ts"),
-      "@hooks": resolve(__dirname, "src/hooks/index.ts"),
-      "@utilities": resolve(__dirname, "src/utilities/index.ts"),
-    },
-  },
   plugins: [dts()],
 });
