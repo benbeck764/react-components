@@ -19,11 +19,8 @@ import {
   StyledChipsInputEndAdornment,
   StyledInputAdornment,
 } from "../AppTextField.styles";
-import {
-  CloseButton,
-  StyledLabelBox,
-} from "@benbeck764/react-components-common";
 import AppChip from "../../Chip/AppChip";
+import { CloseButton, StyledLabelBox } from "../../_common";
 
 export type AppChipTextFieldProps = AppTextFieldRefProps &
   Omit<InputProps, "onChange"> & {

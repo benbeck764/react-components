@@ -7,9 +7,9 @@ import {
   Typography,
 } from "@mui/material";
 import { Ref, useEffect, useImperativeHandle, useState } from "react";
-import { StyledLabelBox } from "../../_common";
 import AppSelectMenuItem from "../common/AppSelectMenuItem";
 import { SelectItem } from "../common/SelectItem";
+import StyledLabelBox from "../../_common/LabelBox";
 
 export type AppSelectInputSizes = "small" | "medium" | "large";
 

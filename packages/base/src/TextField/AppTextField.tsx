@@ -10,11 +10,12 @@ import {
 import { StyledInput, StyledInputAdornment } from "./AppTextField.styles";
 import WarningAmberIcon from "@mui/icons-material/WarningAmber";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
-import { StyledLabelBox, CloseButton } from "../_common";
 import {
   AppTextFieldRefProps,
   AppTextFieldPropSizes,
 } from "./AppTextField.common.props";
+import StyledLabelBox from "../_common/LabelBox";
+import { CloseButton } from "../_common";
 
 export type AppTextFieldProps = AppTextFieldRefProps &
   InputProps & {
