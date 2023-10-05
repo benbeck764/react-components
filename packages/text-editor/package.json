@@ -1,5 +1,5 @@
 {
-  "name": "@benbeck764/@react-components/text-editor",
+  "name": "@react-components/text-editor",
   "version": "1.1.0",
   "description": "React Text Editor component built utilizing MUI v5 & react-quill.",
   "main": "dist/text-editor.ts",
@@ -32,7 +32,7 @@
     }
   },
   "dependencies": {
-    "@benbeck764/@react-components/common": "workspace:*"
+    "@react-components/common": "workspace:*"
   },
   "devDependencies": {
     "@emotion/react": "^11.10.6",

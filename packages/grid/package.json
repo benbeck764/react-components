@@ -1,5 +1,5 @@
 {
-  "name": "@benbeck764/@react-components/grid",
+  "name": "@react-components/grid",
   "version": "1.1.0",
   "description": "Grid components built utilizing MUI v5 & react-virtuoso.",
   "main": "dist/grid.ts",
@@ -32,8 +32,8 @@
     }
   },
   "dependencies": {
-    "@benbeck764/@react-components/base": "workspace:*",
-    "@benbeck764/@react-components/common": "workspace:*"
+    "@react-components/base": "workspace:*",
+    "@react-components/common": "workspace:*"
   },
   "devDependencies": {
     "@emotion/react": "^11.10.6",

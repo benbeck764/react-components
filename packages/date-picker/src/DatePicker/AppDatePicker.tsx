@@ -18,7 +18,7 @@ import {
   useBreakpoint,
   BreakpointDevice,
   StyledLabelBox,
-} from "@benbeck764/@react-components/common";
+} from "@react-components/common";
 import { AppTextFieldPropSizes } from "../TextField/AppTextField.common.props";
 
 export type AppDatePickerProps = {

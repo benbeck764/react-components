@@ -1,5 +1,5 @@
 {
-  "name": "@benbeck764/@react-components/base",
+  "name": "@react-components/base",
   "version": "1.1.0",
   "description": "Base components built utilizing MUI v5.",
   "main": "dist/base.ts",
@@ -32,7 +32,7 @@
     }
   },
   "dependencies": {
-    "@benbeck764/@react-components/common": "workspace:*"
+    "@react-components/common": "workspace:*"
   },
   "devDependencies": {
     "@emotion/react": "^11.10.6",

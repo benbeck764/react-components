@@ -4,7 +4,7 @@ import ReactQuill, { UnprivilegedEditor } from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import { editorFormats, toolbarOptions } from "./AppTextEditor.config";
 import { StyledQuillWrapper } from "./AppTextEditor.styles";
-import { StyledLabelBox } from "@benbeck764/@react-components/common";
+import { StyledLabelBox } from "@react-components/common";
 
 type AppTextEditorProps = {
   defaultValue?: string;

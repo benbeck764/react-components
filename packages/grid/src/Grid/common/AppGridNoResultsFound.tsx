@@ -1,7 +1,7 @@
 import { Box, Typography, Theme, styled, SxProps } from "@mui/material";
 import { ReactNode } from "react";
 import { AppGridDisplayMode } from "../AppGrid.props";
-import { isString } from "@benbeck764/@react-components/common";
+import { isString } from "@react-components/common";
 
 export interface AppGridNoResultsFoundProps {
   message?: ReactNode;

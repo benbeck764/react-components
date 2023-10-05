@@ -1,5 +1,5 @@
 {
-  "name": "@benbeck764/@react-components/date-picker",
+  "name": "@react-components/date-picker",
   "version": "1.1.0",
   "description": "Date Picker component built utilizing MUI v5 & @mui/x-date-pickers.",
   "main": "dist/date-picker.ts",
@@ -32,7 +32,7 @@
     }
   },
   "dependencies": {
-    "@benbeck764/@react-components/common": "workspace:*"
+    "@react-components/common": "workspace:*"
   },
   "devDependencies": {
     "@emotion/react": "^11.10.6",

@@ -1,7 +1,7 @@
 import { FC, RefObject } from "react";
 import { Box, Theme, Typography, SxProps } from "@mui/material";
-import { AppBreakpoint } from "@benbeck764/@react-components/common";
-import { AppButton } from "@benbeck764/@react-components/base";
+import { AppBreakpoint } from "@react-components/common";
+import { AppButton } from "@react-components/base";
 
 export type AppGridLoadMoreProps = {
   pageEndIndex: number;

@@ -20,7 +20,7 @@ import {
   StyledSelect,
   StyledUnderline,
 } from "./AppPagination.styles";
-import { useBreakpoint } from "@benbeck764/@react-components/common";
+import { useBreakpoint } from "@react-components/common";
 
 export const defaultPageSizeOptions = [25, 50, 100, 250];
 
