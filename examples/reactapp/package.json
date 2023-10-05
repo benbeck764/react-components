@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@benbeck764/react-components": "workspace:^",
+    "@benbeck764/react-components-grid": "workspace:^",
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
     "@mui/material": "^5.11.10",
@@ -21,6 +22,7 @@
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
     "@vitejs/plugin-react": "^4.0.3",
+    "rollup-plugin-visualizer": "^5.9.2",
     "typescript": "^5.0.2",
     "vite": "^4.4.5"
   }
