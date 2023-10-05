@@ -1,9 +1,9 @@
 {
-  "name": "@react-components/text-editor",
+  "name": "@benbeck764/react-components-texteditor",
   "version": "1.1.0",
   "description": "React Text Editor component built utilizing MUI v5 & react-quill.",
-  "main": "dist/text-editor.ts",
-  "module": "dist/text-editor.mjs",
+  "main": "dist/texteditor.ts",
+  "module": "dist/texteditor.mjs",
   "types:": "dist/index.d.ts",
   "scripts": {
     "build": "vite build",
@@ -13,7 +13,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/benbeck764/react-components.git",
-    "directory": "packages/text-editor"
+    "directory": "packages/texteditor"
   },
   "keywords": [
     "react"
@@ -26,13 +26,14 @@
   "homepage": "https://github.com/benbeck764/react-components#readme",
   "exports": {
     ".": {
-      "import": "./dist/text-editor.mjs",
-      "require": "./dist/text-editor.umd.js",
+      "import": "./dist/texteditor.mjs",
+      "require": "./dist/texteditor.umd.js",
       "types": "./dist/index.d.ts"
     }
   },
   "dependencies": {
-    "@react-components/common": "workspace:*"
+    "@benbeck764/react-components": "workspace:*",
+    "@benbeck764/react-components-common": "workspace:*"
   },
   "devDependencies": {
     "@emotion/react": "^11.10.6",
@@ -47,6 +48,7 @@
     "typescript": "^5.2.2"
   },
   "peerDependencies": {
+    "@benbeck764/react-components": "workspace:*",
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
     "@mui/material": "5.11.10",

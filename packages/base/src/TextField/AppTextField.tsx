@@ -10,7 +10,10 @@ import {
 import { StyledInput, StyledInputAdornment } from "./AppTextField.styles";
 import WarningAmberIcon from "@mui/icons-material/WarningAmber";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
-import { StyledLabelBox, CloseButton } from "@react-components/common";
+import {
+  StyledLabelBox,
+  CloseButton,
+} from "@benbeck764/react-components-common";
 import {
   AppTextFieldRefProps,
   AppTextFieldPropSizes,

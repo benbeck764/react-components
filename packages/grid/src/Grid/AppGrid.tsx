@@ -11,8 +11,12 @@ import { AppGridTableView } from "./table/AppGridTableView";
 import { getLastPage } from "./utility/grid-helpers";
 import { AppGridCardView } from "./card/AppGridCardView";
 import { AppGridLoadMore } from "./common/AppGridLoadMore";
-import { useBreakpoint } from "@react-components/common";
-import { SelectItem, AppSelect, AppTextField } from "@react-components/base";
+import { useBreakpoint } from "@benbeck764/react-components-common";
+import {
+  SelectItem,
+  AppSelect,
+  AppTextField,
+} from "@benbeck764/react-components";
 
 function AppGrid<TItem>(props: AppGridProps<TItem>): JSX.Element {
   const breakpointProperties = useBreakpoint();

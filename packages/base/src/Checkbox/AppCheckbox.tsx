@@ -8,7 +8,7 @@ import {
   StyledMinusIcon,
 } from "./AppCheckbox.styles";
 import { AppLoadingCheckbox } from "./components/AppLoadingCheckbox";
-import { isString } from "@react-components/common";
+import { isString } from "@benbeck764/react-components-common";
 import { AppCheckboxProps, CheckboxItem } from "./AppCheckbox.props";
 
 const AppCheckbox: FC<AppCheckboxProps> = (props: AppCheckboxProps) => {

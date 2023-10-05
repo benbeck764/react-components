@@ -6,7 +6,7 @@ import {
   isString,
   BreakpointDevice,
   useBreakpoint,
-} from "@react-components/common";
+} from "@benbeck764/react-components-common";
 import { AppBreadcrumbsProps, BreadcrumbItem } from "./AppBreadcrumbs.props";
 
 const AppBreadcrumbs: FC<AppBreadcrumbsProps> = (

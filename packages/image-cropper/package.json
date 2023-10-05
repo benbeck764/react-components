@@ -1,9 +1,9 @@
 {
-  "name": "@react-components/image-cropper",
+  "name": "@benbeck764/react-components-imagecropper",
   "version": "1.1.0",
   "description": "Image cropper component built utilizing MUI v5 & react-image-crop.",
-  "main": "dist/image-cropper.ts",
-  "module": "dist/image-cropper.mjs",
+  "main": "dist/imagecropper.ts",
+  "module": "dist/imagecropper.mjs",
   "types:": "dist/index.d.ts",
   "scripts": {
     "build": "vite build",
@@ -13,7 +13,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/benbeck764/react-components.git",
-    "directory": "packages/image-cropper"
+    "directory": "packages/imagecropper"
   },
   "keywords": [
     "react"
@@ -26,10 +26,13 @@
   "homepage": "https://github.com/benbeck764/react-components#readme",
   "exports": {
     ".": {
-      "import": "./dist/image-cropper.mjs",
-      "require": "./dist/image-cropper.umd.js",
+      "import": "./dist/imagecropper.mjs",
+      "require": "./dist/imagecropper.umd.js",
       "types": "./dist/index.d.ts"
     }
+  },
+  "dependencies": {
+    "@benbeck764/react-components": "workspace:*"
   },
   "devDependencies": {
     "@emotion/react": "^11.10.6",
@@ -44,6 +47,7 @@
     "typescript": "^5.2.2"
   },
   "peerDependencies": {
+    "@benbeck764/react-components": "workspace:*",
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
     "@mui/material": "5.11.10",

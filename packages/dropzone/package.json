@@ -1,5 +1,5 @@
 {
-  "name": "@react-components/dropzone",
+  "name": "@benbeck764/react-components-dropzone",
   "version": "1.1.0",
   "description": "Dropzone component built utilizing MUI v5 & react-dropzone.",
   "main": "dist/dropzone.ts",
@@ -32,8 +32,8 @@
     }
   },
   "dependencies": {
-    "@react-components/base": "workspace:*",
-    "@react-components/common": "workspace:*"
+    "@benbeck764/react-components": "workspace:*",
+    "@benbeck764/react-components-common": "workspace:*"
   },
   "devDependencies": {
     "@emotion/react": "^11.10.6",
@@ -48,6 +48,7 @@
     "typescript": "^5.2.2"
   },
   "peerDependencies": {
+    "@benbeck764/react-components": "workspace:*",
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
     "@mui/material": "5.11.10",
