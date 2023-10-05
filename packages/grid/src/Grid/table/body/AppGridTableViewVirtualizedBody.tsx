@@ -20,18 +20,19 @@ export function AppGridTableViewVirtualizedBody<TItem>(props: {
   const [Virtuoso, setVirtuso] = useState<any>();
 
   useEffect(() => {
-    const loadReactVirtuoso = async () => {
-      const reactVirtuosoModule = await import("react-virtuoso");
-      if (!reactVirtuosoModule) {
-        console.warn(
-          "react-virtuoso (https://www.npmjs.com/package/react-virtuoso) must be installed in order to use virtualizedProps."
-        );
-      }
-      setVirtuso(reactVirtuosoModule.Virtuoso);
-    };
+    try {
+      const loadReactVirtuoso = async () => {
+        const reactVirtuosoModule = await import("react-virtuoso");
+        if (reactVirtuosoModule) setVirtuso(reactVirtuosoModule.Virtuoso);
+      };
 
-    if (virtualizedProps?.enabled) {
-      loadReactVirtuoso();
+      if (virtualizedProps?.enabled) {
+        loadReactVirtuoso();
+      }
+    } catch {
+      console.error(
+        "react-virtuoso (https://www.npmjs.com/package/react-virtuoso) must be installed in order to use virtualizedProps."
+      );
     }
   }, []);
 
