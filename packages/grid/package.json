@@ -1,6 +1,6 @@
 {
   "name": "@benbeck764/react-components-grid",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Grid components built utilizing MUI v5 & react-virtuoso.",
   "main": "dist/grid.ts",
   "module": "dist/grid.mjs",
