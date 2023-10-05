@@ -1,21 +1,13 @@
 {
-  "name": "root",
-  "version": "0.0.0",
+  "type": "module",
+  "version": "1.1.1",
   "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
   "description": "React components built utilizing MUI v5.",
-  "main": "dist/index.umd.js",
-  "module": "dist/index.mjs",
-  "types": "dist/index.d.ts",
-  "files": [
-    "dist",
-    "types"
-  ],
   "scripts": {
     "build": "pnpm -r --filter=\"./packages/*\" run build",
+    "build:examples": "pnpm -r --filter=\"./examples/*\" run build",
     "clean": "pnpm -r --filter=\"./packages/*\" run clean && rimraf node_modules",
+    "clean:examples": "pnpm -r --filter=\"./examples/*\" run clean && rimraf node_modules",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },

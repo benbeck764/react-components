@@ -8,7 +8,7 @@ import {
   BoxProps,
 } from "@mui/material";
 import * as CSS from "csstype";
-import { SelectItem } from "../Select/common/SelectItem";
+import { SelectItem } from "@benbeck764/react-components";
 
 export type KeyOfType<T, TProp> = {
   [P in keyof T]: T[P] extends TProp ? P : never;

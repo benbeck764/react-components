@@ -1,4 +1,4 @@
-import { styled, Button, Box, Drawer, Typography } from "@mui/material/";
+import { styled, Button, Box, Drawer } from "@mui/material/";
 
 export const StyledList = styled("ul")({
   padding: "6px 0px",

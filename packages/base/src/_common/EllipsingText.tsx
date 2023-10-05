@@ -1,4 +1,4 @@
-import { styled, Box, TypographyVariants } from "@mui/material";
+import { styled, Box } from "@mui/material";
 
 type EllipsingTextContainerProps = {
   lines: number;

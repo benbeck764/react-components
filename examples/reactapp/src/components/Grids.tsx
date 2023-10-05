@@ -49,7 +49,7 @@ const Grids: FC = () => {
                 <Box
                   sx={{
                     p: 1,
-                    width: 144,
+                    width: 184,
                     height: 200,
                     backgroundColor: (theme) => theme.palette.grey[300],
                     border: (theme) => `1px solid ${theme.palette.grey[600]}`,
@@ -65,8 +65,8 @@ const Grids: FC = () => {
               );
             },
             columnCount: 4,
-            columnSpacing: 5,
-            rowSpacing: 5,
+            columnSpacing: 3,
+            rowSpacing: 3,
           },
         }}
         displayMode="card"

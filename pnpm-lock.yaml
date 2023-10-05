@@ -4,6 +4,9 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+overrides:
+  jackspeak: 2.1.1
+
 importers:
 
   .:
@@ -54,10 +57,10 @@ importers:
   examples/reactapp:
     dependencies:
       '@benbeck764/react-components':
-        specifier: workspace:^
+        specifier: workspace:*
         version: link:../../packages/base
       '@benbeck764/react-components-grid':
-        specifier: workspace:^
+        specifier: workspace:*
         version: link:../../packages/grid
       '@emotion/react':
         specifier: ^11.10.6
@@ -84,6 +87,12 @@ importers:
       '@vitejs/plugin-react':
         specifier: ^4.0.3
         version: 4.1.0(vite@4.4.9)
+      rimraf:
+        specifier: ^5.0.1
+        version: 5.0.1
+      rollup-plugin-visualizer:
+        specifier: ^5.9.2
+        version: 5.9.2
       typescript:
         specifier: ^5.0.2
         version: 5.2.2
@@ -262,6 +271,9 @@ importers:
       '@emotion/styled':
         specifier: ^11.10.6
         version: 11.11.0(@emotion/react@11.11.1)(@types/react@18.2.22)(react@18.2.0)
+      '@mui/icons-material':
+        specifier: ^5.11.9
+        version: 5.14.9(@mui/material@5.11.10)(@types/react@18.2.22)(react@18.2.0)
       '@mui/material':
         specifier: ^5.11.10
         version: 5.11.10(@emotion/react@11.11.1)(@emotion/styled@11.11.0)(@types/react@18.2.22)(react-dom@18.2.0)(react@18.2.0)

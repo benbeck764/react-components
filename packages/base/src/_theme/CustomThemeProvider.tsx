@@ -1,5 +1,5 @@
 import { FC, PropsWithChildren } from "react";
-import { Theme, ThemeProvider, createTheme } from "@mui/material";
+import { ThemeProvider, createTheme } from "@mui/material";
 import { CustomTheme } from "./overrides.theme";
 import { getMUITheme } from "./mui.theme";
 import { defaultThemeOptions } from "./base.theme";

@@ -36,7 +36,7 @@ export const AppGridNoResultsFound = (
   );
 };
 
-const StyledBox = styled(Box)(({ theme }) => ({
+const StyledBox = styled(Box)(() => ({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
