@@ -11,6 +11,7 @@ import {
 } from "./AppFileDropzone.styles";
 import AppFileDropzoneImageTooltip from "./components/AppFileDropzoneImageTooltip";
 import { DropzoneDefaultFile, DropzoneFile } from "./AppFileDropzone.types";
+import { StyledLabelBox } from "@benbeck764/react-components";
 
 type AppFileDropzoneProps = DropzoneOptions & {
   defaultFiles?: DropzoneDefaultFile[];
