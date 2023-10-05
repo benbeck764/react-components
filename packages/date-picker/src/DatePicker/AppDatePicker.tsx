@@ -14,10 +14,10 @@ import {
   Typography,
   useTheme,
 } from "@mui/material";
+import { StyledLabelBox } from "@benbeck764/react-components";
 import {
   useBreakpoint,
   BreakpointDevice,
-  StyledLabelBox,
 } from "@benbeck764/react-components-common";
 import { AppTextFieldPropSizes } from "../TextField/AppTextField.common.props";
 

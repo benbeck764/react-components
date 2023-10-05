@@ -7,7 +7,7 @@ import {
   Typography,
 } from "@mui/material";
 import { Ref, useEffect, useImperativeHandle, useState } from "react";
-import { StyledLabelBox } from "@benbeck764/react-components-common";
+import { StyledLabelBox } from "../../_common";
 import AppSelectMenuItem from "../common/AppSelectMenuItem";
 import { SelectItem } from "../common/SelectItem";
 

@@ -7,10 +7,10 @@ import {
   Theme,
 } from "@mui/material";
 import { Ref, useEffect, useImperativeHandle, useState } from "react";
-import { StyledLabelBox } from "@benbeck764/react-components-common";
 import AppMultiSelectMenuItem from "./AppMultiSelectMenuItem";
 import AppChip from "../../Chip/AppChip";
 import { SelectItem } from "../common/SelectItem";
+import StyledLabelBox from "../../_common/LabelBox";
 
 type AppSelectProps<TItem> = {
   inputRef?: React.MutableRefObject<HTMLInputElement | null>;

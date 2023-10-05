@@ -8,7 +8,7 @@ import {
 } from "@mui/material";
 import { OverridableStringUnion } from "@mui/types";
 import { Variant } from "@mui/material/styles/createTypography";
-import { getRandomNumberWithVariance } from "../utilities";
+import { getRandomNumberWithVariance } from "@benbeck764/react-components-common";
 
 type TypographySkeletonProps = {
   charCount: number;
