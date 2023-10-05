@@ -1,6 +1,6 @@
 {
   "name": "@benbeck764/react-components-grid",
-  "version": "1.1.1-beta.2",
+  "version": "1.1.1-beta.3",
   "description": "Grid components built utilizing MUI v5 & react-virtuoso.",
   "author": "Ben Beck",
   "license": "ISC",
@@ -55,7 +55,7 @@
     "@benbeck764/react-components": "workspace:*",
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
-    "@mui/material": "5.11.10",
+    "@mui/material": "^5.11.10",
     "@mui/icons-material": "^5.11.9",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

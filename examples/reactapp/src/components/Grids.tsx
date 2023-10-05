@@ -40,10 +40,10 @@ const Grids: FC = () => {
         }}
         cardView={{
           xs: {
-            // virtualizedProps: {
-            //   enabled: true,
-            //   useWindowScroll: true,
-            // },
+            virtualizedProps: {
+              enabled: true,
+              useWindowScroll: true,
+            },
             getContent: (item: GridData) => {
               return (
                 <Box

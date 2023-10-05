@@ -8,22 +8,26 @@ import { AppGridNoResultsFound } from "../../common/AppGridNoResultsFound";
 import { getHasItems, getItems } from "../../utility/grid-helpers";
 import { getChunks } from "@benbeck764/react-components-common";
 import { getCardRowData } from "./common";
-import { useEffect, useState } from "react";
+import { useEffect, useState, lazy } from "react";
 
 export function AppGridCardViewVirtualizedBody<TItem>(props: {
   dataGridProps: AppGridProps<TItem>;
   cardViewDefinition: AppGridCardViewDefinition<TItem>;
 }): JSX.Element {
   const virtualizedProps = props.cardViewDefinition.virtualizedProps;
-  const [Virtuoso, setVirtuso] = useState<any>();
-
   const dataGridProps = props.dataGridProps;
+
+  const [Virtuoso, setVirtuso] = useState<any>();
 
   useEffect(() => {
     const loadReactVirtuoso = async () => {
-      const reactVirtusoModule = await import("react-virtuoso");
-      const virtuoso = reactVirtusoModule.Virtuoso;
-      setVirtuso(virtuoso);
+      const reactVirtuosoModule = await import("react-virtuoso");
+      if (!reactVirtuosoModule) {
+        console.warn(
+          "react-virtuoso (https://www.npmjs.com/package/react-virtuoso) must be installed in order to use virtualizedProps."
+        );
+      }
+      setVirtuso(reactVirtuosoModule.Virtuoso);
     };
 
     if (virtualizedProps?.enabled) {
@@ -64,6 +68,8 @@ export function AppGridCardViewVirtualizedBody<TItem>(props: {
       }
     );
   }
+
+  if (!Virtuoso) return <></>;
 
   return (
     <Virtuoso
