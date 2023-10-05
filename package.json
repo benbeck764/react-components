@@ -50,8 +50,5 @@
     "typescript": "^5.2.2",
     "vite": "^4.4.9",
     "vite-plugin-dts": "^3.5.4"
-  },
-  "publishConfig": {
-    "@benbeck764:registry": "https://npm.pkg.github.com"
   }
 }
