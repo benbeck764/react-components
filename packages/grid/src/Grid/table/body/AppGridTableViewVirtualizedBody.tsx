@@ -1,5 +1,4 @@
 import { Box } from "@mui/material";
-import { Virtuoso } from "react-virtuoso";
 import {
   AppGridColumnDefinition,
   AppGridProps,
@@ -9,6 +8,7 @@ import {
 import { createValueGetters, getRowData } from "./common";
 import { AppGridNoResultsFound } from "../../common/AppGridNoResultsFound";
 import { getHasItems, getItems } from "../../utility/grid-helpers";
+import { useEffect, useState } from "react";
 
 export function AppGridTableViewVirtualizedBody<TItem>(props: {
   dataGridProps: AppGridProps<TItem>;
@@ -16,6 +16,19 @@ export function AppGridTableViewVirtualizedBody<TItem>(props: {
 }): JSX.Element {
   const dataGridProps = props.dataGridProps;
   const virtualizedProps = props.tableViewDefinition?.virtualizedProps;
+  const [Virtuoso, setVirtuso] = useState<any>();
+
+  useEffect(() => {
+    const loadReactVirtuoso = async () => {
+      const reactVirtusoModule = await import("react-virtuoso");
+      const virtuoso = reactVirtusoModule.Virtuoso;
+      setVirtuso(virtuoso);
+    };
+
+    if (virtualizedProps?.enabled) {
+      loadReactVirtuoso();
+    }
+  }, []);
 
   const valueGetters = createValueGetters(props.tableViewDefinition.columns);
 
@@ -74,7 +87,9 @@ export function AppGridTableViewVirtualizedBody<TItem>(props: {
       style={{ height: virtualizedProps?.height }}
       useWindowScroll={virtualizedProps?.useWindowScroll}
       data={rows}
-      itemContent={(_index, row) => <Box>{row.content}</Box>}
+      itemContent={(_index: number, row: AppRowData) => (
+        <Box>{row.content}</Box>
+      )}
     />
   );
 }

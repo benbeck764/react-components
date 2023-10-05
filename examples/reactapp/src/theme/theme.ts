@@ -2,13 +2,13 @@ import { Breakpoint, ThemeOptions, createTheme } from "@mui/material";
 
 declare module "@mui/material/styles" {
   interface Theme {
-    pageContentMargin: number;
-    pageWidths: { [key in Breakpoint]: number };
+    pageContentMargin?: number;
+    pageWidths?: { [key in Breakpoint]: number };
   }
 
   interface ThemeOptions {
-    pageContentMargin: number;
-    pageWidths: { [key in Breakpoint]: number };
+    pageContentMargin?: number;
+    pageWidths?: { [key in Breakpoint]: number };
   }
 }
 

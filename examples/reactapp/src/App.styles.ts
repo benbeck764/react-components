@@ -15,11 +15,11 @@ export const StyledPageContent = styled(Box)(({ theme }: { theme: Theme }) => ({
     width: "calc(100% - 8px)",
   },
   [theme.breakpoints.up("xl")]: {
-    maxWidth: theme.pageWidths["xl"],
+    maxWidth: theme.pageWidths?.["xl"],
     width: theme.contentWidths?.["xl"],
   },
-  marginTop: theme.pageContentMargin,
-  marginBottom: theme.pageContentMargin,
+  marginTop: theme.pageContentMargin ?? 0,
+  marginBottom: theme.pageContentMargin ?? 0,
 }));
 
 export const StyledStickyHeaderContainer = styled(Box)(
