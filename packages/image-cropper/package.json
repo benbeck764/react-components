@@ -1,9 +1,9 @@
 {
   "name": "@benbeck764/react-components-imagecropper",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "description": "Image cropper component built utilizing MUI v5 & react-image-crop.",
-  "main": "dist/imagecropper.ts",
-  "module": "dist/imagecropper.mjs",
+  "main": "dist/image-cropper.ts",
+  "module": "dist/image-cropper.mjs",
   "types:": "dist/index.d.ts",
   "scripts": {
     "build": "vite build",
@@ -26,8 +26,8 @@
   "homepage": "https://github.com/benbeck764/react-components#readme",
   "exports": {
     ".": {
-      "import": "./dist/imagecropper.mjs",
-      "require": "./dist/imagecropper.umd.js",
+      "import": "./dist/image-cropper.mjs",
+      "require": "./dist/image-cropper.umd.js",
       "types": "./dist/index.d.ts"
     }
   },

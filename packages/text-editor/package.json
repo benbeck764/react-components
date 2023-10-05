@@ -1,9 +1,9 @@
 {
   "name": "@benbeck764/react-components-texteditor",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "description": "React Text Editor component built utilizing MUI v5 & react-quill.",
-  "main": "dist/texteditor.ts",
-  "module": "dist/texteditor.mjs",
+  "main": "dist/text-editor.ts",
+  "module": "dist/text-editor.mjs",
   "types:": "dist/text-editor/src/index.d.ts",
   "scripts": {
     "build": "vite build",
@@ -26,8 +26,8 @@
   "homepage": "https://github.com/benbeck764/react-components#readme",
   "exports": {
     ".": {
-      "import": "./dist/texteditor.mjs",
-      "require": "./dist/texteditor.umd.js",
+      "import": "./dist/text-editor.mjs",
+      "require": "./dist/text-editor.umd.js",
       "types": "./dist/text-editor/src/index.d.ts"
     }
   },
