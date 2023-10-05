@@ -1,6 +1,7 @@
 {
   "name": "@benbeck764/react-components-common",
-  "version": "1.1.1-beta.4",
+  "private": true,
+  "version": "0.0.0",
   "description": "Common components built utilizing MUI v5.",
   "main": "dist/common.ts",
   "module": "dist/common.mjs",
@@ -50,8 +51,5 @@
     "@mui/material": "^5.11.10",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
-  },
-  "publishConfig": {
-    "@benbeck764:registry": "https://npm.pkg.github.com"
   }
 }

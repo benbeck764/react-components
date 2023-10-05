@@ -1,6 +1,6 @@
 {
   "type": "module",
-  "version": "1.1.1-beta.4",
+  "version": "1.1.2",
   "private": true,
   "description": "React components built utilizing MUI v5.",
   "scripts": {
