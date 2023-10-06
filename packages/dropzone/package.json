@@ -1,6 +1,6 @@
 {
   "name": "@benbeck764/react-components-dropzone",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Dropzone component built utilizing MUI v5 & react-dropzone.",
   "main": "dist/dropzone.ts",
   "module": "dist/dropzone.mjs",
@@ -33,7 +33,8 @@
   },
   "dependencies": {
     "@benbeck764/react-components": "workspace:*",
-    "@benbeck764/react-components-common": "workspace:*"
+    "@benbeck764/react-components-common": "workspace:*",
+    "react-dropzone": "^14.2.3"
   },
   "devDependencies": {
     "@emotion/react": "^11.10.6",
@@ -43,7 +44,6 @@
     "@types/react-dom": "^18.2.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-dropzone": "^14.2.3",
     "rimraf": "^5.0.1",
     "typescript": "^5.2.2"
   },
@@ -53,8 +53,7 @@
     "@emotion/styled": "^11.10.6",
     "@mui/material": "5.11.10",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-dropzone": "^14.2.3"
+    "react-dom": "^18.2.0"
   },
   "publishConfig": {
     "@benbeck764:registry": "https://npm.pkg.github.com"

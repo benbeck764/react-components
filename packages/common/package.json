@@ -1,6 +1,6 @@
 {
   "name": "@benbeck764/react-components-common",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Common components built utilizing MUI v5.",
   "main": "dist/common.ts",
   "module": "dist/common.mjs",

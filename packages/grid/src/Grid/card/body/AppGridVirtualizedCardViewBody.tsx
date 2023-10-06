@@ -30,9 +30,7 @@ export function AppGridCardViewVirtualizedBody<TItem>(props: {
         loadReactVirtuoso();
       }
     } catch {
-      console.error(
-        "react-virtuoso (https://www.npmjs.com/package/react-virtuoso) must be installed in order to use virtualizedProps."
-      );
+      console.error("Error: failed to import react-virtuoso.");
     }
   }, []);
 

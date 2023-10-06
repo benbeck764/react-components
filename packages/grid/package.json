@@ -1,6 +1,6 @@
 {
   "name": "@benbeck764/react-components-grid",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Grid components built utilizing MUI v5 & react-virtuoso.",
   "author": "Ben Beck",
   "license": "ISC",
@@ -36,7 +36,8 @@
   },
   "dependencies": {
     "@benbeck764/react-components": "workspace:*",
-    "@benbeck764/react-components-common": "workspace:*"
+    "@benbeck764/react-components-common": "workspace:*",
+    "react-virtuoso": "^4.6.0"
   },
   "devDependencies": {
     "@emotion/react": "^11.10.6",
@@ -47,7 +48,6 @@
     "@types/react-dom": "^18.2.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-virtuoso": "^4.6.0",
     "rimraf": "^5.0.1",
     "typescript": "^5.2.2"
   },
@@ -58,8 +58,7 @@
     "@mui/material": "^5.11.10",
     "@mui/icons-material": "^5.11.9",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-virtuoso": "^4.6.0"
+    "react-dom": "^18.2.0"
   },
   "peerDependenciesMeta": {
     "react-virtuoso": {
