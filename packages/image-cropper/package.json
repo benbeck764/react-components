@@ -1,0 +1,60 @@
+{
+  "name": "@benbeck764/react-components-imagecropper",
+  "version": "1.2.1",
+  "description": "Image cropper component built utilizing MUI v5 & react-image-crop.",
+  "main": "dist/image-cropper.ts",
+  "module": "dist/image-cropper.mjs",
+  "types:": "dist/index.d.ts",
+  "scripts": {
+    "build": "vite build",
+    "test": "echo \"Error: no test specified\" && exit 0",
+    "clean": "rimraf dist && rimraf node_modules"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/benbeck764/react-components.git",
+    "directory": "packages/imagecropper"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "Ben Beck",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/benbeck764/react-components/issues"
+  },
+  "homepage": "https://github.com/benbeck764/react-components#readme",
+  "exports": {
+    ".": {
+      "import": "./dist/image-cropper.mjs",
+      "require": "./dist/image-cropper.umd.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "dependencies": {
+    "@benbeck764/react-components": "workspace:*",
+    "react-image-crop": "^10.1.8"
+  },
+  "devDependencies": {
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@mui/material": "^5.11.10",
+    "@types/react": "^18.2.22",
+    "@types/react-dom": "^18.2.7",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rimraf": "^5.0.1",
+    "typescript": "^5.2.2"
+  },
+  "peerDependencies": {
+    "@benbeck764/react-components": "workspace:*",
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@mui/material": "^5.11.10",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "publishConfig": {
+    "@benbeck764:registry": "https://npm.pkg.github.com"
+  }
+}
