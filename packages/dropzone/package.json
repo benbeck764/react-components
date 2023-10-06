@@ -1,6 +1,6 @@
 {
   "name": "@benbeck764/react-components-dropzone",
-  "version": "1.1.6",
+  "version": "1.2.0",
   "description": "Dropzone component built utilizing MUI v5 & react-dropzone.",
   "main": "dist/dropzone.ts",
   "module": "dist/dropzone.mjs",

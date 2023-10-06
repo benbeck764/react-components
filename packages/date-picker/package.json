@@ -1,6 +1,6 @@
 {
   "name": "@benbeck764/react-components-datepicker",
-  "version": "1.1.6",
+  "version": "1.2.0",
   "description": "Date Picker component built utilizing MUI v5 & @mui/x-date-pickers.",
   "main": "dist/date-picker.ts",
   "module": "dist/date-picker.mjs",
