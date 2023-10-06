@@ -88,6 +88,8 @@ export function AppGridTableViewVirtualizedBody<TItem>(props: {
     );
   }
 
+  if (!Virtuoso) return <></>;
+
   return (
     <Virtuoso
       style={{ height: virtualizedProps?.height }}

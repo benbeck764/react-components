@@ -69,7 +69,32 @@ const Grids: FC = () => {
             rowSpacing: 3,
           },
         }}
-        displayMode="card"
+        tableView={{
+          xs: {
+            virtualizedProps: {
+              enabled: true,
+              useWindowScroll: true,
+            },
+            columns: [
+              {
+                title: "Column 1",
+                width: "50%",
+                value: (props) => (
+                  <Typography variant="paragraph">{`Column 1: ${props.itemIndex}`}</Typography>
+                ),
+              },
+              {
+                title: "Column 2",
+                width: "50%",
+                value: (props) => (
+                  <Typography variant="paragraph">{`Column 2: ${props.itemIndex}`}</Typography>
+                ),
+              },
+            ],
+            showHeader: true,
+          },
+        }}
+        displayMode="table"
       />
     </Box>
   );
