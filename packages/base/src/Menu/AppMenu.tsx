@@ -1,3 +1,4 @@
+"use client";
 import React, {
   FC,
   PropsWithChildren,
@@ -5,17 +6,6 @@ import React, {
   useEffect,
   useRef,
 } from "react";
-import {
-  Box,
-  ButtonProps,
-  ClickAwayListener,
-  Divider,
-  Fade,
-  PopperProps,
-  Theme,
-  SxProps,
-  Tooltip,
-} from "@mui/material";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import {
@@ -25,6 +15,14 @@ import {
   StyledPopperArrow,
 } from "./AppMenu.styles";
 import AppButton from "../Button/AppButton";
+import { SxProps, Theme } from "@mui/material/styles";
+import { ButtonProps } from "@mui/material/Button";
+import { PopperProps } from "@mui/material/Popper";
+import ClickAwayListener from "@mui/material/ClickAwayListener";
+import Box from "@mui/material/Box";
+import Tooltip from "@mui/material/Tooltip";
+import Fade from "@mui/material/Fade";
+import Divider from "@mui/material/Divider";
 
 export type AppMenuMode = "menu" | "panel";
 export type AppMenuDividerVariant = "flush" | undefined;

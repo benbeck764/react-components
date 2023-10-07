@@ -1,10 +1,8 @@
-import {
-  IconButtonProps,
-  IconButton,
-  SvgIconPropsSizeOverrides,
-} from "@mui/material";
-import { OverridableStringUnion } from "@mui/types";
+"use client";
 import CloseIcon from "@mui/icons-material/Close";
+import IconButton, { IconButtonProps } from "@mui/material/IconButton";
+import { SvgIconPropsSizeOverrides } from "@mui/material/SvgIcon";
+import { OverridableStringUnion } from "@mui/types";
 import { FC } from "react";
 
 export interface CloseButtonProps extends IconButtonProps {

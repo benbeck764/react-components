@@ -1,4 +1,7 @@
-import { styled, Box, TableContainer, TableRow } from "@mui/material";
+import Box from "@mui/material/Box";
+import TableContainer from "@mui/material/TableContainer";
+import TableRow from "@mui/material/TableRow";
+import { styled } from "@mui/material/styles";
 
 export const StyledTableContainer = styled(TableContainer)(({ theme }) => ({
   borderRadius: 0,

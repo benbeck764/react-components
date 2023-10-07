@@ -1,4 +1,5 @@
-import { TabsProps, SxProps, Theme } from "@mui/material";
+import { TabsProps } from "@mui/material/Tabs";
+import { SxProps, Theme } from "@mui/material/styles";
 
 export type TabItem = {
   label: string;

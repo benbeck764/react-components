@@ -1,4 +1,4 @@
-import { Box, Stack, SxProps, Typography, Theme } from "@mui/material";
+"use client";
 import { FC, Ref, useEffect, useImperativeHandle, useState } from "react";
 import { DropzoneOptions, useDropzone } from "react-dropzone";
 import {
@@ -12,6 +12,10 @@ import {
 import AppFileDropzoneImageTooltip from "./components/AppFileDropzoneImageTooltip";
 import { DropzoneDefaultFile, DropzoneFile } from "./AppFileDropzone.types";
 import { StyledLabelBox } from "@benbeck764/react-components";
+import { SxProps, Theme } from "@mui/material/styles";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
+import Stack from "@mui/material/Stack";
 
 type AppFileDropzoneProps = DropzoneOptions & {
   defaultFiles?: DropzoneDefaultFile[];

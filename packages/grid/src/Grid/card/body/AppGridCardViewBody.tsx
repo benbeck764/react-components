@@ -1,4 +1,5 @@
-import { Grid } from "@mui/material";
+"use client";
+import Grid from "@mui/material/Grid";
 import { AppGridCardViewDefinition, AppGridProps } from "../../AppGrid.props";
 import { getHasItems, getItems } from "../../utility/grid-helpers";
 import { AppGridNoResultsFound } from "../../common/AppGridNoResultsFound";

@@ -1,4 +1,7 @@
-import { styled, Box, Paper, Card } from "@mui/material";
+import Box from "@mui/material/Box";
+import Card from "@mui/material/Card";
+import Paper from "@mui/material/Paper";
+import { styled } from "@mui/material/styles";
 
 export const StyledCard = styled(Card)(({ theme }) => ({
   borderTopLeftRadius: theme.shape.borderRadius * 2,
@@ -21,7 +24,7 @@ export const StyledCardHeader = styled(Paper)(({ theme }) => ({
   paddingTop: theme.spacing(2),
 }));
 
-export const StyledControlsContainer = styled("div")(({ theme }) => ({
+export const StyledControlsContainer = styled(Box)(({ theme }) => ({
   display: "flex",
   marginLeft: "auto",
   alignItems: "start",

@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Stack } from "@mui/material";
+import Stack from "@mui/material/Stack";
 import { StyledPageContainer, StyledPageContent } from "./App.styles";
 import Buttons from "./components/Buttons";
 import Typographies from "./components/Typographies";

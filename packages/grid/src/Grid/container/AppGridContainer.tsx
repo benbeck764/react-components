@@ -1,4 +1,4 @@
-import { Box, Typography, CardContent, Stack } from "@mui/material";
+"use client";
 import { useCallback, useRef, useState } from "react";
 import AppGrid from "../AppGrid";
 import { AppGridComponentContainers } from "../AppGrid.props";
@@ -9,6 +9,10 @@ import {
   StyledCardHeader,
   StyledControlsContainer,
 } from "./AppGridContainer.styles";
+import CardContent from "@mui/material/CardContent";
+import Box from "@mui/material/Box";
+import Stack from "@mui/material/Stack";
+import Typography from "@mui/material/Typography";
 
 function AppGridContainer<TItem>(
   props: AppGridContainerProps<TItem>

@@ -1,4 +1,7 @@
-import { styled, Icon, Input, InputAdornment } from "@mui/material/";
+import Icon from "@mui/material/Icon";
+import Input from "@mui/material/Input";
+import InputAdornment from "@mui/material/InputAdornment";
+import { styled } from "@mui/material/styles";
 
 export const StyledInput = styled(Input)(({ theme }) => ({
   "&.MuiInput-root": {

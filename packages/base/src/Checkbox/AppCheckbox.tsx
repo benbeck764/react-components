@@ -1,5 +1,5 @@
+"use client";
 import { FC, useState, useEffect } from "react";
-import { Theme } from "@mui/material";
 import {
   StyledCheckbox,
   StyledFormControlLabel,
@@ -10,6 +10,7 @@ import {
 import { AppLoadingCheckbox } from "./components/AppLoadingCheckbox";
 import { isString } from "@benbeck764/react-components-common";
 import { AppCheckboxProps, CheckboxItem } from "./AppCheckbox.props";
+import { Theme } from "@mui/material/styles";
 
 const AppCheckbox: FC<AppCheckboxProps> = (props: AppCheckboxProps) => {
   const [isChecked, setIsChecked] = useState<boolean>(

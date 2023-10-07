@@ -1,11 +1,9 @@
-import {
-  Box,
-  TextField,
-  TypographyPropsVariantOverrides,
-  styled,
-} from "@mui/material/";
 import { OverridableStringUnion } from "@mui/types";
 import { Variant } from "@mui/material/styles/createTypography";
+import { styled } from "@mui/material/styles";
+import Box from "@mui/material/Box";
+import TextField from "@mui/material/TextField";
+import { TypographyPropsVariantOverrides } from "@mui/material/Typography";
 
 export const StyledContainer = styled(Box)(() => ({
   display: "flex",

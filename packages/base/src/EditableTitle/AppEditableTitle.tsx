@@ -1,14 +1,13 @@
-import {
-  Box,
-  Stack,
-  IconButton,
-  TypographyPropsVariantOverrides,
-} from "@mui/material";
+"use client";
 import EditIcon from "@mui/icons-material/Edit";
 import React, { FC, useEffect, useRef, useState } from "react";
 import { OverridableStringUnion } from "@mui/types";
 import { Variant } from "@mui/material/styles/createTypography";
 import { StyledContainer, StyledTextField } from "./AppEditableTitle.styles";
+import { TypographyPropsVariantOverrides } from "@mui/material/Typography";
+import Box from "@mui/material/Box";
+import Stack from "@mui/material/Stack";
+import IconButton from "@mui/material/IconButton";
 
 type AppEditableTitleProps = {
   defaultEditState?: boolean;

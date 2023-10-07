@@ -1,4 +1,4 @@
-import { Breakpoint } from "@mui/material";
+import { Breakpoint } from "@mui/material/styles";
 
 export function getPropertyByBreakpoint<T>(
   obj: { xs: T; sm?: T; md?: T; lg?: T; xl?: T },

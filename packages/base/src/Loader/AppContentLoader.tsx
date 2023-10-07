@@ -1,7 +1,9 @@
+"use client";
 import { FC } from "react";
-import { CircularProgress, SxProps, Theme } from "@mui/material";
+import { SxProps, Theme } from "@mui/material/styles";
 import { StyledOverlayBox, StyledCenteredBox } from "./Loader.styles";
 import { circularProgressPropsBase } from "./constants";
+import CircularProgress from "@mui/material/CircularProgress";
 
 export interface AppContentLoaderProps {
   loading: boolean;

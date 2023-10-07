@@ -1,4 +1,5 @@
-import { Grid } from "@mui/material";
+"use client";
+import Grid from "@mui/material/Grid";
 import { AppGridProps } from "../../AppGrid.props";
 import { AppGridCard } from "../card/AppGridCard";
 import { AppGridCardRowBaseProps } from "./common";

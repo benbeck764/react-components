@@ -1,6 +1,8 @@
+"use client";
 import { FC, ReactElement } from "react";
-import { Box, Tooltip } from "@mui/material";
 import { AppCard } from "@benbeck764/react-components";
+import Tooltip from "@mui/material/Tooltip";
+import Box from "@mui/material/Box";
 
 type AppFileDropzoneImageTooltipProps = {
   children: ReactElement<any, any>;

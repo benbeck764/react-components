@@ -1,14 +1,5 @@
+"use client";
 import { FC, PropsWithChildren, MouseEvent, useMemo } from "react";
-import {
-  Box,
-  Stack,
-  ButtonProps,
-  debounce,
-  IconButton,
-  SxProps,
-  Theme,
-  Typography,
-} from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import {
   StyledDialog,
@@ -17,6 +8,13 @@ import {
   StyledDialogButton,
 } from "./AppDialog.styles";
 import AppContentLoader from "../Loader/AppContentLoader";
+import { ButtonProps } from "@mui/material/Button";
+import debounce from "@mui/material/utils/debounce";
+import Stack from "@mui/material/Stack";
+import Typography from "@mui/material/Typography";
+import Box from "@mui/material/Box";
+import IconButton from "@mui/material/IconButton";
+import { SxProps, Theme } from "@mui/material/styles";
 
 type AppDialogProps = {
   open: boolean;

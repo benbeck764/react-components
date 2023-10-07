@@ -1,6 +1,8 @@
-import { styled, Checkbox, FormControlLabel } from "@mui/material";
 import CheckIcon from "@mui/icons-material/Check";
 import RemoveIcon from "@mui/icons-material/Remove";
+import Checkbox from "@mui/material/Checkbox";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import { styled } from "@mui/material/styles";
 
 interface CheckboxSizeProps {
   checkboxSize: number;

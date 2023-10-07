@@ -1,3 +1,4 @@
+"use client";
 export { default as CloseButton } from "./CloseButton";
 export { default as StyledEllipsingTextContainer } from "./EllipsingText";
 export { default as StyledLabelBox } from "./LabelBox";

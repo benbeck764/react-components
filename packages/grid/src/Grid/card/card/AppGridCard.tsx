@@ -1,4 +1,5 @@
-import { Grid } from "@mui/material";
+"use client";
+import Grid from "@mui/material/Grid";
 import * as CSS from "csstype";
 import { AppGridCardCommonProps } from "./common";
 import { StyledCard } from "../AppGridCardView.styles";

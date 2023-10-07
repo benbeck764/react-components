@@ -1,7 +1,11 @@
+"use client";
 import { FC, useEffect, useState } from "react";
-import { Box, Tab, Typography, Stack } from "@mui/material";
 import { StyledDivider, StyledTabs } from "./AppTabs.styles";
 import { AppTabsProps, TabItem } from "./AppTabs.props";
+import Box from "@mui/material/Box";
+import Tab from "@mui/material/Tab";
+import Typography from "@mui/material/Typography";
+import Stack from "@mui/material/Stack";
 
 const AppTabs: FC<AppTabsProps> = (props: AppTabsProps) => {
   const {

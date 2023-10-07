@@ -1,4 +1,4 @@
-import { Theme, SxProps } from "@mui/material";
+import { Theme, SxProps } from "@mui/material/styles";
 import { ReactNode } from "react";
 import { AppGridProps } from "../AppGrid.props";
 

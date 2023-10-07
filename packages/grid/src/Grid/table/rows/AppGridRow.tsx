@@ -1,4 +1,5 @@
-import { BoxProps } from "@mui/material";
+"use client";
+import { BoxProps } from "@mui/material/Box";
 import { ValueGetter } from "../AppGridTableView.props";
 import { AppGridSkeletonRow } from "./AppGridSkeletonRow";
 import { AppGridRowProps } from "./common";

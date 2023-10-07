@@ -1,4 +1,4 @@
-import { CircularProgressProps } from "@mui/material";
+import { CircularProgressProps } from "@mui/material/CircularProgress";
 
 export const circularProgressPropsBase: CircularProgressProps = {
   color: "secondary",

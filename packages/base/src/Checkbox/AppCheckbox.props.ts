@@ -1,4 +1,5 @@
-import { CheckboxProps, SxProps, Theme } from "@mui/material";
+import { SxProps, Theme } from "@mui/material/styles";
+import { CheckboxProps } from "@mui/material/Checkbox";
 
 export type CheckboxItem = {
   label: string | JSX.Element;

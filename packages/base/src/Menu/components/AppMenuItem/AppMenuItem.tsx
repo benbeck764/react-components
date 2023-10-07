@@ -1,10 +1,12 @@
+"use client";
 import { FC, PropsWithChildren } from "react";
-import { Tooltip, Theme, SxProps } from "@mui/material";
+import { Theme, SxProps } from "@mui/material/styles";
 import {
   StyledHeaderMenuItem,
   StyledDisabledMenuItem,
   StyledMenuItem,
 } from "./AppMenuItem.styles";
+import Tooltip from "@mui/material/Tooltip";
 
 export type AppMenuItemProps = {
   header?: boolean;

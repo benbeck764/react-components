@@ -1,5 +1,7 @@
-import { Card, Grid } from "@mui/material";
+"use client";
+import Grid from "@mui/material/Grid";
 import { AppGridCardViewDefinition } from "../../AppGrid.props";
+import Card from "@mui/material/Card";
 
 export function AppGridSkeletonCard<TItem>(props: {
   cardViewDefinition: AppGridCardViewDefinition<TItem>;

@@ -1,3 +1,4 @@
+"use client";
 import Button, { ButtonProps } from "@mui/material/Button";
 import { forwardRef, ForwardedRef } from "react";
 

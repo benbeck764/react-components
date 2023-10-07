@@ -1,15 +1,13 @@
-import {
-  Divider,
-  FormControl,
-  Select,
-  SelectProps,
-  Theme,
-  Typography,
-} from "@mui/material";
+"use client";
 import { Ref, useEffect, useImperativeHandle, useState } from "react";
 import AppSelectMenuItem from "../common/AppSelectMenuItem";
 import { SelectItem } from "../common/SelectItem";
 import StyledLabelBox from "../../_common/LabelBox";
+import Select, { SelectProps } from "@mui/material/Select";
+import { Theme } from "@mui/material/styles";
+import FormControl from "@mui/material/FormControl";
+import Typography from "@mui/material/Typography";
+import Divider from "@mui/material/Divider";
 
 export type AppSelectInputSizes = "small" | "medium" | "large";
 

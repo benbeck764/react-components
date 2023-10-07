@@ -1,7 +1,9 @@
+"use client";
 import { FC, PropsWithChildren } from "react";
-import { PopperPlacementType, SxProps, Theme } from "@mui/material";
+import { SxProps, Theme } from "@mui/material/styles";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { AppMenu, AppMenuDividerVariant, AppMenuMode } from "../Menu/AppMenu";
+import { PopperPlacementType } from "@mui/material/Popper";
 
 type AppEllipsisMenuProps = {
   mode: AppMenuMode;

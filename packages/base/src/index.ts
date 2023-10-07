@@ -1,3 +1,4 @@
+"use client";
 // Export Theme
 export * from "./_theme/overrides.theme";
 export { default as CustomThemeProvider } from "./_theme/CustomThemeProvider";
@@ -36,6 +37,7 @@ export { default as AppMultiSelectMenuItem } from "./Select/MultiSelect/AppMulti
 export { default as AppTabs } from "./Tabs/AppTabs";
 export * from "./Tabs/AppTabs.props";
 export { default as AppTextField } from "./TextField/AppTextField";
+export * from "./TextField/AppTextField.common.props";
 export { default as AppChipTextField } from "./TextField/ChipTextField/AppChipTextField";
 export { default as AppToast } from "./Toast/AppToast";
 

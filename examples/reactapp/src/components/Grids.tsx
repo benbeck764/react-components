@@ -1,6 +1,7 @@
-import { Box, Typography } from "@mui/material";
 import { FC } from "react";
 import { AppGrid } from "@benbeck764/react-components-grid";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
 
 type GridData = {
   title: string;

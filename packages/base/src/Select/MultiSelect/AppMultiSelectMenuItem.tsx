@@ -1,4 +1,5 @@
-import { SxProps, Theme } from "@mui/material";
+"use client";
+import { SxProps, Theme } from "@mui/material/styles";
 import { StyledMultiSelectMenuItem } from "./AppMultiSelect.styles";
 import { CheckboxItem } from "../../Checkbox/AppCheckbox.props";
 import AppCheckbox from "../../Checkbox/AppCheckbox";

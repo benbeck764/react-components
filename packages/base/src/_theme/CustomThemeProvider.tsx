@@ -1,9 +1,9 @@
 import { FC, PropsWithChildren } from "react";
-import { ThemeProvider, createTheme } from "@mui/material";
 import { CustomTheme } from "./overrides.theme";
 import { getMUITheme } from "./mui.theme";
 import { defaultThemeOptions } from "./base.theme";
 import deepmerge from "deepmerge";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
 
 type CustomThemeProviderProps = {
   theme: CustomTheme;

@@ -1,6 +1,8 @@
+"use client";
 import { FC } from "react";
-import { Chip, SxProps, Theme } from "@mui/material";
+import { SxProps, Theme } from "@mui/material/styles";
 import CancelIcon from "@mui/icons-material/Cancel";
+import Chip from "@mui/material/Chip";
 
 type AppChipProps = {
   label?: string | React.ReactNode;

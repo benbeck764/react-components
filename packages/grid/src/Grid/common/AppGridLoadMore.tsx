@@ -1,7 +1,10 @@
+"use client";
 import { FC, RefObject } from "react";
-import { Box, Theme, Typography, SxProps } from "@mui/material";
+import { Theme, SxProps } from "@mui/material/styles";
 import { AppBreakpoint } from "@benbeck764/react-components-common";
 import { AppButton } from "@benbeck764/react-components";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
 
 export type AppGridLoadMoreProps = {
   pageEndIndex: number;

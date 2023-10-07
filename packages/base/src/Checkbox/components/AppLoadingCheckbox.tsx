@@ -1,7 +1,10 @@
+"use client";
 import { FC } from "react";
-import { SxProps, Theme, Box, Skeleton } from "@mui/material";
 import AppCheckbox from "../AppCheckbox";
 import { AppCheckboxSize } from "../AppCheckbox.props";
+import { SxProps, Theme } from "@mui/material/styles";
+import Box from "@mui/material/Box";
+import Skeleton from "@mui/material/Skeleton";
 
 type AppLoadingCheckboxProps = {
   containerSx?: SxProps<Theme>;

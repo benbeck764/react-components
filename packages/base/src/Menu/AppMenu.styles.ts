@@ -1,5 +1,6 @@
-import { styled, Box } from "@mui/material";
+import { styled } from "@mui/material/styles";
 import PopperUnstyled from "@mui/base/PopperUnstyled/PopperUnstyled";
+import Box from "@mui/material/Box";
 
 export const StyledContainerMenu = styled("ul")(({ theme }) => ({
   margin: "6px 0px",

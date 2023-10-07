@@ -1,4 +1,5 @@
-import { Box } from "@mui/material";
+"use client";
+import Box from "@mui/material/Box";
 import { useRef } from "react";
 import ReactDOM from "react-dom";
 import {

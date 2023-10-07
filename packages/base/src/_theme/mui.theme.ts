@@ -1,4 +1,5 @@
-import { Theme, ThemeOptions, ButtonPropsSizeOverrides } from "@mui/material";
+import { ButtonPropsSizeOverrides } from "@mui/material/Button";
+import { Theme, ThemeOptions } from "@mui/material/styles";
 
 export const getMUITheme = (themeBaseOptions: ThemeOptions): ThemeOptions => {
   const themeBase = themeBaseOptions as Theme;

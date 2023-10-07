@@ -1,9 +1,13 @@
 import { Meta, StoryObj } from "@storybook/react";
 import AppTabs from "./AppTabs";
-import { Box, Stack, Theme, Typography, createTheme } from "@mui/material";
-import { getMUITheme, defaultThemeOptions } from "@theme";
 import CustomThemeProvider from "../_theme/CustomThemeProvider";
 import { AppTabsProps, TabItem } from "./AppTabs.props";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
+import { Theme, createTheme } from "@mui/material/styles";
+import { getMUITheme } from "../_theme/mui.theme";
+import { defaultThemeOptions } from "../_theme/base.theme";
+import Stack from "@mui/material/Stack";
 
 type AppTabsStoryProps = AppTabsProps;
 type Story = StoryObj<typeof AppTabs>;

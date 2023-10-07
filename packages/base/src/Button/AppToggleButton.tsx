@@ -1,3 +1,4 @@
+"use client";
 import { FC, PropsWithChildren } from "react";
 import { SxProps, Theme } from "@mui/material/styles";
 import ToggleButton from "@mui/material/ToggleButton";

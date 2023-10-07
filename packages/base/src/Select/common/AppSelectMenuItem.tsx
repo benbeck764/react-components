@@ -1,4 +1,5 @@
-import { SxProps, Theme } from "@mui/material";
+"use client";
+import { SxProps, Theme } from "@mui/material/styles";
 import { PropsWithChildren } from "react";
 import { StyledMenuItem } from "../Select/AppSelect.styles";
 import { SelectItem } from "./SelectItem";

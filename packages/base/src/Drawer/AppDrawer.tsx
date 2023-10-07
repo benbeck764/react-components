@@ -1,3 +1,4 @@
+"use client";
 import React, {
   FC,
   PropsWithChildren,
@@ -7,20 +8,17 @@ import React, {
 } from "react";
 import ReactDOM from "react-dom";
 import {
-  Box,
-  ButtonProps,
-  Divider,
-  DrawerProps,
-  SxProps,
-  Theme,
-} from "@mui/material";
-import {
   StyledButton,
   StyledList,
   StyledPanelBox,
   StyledDrawer,
 } from "./AppDrawer.styles";
 import { CloseButton } from "../_common";
+import { DrawerProps } from "@mui/material/Drawer";
+import { ButtonProps } from "@mui/material/Button";
+import { SxProps, Theme } from "@mui/material/styles";
+import Box from "@mui/material/Box";
+import Divider from "@mui/material/Divider";
 
 export type AppDrawerMode = "menu" | "panel";
 

@@ -1,14 +1,11 @@
 import { ReactNode } from "react";
-import {
-  Theme,
-  SxProps,
-  TableCellProps,
-  TableProps,
-  TableRowProps,
-  BoxProps,
-} from "@mui/material";
+import { Theme, SxProps } from "@mui/material/styles";
 import * as CSS from "csstype";
 import { SelectItem } from "@benbeck764/react-components";
+import { TableCellProps } from "@mui/material/TableCell";
+import { TableProps } from "@mui/material/Table";
+import { TableRowProps } from "@mui/material/TableRow";
+import { BoxProps } from "@mui/material/Box";
 
 export type KeyOfType<T, TProp> = {
   [P in keyof T]: T[P] extends TProp ? P : never;

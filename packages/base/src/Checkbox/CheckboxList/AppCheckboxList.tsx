@@ -1,5 +1,5 @@
+"use client";
 import { FC, useState } from "react";
-import { SxProps, Theme, Box, Collapse, Typography } from "@mui/material";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import AppCheckbox from "../AppCheckbox";
@@ -13,6 +13,10 @@ import { StyledFormGroup, StyledViewMore } from "./AppCheckboxList.styles";
 import { AppSelectAllCheckbox } from "../components/AppSelectAllCheckbox";
 import { StyledLabel } from "../AppCheckbox.styles";
 import StyledLabelBox from "../../_common/LabelBox";
+import { SxProps, Theme } from "@mui/material/styles";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
+import Collapse from "@mui/material/Collapse";
 
 export type AppCheckboxListProps = {
   items: CheckboxItem[];

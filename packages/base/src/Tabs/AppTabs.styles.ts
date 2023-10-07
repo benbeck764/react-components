@@ -1,4 +1,6 @@
-import { styled, Tabs, Divider, Theme } from "@mui/material/";
+import Divider from "@mui/material/Divider";
+import Tabs from "@mui/material/Tabs";
+import { styled, Theme } from "@mui/material/styles";
 
 export const StyledTabs = styled(Tabs, {
   shouldForwardProp: (prop) =>

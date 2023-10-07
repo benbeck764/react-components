@@ -1,4 +1,5 @@
-import { styled, Box, SxProps, Theme } from "@mui/material";
+import Box from "@mui/material/Box";
+import { SxProps, Theme, styled } from "@mui/material/styles";
 
 export const StyledQuillWrapper = styled(Box, {
   shouldForwardProp: (prop) =>

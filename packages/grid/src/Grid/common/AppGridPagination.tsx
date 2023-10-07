@@ -1,4 +1,5 @@
-import { SxProps, Theme } from "@mui/material";
+"use client";
+import { SxProps, Theme } from "@mui/material/styles";
 import AppPagination, {
   AppPaginationProps,
   defaultPageSizeOptions,

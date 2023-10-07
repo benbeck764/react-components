@@ -1,5 +1,6 @@
+"use client";
 import React, { FC, PropsWithChildren, useState } from "react";
-import { Box, Collapse, Typography, SxProps, Theme } from "@mui/material";
+import { SxProps, Theme } from "@mui/material/styles";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import {
@@ -7,6 +8,9 @@ import {
   StyledHeader,
   StyledSubheader,
 } from "./AppDropdown.styles";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
+import Collapse from "@mui/material/Collapse";
 
 export type AppDropdownVariant = "header" | "subheader";
 

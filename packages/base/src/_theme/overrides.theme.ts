@@ -1,4 +1,4 @@
-import { Breakpoint, Theme } from "@mui/material";
+import { Breakpoint, Theme } from "@mui/material/styles";
 
 export type CustomTheme = Theme;
 

@@ -1,11 +1,4 @@
-import {
-  SelectChangeEvent,
-  Typography,
-  SxProps,
-  Theme,
-  Stack,
-  Grid,
-} from "@mui/material";
+"use client";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import usePagination from "@mui/material/usePagination/usePagination";
@@ -21,6 +14,11 @@ import {
   StyledUnderline,
 } from "./AppPagination.styles";
 import { useBreakpoint } from "@benbeck764/react-components-common";
+import Stack from "@mui/material/Stack";
+import { SelectChangeEvent } from "@mui/material/Select";
+import Typography from "@mui/material/Typography";
+import Grid from "@mui/material/Grid";
+import { SxProps, Theme } from "@mui/material/styles";
 
 export const defaultPageSizeOptions = [25, 50, 100, 250];
 

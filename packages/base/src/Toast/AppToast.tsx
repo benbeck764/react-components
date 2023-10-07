@@ -1,15 +1,13 @@
+"use client";
 import { FC, PropsWithChildren } from "react";
-import {
-  IconButton,
-  Typography,
-  Theme,
-  Stack,
-  SxProps,
-  SvgIconProps,
-  Divider,
-} from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import { StyledToastBox, StyledSnackbar } from "./AppToast.styles";
+import { SvgIconProps } from "@mui/material/SvgIcon";
+import { SxProps, Theme } from "@mui/material/styles";
+import Stack from "@mui/material/Stack";
+import Typography from "@mui/material/Typography";
+import IconButton from "@mui/material/IconButton";
+import Divider from "@mui/material/Divider";
 
 export type AppToastProps = {
   open: boolean;

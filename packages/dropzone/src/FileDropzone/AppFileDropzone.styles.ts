@@ -1,5 +1,7 @@
-import { styled, Box, Stack } from "@mui/material";
 import { CloseButton } from "@benbeck764/react-components";
+import Box from "@mui/material/Box";
+import Stack from "@mui/material/Stack";
+import { styled } from "@mui/material/styles";
 
 export const StyledDropzoneWrapper = styled(Stack)(({ theme }) => ({
   padding: theme.spacing(2),

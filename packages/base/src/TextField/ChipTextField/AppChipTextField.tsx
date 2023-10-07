@@ -1,14 +1,5 @@
+"use client";
 import React, { FC, Ref, useImperativeHandle, useRef, useState } from "react";
-import {
-  ClickAwayListener,
-  FormControl,
-  IconButton,
-  InputProps,
-  Stack,
-  Theme,
-  Typography,
-  useTheme,
-} from "@mui/material";
 import WarningAmberIcon from "@mui/icons-material/WarningAmber";
 import {
   AppTextFieldRefProps,
@@ -21,6 +12,13 @@ import {
 } from "../AppTextField.styles";
 import AppChip from "../../Chip/AppChip";
 import { CloseButton, StyledLabelBox } from "../../_common";
+import { InputProps } from "@mui/material/Input";
+import { Theme, useTheme } from "@mui/material/styles";
+import ClickAwayListener from "@mui/material/ClickAwayListener";
+import FormControl from "@mui/material/FormControl";
+import Typography from "@mui/material/Typography";
+import Stack from "@mui/material/Stack";
+import IconButton from "@mui/material/IconButton";
 
 export type AppChipTextFieldProps = AppTextFieldRefProps &
   Omit<InputProps, "onChange"> & {

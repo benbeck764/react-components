@@ -1,8 +1,10 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { Box, Typography, createTheme } from "@mui/material";
 import AppGrid from "./AppGrid";
 import { AppGridProps } from "./AppGrid.props";
 import { CustomThemeProvider } from "@benbeck764/react-components";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
+import { createTheme } from "@mui/material/styles";
 
 type GridData = {
   title: string;

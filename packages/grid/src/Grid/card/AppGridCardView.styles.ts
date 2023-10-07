@@ -1,4 +1,5 @@
-import { styled, Card } from "@mui/material";
+import Card from "@mui/material/Card";
+import { styled } from "@mui/material/styles";
 
 export const StyledCard = styled(Card)(({ theme }) => ({
   WebkitTapHighlightColor: "transparent",

@@ -1,4 +1,4 @@
-import { Breakpoint, ThemeOptions, createTheme } from "@mui/material";
+import { Breakpoint, ThemeOptions, createTheme } from "@mui/material/styles";
 
 declare module "@mui/material/styles" {
   interface Theme {

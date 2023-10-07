@@ -1,3 +1,4 @@
+"use client";
 import ToggleButtonGroup, {
   ToggleButtonGroupProps,
 } from "@mui/material/ToggleButtonGroup";

@@ -1,7 +1,8 @@
 import { Meta, StoryObj } from "@storybook/react";
 import AppDatePicker, { AppDatePickerProps } from "./AppDatePicker";
-import { Stack, createTheme } from "@mui/material";
 import { CustomThemeProvider } from "@benbeck764/react-components";
+import { createTheme } from "@mui/material/styles";
+import Stack from "@mui/material/Stack";
 
 type AppDatePickerStoryProps = AppDatePickerProps;
 type Story = StoryObj<typeof AppDatePicker>;

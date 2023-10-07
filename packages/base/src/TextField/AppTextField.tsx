@@ -1,12 +1,5 @@
+"use client";
 import React, { FC, Ref, useRef } from "react";
-import {
-  FormControl,
-  IconButton,
-  InputAdornment,
-  InputProps,
-  Typography,
-  useTheme,
-} from "@mui/material";
 import { StyledInput, StyledInputAdornment } from "./AppTextField.styles";
 import WarningAmberIcon from "@mui/icons-material/WarningAmber";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
@@ -16,6 +9,12 @@ import {
 } from "./AppTextField.common.props";
 import StyledLabelBox from "../_common/LabelBox";
 import { CloseButton } from "../_common";
+import { InputProps } from "@mui/material/Input";
+import FormControl from "@mui/material/FormControl";
+import Typography from "@mui/material/Typography";
+import InputAdornment from "@mui/material/InputAdornment";
+import IconButton from "@mui/material/IconButton";
+import { useTheme } from "@mui/material/styles";
 
 export type AppTextFieldProps = AppTextFieldRefProps &
   InputProps & {

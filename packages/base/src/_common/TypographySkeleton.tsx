@@ -1,14 +1,13 @@
+"use client";
 import { FC } from "react";
-import {
-  Skeleton,
-  SxProps,
-  Theme,
-  Typography,
-  TypographyPropsVariantOverrides,
-} from "@mui/material";
+import { SxProps, Theme } from "@mui/material/styles";
 import { OverridableStringUnion } from "@mui/types";
 import { Variant } from "@mui/material/styles/createTypography";
 import { getRandomNumberWithVariance } from "@benbeck764/react-components-common";
+import Typography, {
+  TypographyPropsVariantOverrides,
+} from "@mui/material/Typography";
+import Skeleton from "@mui/material/Skeleton";
 
 type TypographySkeletonProps = {
   charCount: number;
