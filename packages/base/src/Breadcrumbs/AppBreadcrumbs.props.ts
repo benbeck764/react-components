@@ -1,4 +1,5 @@
-import { BreadcrumbsProps, SxProps, Theme } from "@mui/material";
+import { BreadcrumbsProps } from "@mui/material/Breadcrumbs";
+import { SxProps, Theme } from "@mui/material/styles";
 
 export type BreadcrumbItem = {
   displayName: React.ReactNode;

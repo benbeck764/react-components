@@ -1,9 +1,8 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { Box, Typography, createTheme } from "@mui/material";
-import { getMUITheme, defaultThemeOptions } from "@theme";
-import CustomThemeProvider from "../_theme/CustomThemeProvider";
 import AppGrid from "./AppGrid";
 import { AppGridProps } from "./AppGrid.props";
+import { CustomThemeProvider } from "@benbeck764/react-components";
 
 type GridData = {
   title: string;
@@ -24,7 +23,7 @@ const generateGridItems = (numItems: number): GridData[] => {
 type Story = StoryObj<typeof AppGrid<GridData>>;
 
 export const VirtualizedCardGrid: Story = (args: AppGridProps<GridData>) => {
-  const theme = createTheme(getMUITheme(defaultThemeOptions));
+  const theme = createTheme({});
   return (
     <CustomThemeProvider theme={theme}>
       <Box width={800}>

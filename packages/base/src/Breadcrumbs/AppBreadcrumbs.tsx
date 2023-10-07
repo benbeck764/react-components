@@ -1,5 +1,6 @@
+"use client";
 import { FC } from "react";
-import { Typography } from "@mui/material";
+import Typography from "@mui/material/Typography";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import { StyledBreadcrumbs, StyledLink } from "./AppBreadcrumbs.styles";
 import {

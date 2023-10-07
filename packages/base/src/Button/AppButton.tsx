@@ -1,5 +1,5 @@
+import Button, { ButtonProps } from "@mui/material/Button";
 import { forwardRef, ForwardedRef } from "react";
-import { Button, ButtonProps } from "@mui/material";
 
 export interface AppButtonProps extends ButtonProps {}
 

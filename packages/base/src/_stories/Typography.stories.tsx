@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { Box, Stack, Theme, Typography, createTheme } from "@mui/material";
-import { getMUITheme, defaultThemeOptions } from "@theme";
+import { Typography, createTheme } from "@mui/material";
 import CustomThemeProvider from "../_theme/CustomThemeProvider";
+import { getMUITheme, defaultThemeOptions } from "../_theme";
 
 type Story = StoryObj<typeof Typography>;
 

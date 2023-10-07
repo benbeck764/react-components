@@ -1,14 +1,13 @@
 import { Meta, StoryObj } from "@storybook/react";
 import AppDatePicker, { AppDatePickerProps } from "./AppDatePicker";
 import { Stack, createTheme } from "@mui/material";
-import { getMUITheme, defaultThemeOptions } from "@theme";
-import CustomThemeProvider from "../_theme/CustomThemeProvider";
+import { CustomThemeProvider } from "@benbeck764/react-components";
 
 type AppDatePickerStoryProps = AppDatePickerProps;
 type Story = StoryObj<typeof AppDatePicker>;
 
 export const DatePickers: Story = (args: AppDatePickerStoryProps) => {
-  const theme = createTheme(getMUITheme(defaultThemeOptions));
+  const theme = createTheme({});
   return (
     <CustomThemeProvider theme={theme}>
       <Stack direction="column" gap={1} maxWidth={200}>

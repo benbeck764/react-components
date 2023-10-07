@@ -1,6 +1,8 @@
+"use client";
 import { FC, PropsWithChildren, useState } from "react";
-import { Card, CardProps, SxProps, Theme } from "@mui/material";
+import { SxProps, Theme } from "@mui/material/styles";
 import { StyledPaper } from "./AppCard.styles";
+import Card, { CardProps } from "@mui/material/Card";
 
 export interface AppCardProps extends CardProps {
   elevateOnHover?: boolean;

@@ -1,6 +1,6 @@
 {
   "name": "@benbeck764/react-components-texteditor",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "React Text Editor component built utilizing MUI v5 & react-quill.",
   "repository": {
     "type": "git",
