@@ -19,7 +19,6 @@ export const useBreakpoint = (): AppBreakpoint => {
   const keys = [...theme.breakpoints.keys].reverse();
   const breakpoint =
     keys.reduce((output: BreakpointOrNull, key: Breakpoint) => {
-      // eslint-disable-next-line react-hooks/rules-of-hooks
       const matches = useMediaQuery(theme.breakpoints.up(key), {
         noSsr: true,
       });

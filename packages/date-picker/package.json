@@ -1,15 +1,7 @@
 {
   "name": "@benbeck764/react-components-datepicker",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Date Picker component built utilizing MUI v5 & @mui/x-date-pickers.",
-  "main": "dist/date-picker.ts",
-  "module": "dist/date-picker.mjs",
-  "types:": "dist/date-picker/src/index.d.ts",
-  "scripts": {
-    "build": "vite build",
-    "test": "echo \"Error: no test specified\" && exit 0",
-    "clean": "rimraf dist && rimraf node_modules"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/benbeck764/react-components.git",
@@ -30,6 +22,17 @@
       "require": "./dist/date-picker.umd.js",
       "types": "./dist/date-picker/src/index.d.ts"
     }
+  },
+  "main": "dist/date-picker.ts",
+  "module": "dist/date-picker.mjs",
+  "types:": "dist/date-picker/src/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "vite build",
+    "test": "echo \"Error: no test specified\" && exit 0",
+    "clean": "rimraf dist && rimraf node_modules"
   },
   "dependencies": {
     "@benbeck764/react-components": "workspace:*",
