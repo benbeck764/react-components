@@ -15,31 +15,40 @@ type AppEditableTitleProps = {
   size?: "small" | "medium";
   variant: OverridableStringUnion<Variant, TypographyPropsVariantOverrides>;
   maxLength?: number;
-  refresh?: boolean; // Forces the component to re-render when value hasn't changed but text has (i.e. when validation fails)
-  loading?: boolean;
-  skeletonCharCount?: number;
-  onChange?: (value: string) => void;
-  onSubmit?: (value: string) => void;
-  autoFocus?: boolean;
   placeholder?: string;
   error?: boolean;
+  onChange?: (value: string) => void;
+  onSubmit?: (value: string) => void;
 };
 
 const AppEditableTitle: FC<AppEditableTitleProps> = (
   props: AppEditableTitleProps
 ) => {
-  const [text, setText] = useState<string | undefined>(props.defaultValue);
+  const {
+    defaultEditState = false,
+    defaultValue,
+    size,
+    variant,
+    maxLength,
+
+    placeholder,
+    error,
+    onChange,
+    onSubmit,
+  } = props;
+
+  const [text, setText] = useState<string | undefined>(defaultValue);
   const [editMode, setEditMode] = useState<boolean | undefined>(
-    props.defaultEditState
+    defaultEditState
   );
 
   const inputRef = useRef<HTMLInputElement>();
 
   useEffect(() => {
-    if (props.defaultValue) {
-      setText(props.defaultValue);
+    if (defaultValue) {
+      setText(defaultValue);
     }
-  }, [props.defaultValue]);
+  }, [defaultValue]);
 
   useEffect(() => {
     if (editMode && inputRef.current) {
@@ -52,7 +61,7 @@ const AppEditableTitle: FC<AppEditableTitleProps> = (
   };
 
   const closeInputAndSubmit = () => {
-    props.onSubmit?.(text ?? "");
+    onSubmit?.(text ?? "");
     setEditMode(false);
   };
 
@@ -66,14 +75,11 @@ const AppEditableTitle: FC<AppEditableTitleProps> = (
   ) => {
     let inputText = e?.target?.value;
     if (inputText != null) {
-      if (props.maxLength) {
-        inputText = inputText.slice(
-          0,
-          Math.min(inputText.length, props.maxLength)
-        );
+      if (maxLength) {
+        inputText = inputText.slice(0, Math.min(inputText.length, maxLength));
       }
       setText(inputText);
-      props.onChange?.(inputText);
+      onChange?.(inputText);
     }
   };
 
@@ -93,10 +99,10 @@ const AppEditableTitle: FC<AppEditableTitleProps> = (
             onFocus={(e) => e.target.select()}
             onBlur={() => closeInputAndSubmit()}
             onChange={handleChange}
-            placeholder={props.placeholder}
-            error={props.error}
-            $textVariant={props.variant}
-            $size={props.size}
+            placeholder={placeholder}
+            error={error}
+            $textVariant={variant}
+            $size={size}
           />
         </StyledContainer>
         {!editMode && (
@@ -106,7 +112,7 @@ const AppEditableTitle: FC<AppEditableTitleProps> = (
             onKeyPress={(e: React.KeyboardEvent<HTMLSpanElement>) =>
               e.key === "Enter" && handleOnClickEdit()
             }
-            color={props.error ? "error" : "default"}
+            color={error ? "error" : "default"}
           >
             <EditIcon />
           </IconButton>
@@ -114,10 +120,6 @@ const AppEditableTitle: FC<AppEditableTitleProps> = (
       </Stack>
     </Box>
   );
-};
-
-AppEditableTitle.defaultProps = {
-  defaultEditState: false,
 };
 
 export default AppEditableTitle;

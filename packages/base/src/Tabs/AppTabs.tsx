@@ -141,9 +141,4 @@ function getPanelControlProps(index: number) {
   };
 }
 
-AppTabs.defaultProps = {
-  orientation: "horizontal",
-  reverseIndicator: false,
-};
-
 export default AppTabs;

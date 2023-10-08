@@ -49,6 +49,7 @@ const AppTextField: FC<AppTextFieldProps> = (props: AppTextFieldProps) => {
     spacing,
     refCallback,
     containerRef,
+    fullWidth = true,
     ...rest
   } = {
     ...props,
@@ -133,6 +134,7 @@ const AppTextField: FC<AppTextFieldProps> = (props: AppTextFieldProps) => {
       )}
       <StyledInput
         {...rest}
+        fullWidth={fullWidth}
         onKeyDown={rest.onKeyDown ?? handleKeydown}
         inputRef={refCallback ? refCallbackFn : inputRef}
         tabIndex={-1}
@@ -225,10 +227,6 @@ const AppTextField: FC<AppTextFieldProps> = (props: AppTextFieldProps) => {
       )}
     </FormControl>
   );
-};
-
-AppTextField.defaultProps = {
-  fullWidth: true,
 };
 
 export default AppTextField;

@@ -20,9 +20,7 @@ import Collapse from "@mui/material/Collapse";
 
 export type AppCheckboxListProps = {
   items: CheckboxItem[];
-  onCheckedChange?: (item: CheckboxItem) => void;
   selectAll?: boolean;
-  onSelectAll?: (selected: boolean) => void;
   length?: number;
   variant?: AppCheckboxVariant;
   icon?: AppCheckboxIcon;
@@ -30,36 +28,51 @@ export type AppCheckboxListProps = {
   checkboxStyle?: SxProps<Theme>;
   checkboxSize?: AppCheckboxSize;
   inputLabel?: string | React.ReactNode;
+  onCheckedChange?: (item: CheckboxItem) => void;
+  onSelectAll?: (selected: boolean) => void;
 };
 
 const AppCheckboxList: FC<AppCheckboxListProps> = (
   props: AppCheckboxListProps
 ) => {
+  const {
+    items,
+    selectAll = true,
+    length = 5,
+    variant = "primary",
+    icon = "check",
+    sx,
+    checkboxStyle,
+    checkboxSize,
+    inputLabel,
+    onCheckedChange,
+    onSelectAll,
+  } = props;
+
   const [isExpanded, setIsExpanded] = useState<boolean>(false);
   const handleCheckedChange = (item: CheckboxItem): void => {
-    if (props.onCheckedChange) {
-      props.onCheckedChange(item);
+    if (onCheckedChange) {
+      onCheckedChange(item);
     }
   };
 
   const displayOverflowToggle =
-    typeof props.length !== "undefined" && props.length < props.items.length;
-  const baseLength =
-    displayOverflowToggle && props.length ? props.length : props.items.length;
+    typeof length !== "undefined" && length < items.length;
+  const baseLength = displayOverflowToggle && length ? length : items.length;
 
   const childrenBase: React.ReactNode[] = [];
   const childrenOverflow: React.ReactNode[] = [];
-  props.items.forEach((item, index) => {
+  items.forEach((item, index) => {
     const checkBox = (
       <AppCheckbox
         key={index}
         item={item}
         onCheckedChanged={handleCheckedChange}
-        variant={props.variant ?? "primary"}
-        icon={props.icon ?? "check"}
+        variant={variant ?? "primary"}
+        icon={icon ?? "check"}
         hidden={displayOverflowToggle && !isExpanded && index > baseLength}
-        sx={props.checkboxStyle}
-        size={props.checkboxSize}
+        sx={checkboxStyle}
+        size={checkboxSize}
       />
     );
     if (index > baseLength) childrenOverflow.push(checkBox);
@@ -67,33 +80,31 @@ const AppCheckboxList: FC<AppCheckboxListProps> = (
   });
 
   return (
-    <Box sx={props.sx}>
-      {props.inputLabel && (
+    <Box sx={sx}>
+      {inputLabel && (
         <StyledLabelBox>
-          {typeof props.inputLabel === "string" && (
+          {typeof inputLabel === "string" && (
             <Typography
               variant="paragraph"
               sx={{ color: (theme) => theme.palette.grey[700] }}
             >
-              {props.inputLabel}
+              {inputLabel}
             </Typography>
           )}
-          {typeof props.inputLabel !== "string" && props.inputLabel}
+          {typeof inputLabel !== "string" && inputLabel}
         </StyledLabelBox>
       )}
 
-      {props.selectAll && (
+      {selectAll && (
         <Box sx={{ mb: 0.75 }}>
           <AppSelectAllCheckbox
-            size={props.checkboxSize}
-            allLinesCount={props.items.length}
+            size={checkboxSize}
+            allLinesCount={items.length}
             selectedLinesCount={
-              props.items.filter((i: CheckboxItem) => i.checked).length
+              items.filter((i: CheckboxItem) => i.checked).length
             }
             label={<StyledLabel>Select All</StyledLabel>}
-            onCheckedChanged={(i: CheckboxItem) =>
-              props.onSelectAll?.(i.checked)
-            }
+            onCheckedChanged={(i: CheckboxItem) => onSelectAll?.(i.checked)}
           />
         </Box>
       )}
@@ -131,13 +142,6 @@ const AppCheckboxList: FC<AppCheckboxListProps> = (
       )}
     </Box>
   );
-};
-
-AppCheckboxList.defaultProps = {
-  variant: "primary",
-  selectAll: true,
-  icon: "check",
-  length: 6,
 };
 
 export default AppCheckboxList;

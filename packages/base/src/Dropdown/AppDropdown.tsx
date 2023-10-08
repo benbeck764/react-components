@@ -36,17 +36,35 @@ export interface AppDropdownProps {
 const AppDropdown: FC<PropsWithChildren<AppDropdownProps>> = (
   props: PropsWithChildren<AppDropdownProps>
 ) => {
-  const [isOpen, setIsOpen] = useState(!props.renderClosed ?? true);
+  const {
+    children,
+    variant = "header",
+    title,
+    subTitle,
+    titlePlaceholder,
+    titleSx,
+    contentWhenHidden,
+    renderClosed,
+    hideCaret,
+    disabled,
+    headerBoxSx,
+    caretSx,
+    caretSize,
+    childrenBoxSx,
+    sx,
+    onOpen,
+    disableHeaderClick,
+  } = props;
 
-  const isTitleString =
-    typeof props.title === "string" || props.title instanceof String;
+  const [isOpen, setIsOpen] = useState(!renderClosed ?? true);
+
+  const isTitleString = typeof title === "string" || title instanceof String;
   const isPlaceholderString =
-    typeof props.titlePlaceholder === "string" ||
-    props.titlePlaceholder instanceof String;
+    typeof titlePlaceholder === "string" || titlePlaceholder instanceof String;
 
   const toggleIsOpen = () => {
-    if (props.disabled !== true) {
-      if (!isOpen) props.onOpen?.();
+    if (disabled !== true) {
+      if (!isOpen) onOpen?.();
       setIsOpen(!isOpen);
     }
   };
@@ -54,18 +72,18 @@ const AppDropdown: FC<PropsWithChildren<AppDropdownProps>> = (
   return (
     <Box
       sx={{
-        marginLeft: props.variant === "subheader" ? "10px" : "initial",
-        ...props.sx,
+        marginLeft: variant === "subheader" ? "10px" : "initial",
+        ...sx,
       }}
     >
       <StyledHeaderBox
-        onClick={() => !props.disableHeaderClick && toggleIsOpen()}
+        onClick={() => !disableHeaderClick && toggleIsOpen()}
         sx={{
-          cursor: props.disabled ? "default" : "pointer",
-          ...props.headerBoxSx,
+          cursor: disabled ? "default" : "pointer",
+          ...headerBoxSx,
         }}
       >
-        {props.variant === "header" && (
+        {variant === "header" && (
           <Box
             sx={{ display: "flex", alignItems: "center", width: "100%" }}
             tabIndex={0}
@@ -73,45 +91,45 @@ const AppDropdown: FC<PropsWithChildren<AppDropdownProps>> = (
               if (e.key === "Enter") toggleIsOpen();
             }}
           >
-            {!isOpen && props.titlePlaceholder && (
+            {!isOpen && titlePlaceholder && (
               <>
                 {isPlaceholderString && (
-                  <StyledHeader variant="h5" sx={props.titleSx}>
-                    {props.titlePlaceholder}
+                  <StyledHeader variant="h5" sx={titleSx}>
+                    {titlePlaceholder}
                   </StyledHeader>
                 )}
-                {!isPlaceholderString && props.titlePlaceholder}
+                {!isPlaceholderString && titlePlaceholder}
               </>
             )}
-            {!props.titlePlaceholder && props.title && (
+            {!titlePlaceholder && title && (
               <>
                 {isTitleString && (
-                  <StyledHeader variant="h5" sx={props.titleSx}>
-                    {props.title}
+                  <StyledHeader variant="h5" sx={titleSx}>
+                    {title}
                   </StyledHeader>
                 )}
-                {!isTitleString && props.title}
+                {!isTitleString && title}
               </>
             )}
-            {!Boolean(props.hideCaret) &&
+            {!Boolean(hideCaret) &&
               (isOpen ? (
                 <ExpandLessIcon
-                  fontSize={props.caretSize ?? "small"}
+                  fontSize={caretSize ?? "small"}
                   color="primary"
-                  sx={{ position: "absolute", right: 0, ...props.caretSx }}
+                  sx={{ position: "absolute", right: 0, ...caretSx }}
                   onClick={() => toggleIsOpen()}
                 />
               ) : (
                 <ExpandMoreIcon
-                  fontSize={props.caretSize ?? "small"}
+                  fontSize={caretSize ?? "small"}
                   color="primary"
-                  sx={{ position: "absolute", right: 0, ...props.caretSx }}
+                  sx={{ position: "absolute", right: 0, ...caretSx }}
                   onClick={() => toggleIsOpen()}
                 />
               ))}
           </Box>
         )}
-        {props.variant === "subheader" && (
+        {variant === "subheader" && (
           <Box
             sx={{ display: "flex" }}
             tabIndex={0}
@@ -119,56 +137,48 @@ const AppDropdown: FC<PropsWithChildren<AppDropdownProps>> = (
               if (e.key === "Enter") toggleIsOpen();
             }}
           >
-            {!isOpen && props.titlePlaceholder && (
+            {!isOpen && titlePlaceholder && (
               <>
                 {isPlaceholderString && (
-                  <StyledSubheader>{props.titlePlaceholder}</StyledSubheader>
+                  <StyledSubheader>{titlePlaceholder}</StyledSubheader>
                 )}
-                {!isPlaceholderString && props.titlePlaceholder}
+                {!isPlaceholderString && titlePlaceholder}
               </>
             )}
-            {!props.titlePlaceholder && props.title && (
+            {!titlePlaceholder && title && (
               <>
-                {isTitleString && (
-                  <StyledSubheader>{props.title}</StyledSubheader>
-                )}
-                {!isTitleString && props.title}
+                {isTitleString && <StyledSubheader>{title}</StyledSubheader>}
+                {!isTitleString && title}
               </>
             )}
-            {!Boolean(props.hideCaret) &&
+            {!Boolean(hideCaret) &&
               (isOpen ? (
                 <ExpandLessIcon
-                  fontSize={props.caretSize ?? "small"}
+                  fontSize={caretSize ?? "small"}
                   color="primary"
-                  sx={{ position: "absolute", right: 0, ...props.caretSx }}
+                  sx={{ position: "absolute", right: 0, ...caretSx }}
                   onClick={() => toggleIsOpen()}
                 />
               ) : (
                 <ExpandMoreIcon
-                  fontSize={props.caretSize ?? "small"}
+                  fontSize={caretSize ?? "small"}
                   color="primary"
-                  sx={{ position: "absolute", right: 0, ...props.caretSx }}
+                  sx={{ position: "absolute", right: 0, ...caretSx }}
                   onClick={() => toggleIsOpen()}
                 />
               ))}
           </Box>
         )}
       </StyledHeaderBox>
-      <Typography variant="paragraphSmall">{props.subTitle}</Typography>
+      <Typography variant="paragraphSmall">{subTitle}</Typography>
       <Collapse in={isOpen}>
-        <Box display={isOpen ? "hidden" : ""} sx={props.childrenBoxSx}>
-          {props.children}
+        <Box display={isOpen ? "hidden" : ""} sx={childrenBoxSx}>
+          {children}
         </Box>
       </Collapse>
-      {props.contentWhenHidden && !isOpen && (
-        <Box>{props.contentWhenHidden}</Box>
-      )}
+      {contentWhenHidden && !isOpen && <Box>{contentWhenHidden}</Box>}
     </Box>
   );
-};
-
-AppDropdown.defaultProps = {
-  variant: "header",
 };
 
 export default AppDropdown;

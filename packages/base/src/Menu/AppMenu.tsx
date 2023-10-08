@@ -38,11 +38,6 @@ export interface AppMenuProps {
   popperProps?: PopperProps;
   menuWidthRelativeToInput?: number;
   menuWidth?: number;
-  onButtonClick?: (
-    event: React.MouseEvent<HTMLButtonElement | HTMLDivElement>
-  ) => void;
-  onMenuOpen?: () => void;
-  onMenuClose?: () => void;
   forcedToggleState?: boolean;
   listProps?: React.ButtonHTMLAttributes<HTMLUListElement>;
   stopPropagation?: boolean;
@@ -51,11 +46,39 @@ export interface AppMenuProps {
   fullWidth?: boolean;
   disablePortal?: boolean;
   disabled?: boolean;
+  onButtonClick?: (
+    event: React.MouseEvent<HTMLButtonElement | HTMLDivElement>
+  ) => void;
+  onMenuOpen?: () => void;
+  onMenuClose?: () => void;
 }
 
 export const AppMenu: FC<PropsWithChildren<AppMenuProps>> = (
   props: PropsWithChildren<AppMenuProps>
 ) => {
+  const {
+    mode = "menu",
+    displayCaret = false,
+    displayDividers = true,
+    displayArrow,
+    closeOnSelect = true,
+    toolTipTitle,
+    buttonProps,
+    popperProps,
+    menuWidthRelativeToInput = 1,
+    menuWidth,
+    forcedToggleState,
+    listProps,
+    stopPropagation,
+    dividerVariant,
+    popperSx,
+    fullWidth,
+    disablePortal,
+    disabled,
+    onButtonClick,
+    onMenuClose,
+    onMenuOpen,
+  } = props;
   const [buttonAnchor, setButtonAnchor] = useState<null | HTMLElement>(null);
   const [arrowRef, setArrowRef] = useState<HTMLElement | null>(null);
 
@@ -265,14 +288,6 @@ export const AppMenu: FC<PropsWithChildren<AppMenuProps>> = (
       </Box>
     </ClickAwayListener>
   );
-};
-
-AppMenu.defaultProps = {
-  displayCaret: false,
-  displayDividers: true,
-  closeOnSelect: true,
-  mode: "menu",
-  menuWidthRelativeToInput: 1,
 };
 
 export default AppMenu;

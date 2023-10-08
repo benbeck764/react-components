@@ -54,7 +54,7 @@ export const AppChipTextField: FC<AppChipTextFieldProps> = (
     inputSize,
     spacing,
     inputFont,
-    fullWidth,
+    fullWidth = true,
     placeholder,
     showPlaceholder,
     refCallback,
@@ -334,10 +334,6 @@ export const AppChipTextField: FC<AppChipTextFieldProps> = (
       </FormControl>
     </ClickAwayListener>
   );
-};
-
-AppChipTextField.defaultProps = {
-  fullWidth: true,
 };
 
 export default AppChipTextField;
