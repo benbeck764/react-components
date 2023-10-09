@@ -21,7 +21,7 @@ export default defineConfig({
       targets: [
         {
           src: "./src/index.js",
-          dest: "./",
+          dest: "./base/src",
         },
       ],
     }),

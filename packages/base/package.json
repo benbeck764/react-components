@@ -1,6 +1,6 @@
 {
   "name": "@benbeck764/react-components",
-  "version": "1.3.3",
+  "version": "1.3.4",
   "description": "Base components built utilizing MUI v5.",
   "author": "Ben Beck",
   "license": "ISC",
@@ -16,7 +16,7 @@
     "url": "https://github.com/benbeck764/react-components/issues"
   },
   "homepage": "https://github.com/benbeck764/react-components#readme",
-  "main": "./src/index.js",
+  "main": "dist/base/src/index.js",
   "types:": "dist/base/src/index.d.ts",
   "files": [
     "dist"
