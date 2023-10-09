@@ -1,6 +1,6 @@
 {
   "name": "@benbeck764/react-components-common",
-  "version": "1.3.9",
+  "version": "1.4.0-beta.1",
   "description": "Common components built utilizing MUI v5.",
   "repository": {
     "type": "git",
@@ -18,13 +18,13 @@
   "homepage": "https://github.com/benbeck764/react-components#readme",
   "exports": {
     ".": {
-      "import": "./dist/common.mjs",
-      "require": "./dist/common.umd.js",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.umd.js",
       "types": "./dist/index.d.ts"
     }
   },
-  "main": "dist/common.ts",
-  "module": "dist/common.mjs",
+  "main": "dist/index.ts",
+  "module": "dist/index.mjs",
   "types:": "dist/index.d.ts",
   "files": [
     "dist"
@@ -34,11 +34,12 @@
     "test": "echo \"Error: no test specified\" && exit 0",
     "clean": "rimraf dist && rimraf node_modules"
   },
+  "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.14.12"
+  },
   "devDependencies": {
-    "@emotion/react": "^11.10.6",
-    "@emotion/styled": "^11.10.6",
-    "@mui/icons-material": "^5.11.9",
-    "@mui/material": "^5.14.12",
     "@types/react": "^18.2.22",
     "@types/react-dom": "^18.2.7",
     "react": "^18.2.0",
@@ -47,10 +48,6 @@
     "typescript": "^5.2.2"
   },
   "peerDependencies": {
-    "@emotion/react": "^11.10.6",
-    "@emotion/styled": "^11.10.6",
-    "@mui/icons-material": "^5.11.9",
-    "@mui/material": "^5.14.12",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   }

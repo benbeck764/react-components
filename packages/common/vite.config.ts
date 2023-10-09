@@ -8,7 +8,7 @@ export default defineConfig({
     lib: {
       entry: resolve(__dirname, "src/index.ts"),
       name: "react-components-common",
-      fileName: "common",
+      fileName: "index",
     },
     rollupOptions: {
       external: [...Object.keys(pkg.peerDependencies)],

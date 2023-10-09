@@ -1,6 +1,6 @@
 {
   "name": "@benbeck764/react-components-datepicker",
-  "version": "1.3.9",
+  "version": "1.4.0-beta.1",
   "description": "Date Picker component built utilizing MUI v5 & @mui/x-date-pickers.",
   "repository": {
     "type": "git",
@@ -18,14 +18,12 @@
   "homepage": "https://github.com/benbeck764/react-components#readme",
   "exports": {
     ".": {
-      "import": "./dist/date-picker.mjs",
-      "require": "./dist/date-picker.umd.js",
-      "types": "./dist/date-picker/src/index.d.ts"
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
     }
   },
-  "main": "dist/date-picker.ts",
-  "module": "dist/date-picker.mjs",
-  "types:": "dist/date-picker/src/index.d.ts",
+  "main": "dist/index.mjs",
+  "types:": "dist/index.d.ts",
   "files": [
     "dist"
   ],
@@ -37,13 +35,13 @@
   "dependencies": {
     "@benbeck764/react-components": "workspace:*",
     "@benbeck764/react-components-common": "workspace:*",
-    "@mui/x-date-pickers": "^6.3.0",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.14.12",
+    "@mui/x-date-pickers": "^6.16.1",
     "moment": "^2.29.4"
   },
   "devDependencies": {
-    "@emotion/react": "^11.10.6",
-    "@emotion/styled": "^11.10.6",
-    "@mui/material": "^5.14.12",
     "@types/react": "^18.2.22",
     "@types/react-dom": "^18.2.7",
     "react": "^18.2.0",
@@ -52,10 +50,6 @@
     "typescript": "^5.2.2"
   },
   "peerDependencies": {
-    "@benbeck764/react-components": "workspace:*",
-    "@emotion/react": "^11.10.6",
-    "@emotion/styled": "^11.10.6",
-    "@mui/material": "^5.14.12",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
