@@ -140,7 +140,6 @@ function AppGrid<TItem>(props: AppGridProps<TItem>): JSX.Element {
       <AppGridLoadMore
         pageEndIndex={lastPage?.pageIndex ?? 0}
         onNextPageRequested={handleNextPageRequested}
-        breakpointProperties={breakpointProperties}
         buttonRef={loadMoreRef}
       />
     );
