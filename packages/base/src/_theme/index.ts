@@ -1,4 +1,5 @@
-export * from "./CustomThemeProvider";
+"use client";
+export { default } from "./CustomThemeProvider";
 export * from "./base.theme";
 export * from "./mui.theme";
 export * from "./overrides.theme";

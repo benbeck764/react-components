@@ -7,23 +7,15 @@ import pkg from "./package.json";
 export default defineConfig({
   build: {
     lib: {
-      entry: resolve(__dirname, "src/index.js"),
-      name: "react-components-base",
+      entry: resolve(__dirname, "src/index.ts"),
+      name: "react-components",
       fileName: "base",
+      formats: ["es", "umd", "cjs"],
     },
     rollupOptions: {
       external: [...Object.keys(pkg.peerDependencies)],
     },
+    outDir: "dist",
   },
-  plugins: [
-    dts(),
-    viteStaticCopy({
-      targets: [
-        {
-          src: "./src/index.js",
-          dest: "./base/src",
-        },
-      ],
-    }),
-  ],
+  plugins: [dts({ tsconfigPath: "./tsconfig.json" })],
 });
