@@ -1,6 +1,6 @@
 import { styled } from "@mui/material/styles";
-import PopperUnstyled from "@mui/base/PopperUnstyled/PopperUnstyled";
 import Box from "@mui/material/Box";
+import Popper from "@mui/material/Popper";
 
 export const StyledContainerMenu = styled("ul")(({ theme }) => ({
   margin: "6px 0px",
@@ -18,7 +18,7 @@ export const StyledContainerPanel = styled(Box)({
   "&:focus": { outline: "none" },
 });
 
-export const StyledPopper = styled(PopperUnstyled)(({ theme }) => ({
+export const StyledPopper = styled(Popper)(({ theme }) => ({
   zIndex: theme.zIndex.tooltip,
   backgroundColor: theme.palette.common.white,
   border: `1px solid ${theme.palette.coolGrey[200]}`,

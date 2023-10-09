@@ -4,6 +4,7 @@ import { StyledPageContainer, StyledPageContent } from "./App.styles";
 import Buttons from "./components/Buttons";
 import Typographies from "./components/Typographies";
 import Grids from "./components/Grids";
+import Menus from "./components/Menus";
 
 const AppContent: FC = () => {
   return (
@@ -19,6 +20,7 @@ const AppContent: FC = () => {
           <Typographies />
           <Buttons />
           <Grids />
+          <Menus />
         </Stack>
       </StyledPageContent>
     </StyledPageContainer>
