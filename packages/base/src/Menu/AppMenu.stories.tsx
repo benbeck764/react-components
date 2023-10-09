@@ -9,6 +9,7 @@ import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import { Theme, createTheme } from "@mui/material/styles";
 import Avatar from "@mui/material/Avatar";
+import { useState } from "react";
 
 type AppMenuStoryProps = AppMenuProps;
 type Story = StoryObj<typeof AppMenu>;
@@ -81,6 +82,27 @@ ImageMenu.args = {
   },
   menuWidth: 150,
   toolTipTitle: "Account Settings",
+};
+
+export const PanelMenu: Story = (args: AppMenuStoryProps) => {
+  const theme = createTheme(getMUITheme(defaultThemeOptions));
+  const [open, setOpen] = useState<boolean>(false);
+  return (
+    <CustomThemeProvider theme={theme}>
+      <Stack direction="row" gap={1}>
+        <AppMenu {...args}>
+          <Typography textAlign="center" variant="h6">
+            Hello World!
+          </Typography>
+        </AppMenu>
+      </Stack>
+    </CustomThemeProvider>
+  );
+};
+PanelMenu.args = {
+  mode: "panel",
+  buttonProps: { children: "Panel Menu" },
+  menuWidth: 150,
 };
 
 const meta: Meta<typeof AppMenu> = {

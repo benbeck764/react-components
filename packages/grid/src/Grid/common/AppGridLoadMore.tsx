@@ -8,7 +8,6 @@ import Typography from "@mui/material/Typography";
 export type AppGridLoadMoreProps = {
   pageEndIndex: number;
   onNextPageRequested: (pageIndex: number) => void;
-  buttonRef?: RefObject<HTMLButtonElement>;
   sx?: SxProps<Theme>;
 };
 
@@ -33,7 +32,6 @@ export const AppGridLoadMore: FC<AppGridLoadMoreProps> = (
         color="secondary"
         onClick={handleClick}
         sx={{ width: 200, height: { xs: 40, xl: 32 }, ...props.sx }}
-        ref={props.buttonRef}
       >
         <Typography component="span" variant="paragraphBold">
           Load More

@@ -38,7 +38,6 @@ export interface AppMenuProps {
   popperProps?: PopperProps;
   menuWidthRelativeToInput?: number;
   menuWidth?: number;
-  forcedToggleState?: boolean;
   listProps?: React.ButtonHTMLAttributes<HTMLUListElement>;
   stopPropagation?: boolean;
   dividerVariant?: AppMenuDividerVariant;
@@ -67,7 +66,6 @@ export const AppMenu: FC<PropsWithChildren<AppMenuProps>> = (
     popperProps,
     menuWidthRelativeToInput = 1,
     menuWidth,
-    forcedToggleState,
     listProps,
     stopPropagation,
     dividerVariant,
@@ -105,16 +103,6 @@ export const AppMenu: FC<PropsWithChildren<AppMenuProps>> = (
     if (buttonAnchor && numChildren > 0 && listRef.current)
       listRef.current.focus({ preventScroll: true });
   }, [buttonAnchor]);
-
-  useEffect(() => {
-    if (typeof props.forcedToggleState !== "undefined") {
-      if (props.forcedToggleState) {
-        handleMenuOpen(buttonRef?.current);
-      } else {
-        handleMenuClose();
-      }
-    }
-  }, [props.forcedToggleState]);
 
   const handleClick = (
     event: React.MouseEvent<HTMLButtonElement | HTMLDivElement>
@@ -190,11 +178,7 @@ export const AppMenu: FC<PropsWithChildren<AppMenuProps>> = (
     <ClickAwayListener onClickAway={handleClickAway}>
       <Box>
         <Tooltip title={props.toolTipTitle} disableHoverListener={menuOpen}>
-          <AppButton
-            {...buttonPropsAugmented}
-            onKeyDown={handleButtonKeyDown}
-            ref={buttonRef}
-          >
+          <AppButton {...buttonPropsAugmented} onKeyDown={handleButtonKeyDown}>
             {props.buttonProps?.children}
             {props.displayCaret &&
               (buttonAnchor ? (

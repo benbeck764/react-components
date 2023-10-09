@@ -23,7 +23,6 @@ function AppGrid<TItem>(props: AppGridProps<TItem>): JSX.Element {
   const breakpointProperties = useBreakpoint();
   const filterInputRef = useRef<HTMLInputElement | null>(null);
   const sortInputRef = useRef<HTMLInputElement | null>(null);
-  const loadMoreRef = useRef<HTMLButtonElement | null>(null);
 
   const oldFilterText = props.data.filterText;
   const placeholderText = props.data.placeholderFilterText;
@@ -140,7 +139,6 @@ function AppGrid<TItem>(props: AppGridProps<TItem>): JSX.Element {
       <AppGridLoadMore
         pageEndIndex={lastPage?.pageIndex ?? 0}
         onNextPageRequested={handleNextPageRequested}
-        buttonRef={loadMoreRef}
       />
     );
   }
