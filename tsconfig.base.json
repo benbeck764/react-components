@@ -17,7 +17,8 @@
     "noFallthroughCasesInSwitch": true,
     "allowJs": true,
     "paths": {
-      "@benbeck764/react-components": ["./packages/base/src/index.ts"],
+      "@benbeck764/react-components": ["./packages/base/src"],
+      "@benbeck764/react-components/*": ["./packages/base/src/*"],
       "@benbeck764/react-components-common": ["./packages/common/src"],
       "@benbeck764/react-components-datepicker": ["./packages/date-picker/src"],
       "@benbeck764/react-components-dropzone": ["./packages/dropzone/src"],

@@ -1,10 +1,8 @@
 "use client";
 import { FC, PropsWithChildren, useState } from "react";
 import { SxProps, Theme } from "@mui/material/styles";
-//import { StyledPaper } from "./AppCard.styles";
 import Card, { CardProps } from "@mui/material/Card";
 import { StyledPaper } from "./AppCard.styles";
-import Typography from "@mui/material/Typography";
 
 export interface AppCardProps extends CardProps {
   elevateOnHover?: boolean;
@@ -27,17 +25,16 @@ const AppCard: FC<PropsWithChildren<AppCardProps>> = (
   };
 
   return (
-    // <StyledPaper
-    //   sx={{ ...paperSx }}
-    //   elevation={elevation}
-    //   onMouseOver={() => handleOnMouseOver()}
-    //   onMouseOut={() => handleOnMouseOut()}
-    // >
-    //   <Card sx={cardSx} {...rest}>
-    //     {props.children}
-    //   </Card>
-    // </StyledPaper>
-    <h1>Help me!</h1>
+    <StyledPaper
+      sx={{ ...paperSx }}
+      elevation={elevation}
+      onMouseOver={() => handleOnMouseOver()}
+      onMouseOut={() => handleOnMouseOut()}
+    >
+      <Card sx={cardSx} {...rest}>
+        {props.children}
+      </Card>
+    </StyledPaper>
   );
 };
 
