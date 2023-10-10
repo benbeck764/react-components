@@ -15,7 +15,7 @@ export * from "./Breadcrumbs/AppBreadcrumbs.props";
 export { default as AppButton } from "./Button/AppButton";
 export { default as AppToggleButton } from "./Button/AppToggleButton";
 export { default as AppToggleButtonGroup } from "./Button/AppToggleButtonGroup";
-export { default as AppCard } from "./Card/AppCard";
+export * from "./Card/AppCard";
 export { default as AppCheckbox } from "./Checkbox/AppCheckbox";
 export * from "./Checkbox/AppCheckbox.props";
 export { default as AppCheckboxList } from "./Checkbox/CheckboxList/AppCheckboxList";

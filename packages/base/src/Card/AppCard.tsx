@@ -38,4 +38,4 @@ const AppCard: FC<PropsWithChildren<AppCardProps>> = (
   );
 };
 
-export default AppCard;
+export { AppCard };

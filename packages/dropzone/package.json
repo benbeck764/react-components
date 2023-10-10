@@ -37,12 +37,12 @@
   "dependencies": {
     "@benbeck764/react-components": "workspace:*",
     "@benbeck764/react-components-common": "workspace:*",
-    "@emotion/react": "^11.11.1",
-    "@emotion/styled": "^11.11.0",
-    "@mui/material": "^5.14.12",
     "react-dropzone": "^14.2.3"
   },
   "devDependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.14.12",
     "@types/react": "^18.2.22",
     "@types/react-dom": "^18.2.7",
     "react": "^18.2.0",
@@ -51,6 +51,10 @@
     "typescript": "^5.2.2"
   },
   "peerDependencies": {
+    "@benbeck764/react-components": "workspace:*",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.14.12",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
