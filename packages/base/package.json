@@ -1,6 +1,6 @@
 {
   "name": "@benbeck764/react-components",
-  "version": "1.4.0-beta.3",
+  "version": "1.4.0-beta.4",
   "description": "Base components built utilizing MUI v5.",
   "author": "Ben Beck",
   "license": "ISC",
@@ -28,7 +28,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "vite build",
+    "build": "tsc",
     "esbuild": "node ./build.mjs && tsc",
     "test": "echo \"Error: no test specified\" && exit 0",
     "tsc": "tsc",
