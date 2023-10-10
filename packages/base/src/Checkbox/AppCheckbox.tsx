@@ -131,4 +131,4 @@ const AppCheckbox: FC<AppCheckboxProps> = (props: AppCheckboxProps) => {
   );
 };
 
-export default AppCheckbox;
+export { AppCheckbox };

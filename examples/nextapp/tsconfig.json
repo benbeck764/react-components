@@ -17,7 +17,11 @@
       {
         "name": "next"
       }
-    ]
+    ],
+    "paths": {
+      "@benbeck764/react-components": ["../../packages/base/dist"],
+      "@benbeck764/react-components/*": ["../../packages/base/dist/*"]
+    }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]

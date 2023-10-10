@@ -112,4 +112,4 @@ const AppBreadcrumbs: FC<AppBreadcrumbsProps> = (
   );
 };
 
-export default AppBreadcrumbs;
+export { AppBreadcrumbs };

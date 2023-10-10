@@ -4,13 +4,17 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build --debug",
     "start": "next start",
     "lint": "next lint",
     "clean": "rimraf .next && rimraf node_modules"
   },
   "dependencies": {
     "@benbeck764/react-components": "workspace:*",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.14.12",
+    "@mui/material": "^5.14.12",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "next": "^13.5.4"

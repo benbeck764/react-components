@@ -2,7 +2,6 @@
 import { FC, useState } from "react";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import AppCheckbox from "../AppCheckbox";
 import {
   CheckboxItem,
   AppCheckboxVariant,
@@ -17,6 +16,7 @@ import { SxProps, Theme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Collapse from "@mui/material/Collapse";
+import { AppCheckbox } from "../AppCheckbox";
 
 export type AppCheckboxListProps = {
   items: CheckboxItem[];
@@ -144,4 +144,4 @@ const AppCheckboxList: FC<AppCheckboxListProps> = (
   );
 };
 
-export default AppCheckboxList;
+export default { AppCheckboxList };
