@@ -31,7 +31,9 @@
     "build": "vite build",
     "esbuild": "node ./build.mjs && tsc",
     "test": "echo \"Error: no test specified\" && exit 0",
-    "clean": "rimraf dist && rimraf node_modules"
+    "tsc": "tsc",
+    "clean": "rimraf dist && rimraf node_modules",
+    "clean:dist": "rimraf dist"
   },
   "dependencies": {
     "@benbeck764/react-components-common": "workspace:*",

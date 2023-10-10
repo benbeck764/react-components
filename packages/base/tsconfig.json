@@ -10,12 +10,10 @@
     "jsx": "react-jsx",
     "declarationDir": "dist",
     "emitDeclarationOnly": false,
-    "outDir": "dist"
-    // "moduleResolution": "node",
-    // "allowSyntheticDefaultImports": true,
-    // "forceConsistentCasingInFileNames": true,
-    // "noFallthroughCasesInSwitch": true,
-    // "allowJs": true
+    "outDir": "dist",
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true
   },
   "include": ["src/**/*.ts*"],
   "exclude": [
