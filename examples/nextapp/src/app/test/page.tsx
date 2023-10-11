@@ -1,6 +1,6 @@
 import Typography from "@mui/material/Typography";
 import { StyledTestBox } from "./test.styles";
-import AppCard from "@benbeck764/react-components/Card/AppCard";
+import { AppCard } from "@benbeck764/react-components";
 
 const TestPage = async () => {
   return (

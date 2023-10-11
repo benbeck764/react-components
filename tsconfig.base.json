@@ -15,19 +15,19 @@
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
-    "allowJs": true,
-    "paths": {
-      "@benbeck764/react-components": ["./packages/base/src"],
-      "@benbeck764/react-components/*": ["./packages/base/src/*"],
-      "@benbeck764/react-components-common": ["./packages/common/src"],
-      "@benbeck764/react-components-datepicker": ["./packages/date-picker/src"],
-      "@benbeck764/react-components-dropzone": ["./packages/dropzone/src"],
-      "@benbeck764/react-components-grid": ["./packages/grid/src"],
-      "@benbeck764/react-components-imagecropper": [
-        "./packages/image-cropper/src"
-      ],
-      "@benbeck764/react-components-texteditor": ["./packages/text-editor/src"]
-    }
+    "allowJs": true
+    // "paths": {
+    //   "@benbeck764/react-components": ["./packages/base/src"],
+    //   "@benbeck764/react-components/*": ["./packages/base/src/*"],
+    //   "@benbeck764/react-components-common": ["./packages/common/src"],
+    //   "@benbeck764/react-components-datepicker": ["./packages/date-picker/src"],
+    //   "@benbeck764/react-components-dropzone": ["./packages/dropzone/src"],
+    //   "@benbeck764/react-components-grid": ["./packages/grid/src"],
+    //   "@benbeck764/react-components-imagecropper": [
+    //     "./packages/image-cropper/src"
+    //   ],
+    //   "@benbeck764/react-components-texteditor": ["./packages/text-editor/src"]
+    // }
   },
   "exclude": ["node_modules", "dist"]
 }
