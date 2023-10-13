@@ -38,21 +38,7 @@ export function AppGridPagination<TItem>(
     pageIndex: number,
     pageSize: number,
     _eventType: "pageIndex" | "pageSize"
-  ) => {
-    // if (eventType === 'pageIndex') {
-    //   const target =
-    //     props.dataGridProps.componentContainers?.scrollTopTarget ??
-    //     document.body
-    //   window.scrollTo({
-    //     top:
-    //       target.offsetTop -
-    //       theme.custom.headerHeight -
-    //       parseInt(theme.spacing(0.5)),
-    //     behavior: 'smooth',
-    //   })
-    // }
-    props.onChange?.(pageIndex, pageSize);
-  };
+  ) => props.onChange?.(pageIndex, pageSize);
 
   return <AppPagination sx={props.sx} {...paginationProps} />;
 }

@@ -2,7 +2,7 @@
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import usePagination from "@mui/material/usePagination/usePagination";
-import { FC, useEffect } from "react";
+import { FC, useEffect, useState } from "react";
 import {
   StyledEllipsis,
   StyledLabel,
@@ -18,7 +18,7 @@ import Stack from "@mui/material/Stack";
 import { SelectChangeEvent } from "@mui/material/Select";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
-import { SxProps, Theme } from "@mui/material/styles";
+import { Breakpoint, SxProps, Theme } from "@mui/material/styles";
 
 export const defaultPageSizeOptions = [25, 50, 100, 250];
 
@@ -39,7 +39,9 @@ export interface AppPaginationProps {
 }
 
 const AppPagination: FC<AppPaginationProps> = (props: AppPaginationProps) => {
-  const { breakpoint } = useBreakpoint();
+  const { breakpoint: appBreakpoint } = useBreakpoint();
+  const [breakpoint, setBreakpoint] = useState<Breakpoint>(appBreakpoint);
+
   const pageSizeOptions = props.pageSizeOptions ?? defaultPageSizeOptions;
   const selectedPageSize =
     pageSizeOptions.find((pageSize: number) => props.pageSize <= pageSize) ??
@@ -62,10 +64,13 @@ const AppPagination: FC<AppPaginationProps> = (props: AppPaginationProps) => {
     props.onInit?.(props.pageIndex, props.pageSize);
   }, []);
 
-  const resultsPerPageText =
-    breakpoint === "lg" || breakpoint === "xl"
-      ? "Results Per Page:"
-      : "Per Page:";
+  useEffect(() => {
+    setBreakpoint(appBreakpoint);
+  }, [appBreakpoint]);
+
+  const resultsPerPageText = ["lg", "xl"].includes(breakpoint)
+    ? "Results Per Page:"
+    : "Per Page:";
   const ResultPerPage = (
     <Stack direction="row" alignItems="center" justifyContent="flex-start">
       <StyledLabel sx={{ mr: 1 }}>{resultsPerPageText}</StyledLabel>
@@ -134,17 +139,16 @@ const AppPagination: FC<AppPaginationProps> = (props: AppPaginationProps) => {
     </Stack>
   );
 
-  const totalItemsText =
-    breakpoint === "lg" || breakpoint === "xl"
-      ? `Showing 
+  const totalItemsText = ["lg", "xl"].includes(breakpoint)
+    ? `Showing 
   ${Math.min(selectedPageSize * props.pageIndex + 1, props.totalItemCount)}
   -
   ${Math.min(selectedPageSize * (props.pageIndex + 1), props.totalItemCount)}
   of ${props.totalItemCount} Item${props.totalItemCount === 1 ? "" : "s"}`
-      : `(${Math.min(
-          selectedPageSize * props.pageIndex + 1,
-          props.totalItemCount
-        )}
+    : `(${Math.min(
+        selectedPageSize * props.pageIndex + 1,
+        props.totalItemCount
+      )}
       -
       ${Math.min(
         selectedPageSize * (props.pageIndex + 1),
@@ -170,7 +174,7 @@ const AppPagination: FC<AppPaginationProps> = (props: AppPaginationProps) => {
 
   return (
     <Grid container pt={1} px={2} sx={props.sx}>
-      {(breakpoint === "xs" || breakpoint === "sm" || breakpoint === "md") && (
+      {["xs", "sm", "md"].includes(breakpoint) && (
         <>
           <Grid item xs={6} sm={6} md={6}>
             {ResultPerPage}
@@ -186,7 +190,7 @@ const AppPagination: FC<AppPaginationProps> = (props: AppPaginationProps) => {
         </>
       )}
 
-      {(breakpoint === "lg" || breakpoint === "xl") && (
+      {["lg", "xl"].includes(breakpoint) && (
         <>
           <Grid item lg={3} xl={3}>
             {ResultPerPage}

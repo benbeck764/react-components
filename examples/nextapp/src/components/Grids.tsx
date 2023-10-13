@@ -1,8 +1,9 @@
 "use client";
-import { FC } from "react";
-import { AppGrid } from "@benbeck764/react-components-grid";
+import { FC, useEffect, useState } from "react";
+import { AppGrid, AppGridDataRequest } from "@benbeck764/react-components-grid";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
+import { TypographySkeleton } from "@benbeck764/react-components";
 
 type GridData = {
   title: string;
@@ -10,30 +11,68 @@ type GridData = {
 };
 
 const Grids: FC = () => {
+  const [loading, setLoading] = useState<boolean>(true);
+  const [dataRequest, setDataRequest] = useState<AppGridDataRequest>({
+    pageNumber: 0,
+    pageSize: 4,
+  });
+
+  const totalItems = 12;
+  const items = Array.from(Array(totalItems).keys()).map((num: number) => {
+    return {
+      title: `Grid Item #${num + 1}`,
+      description: `This right here is the description for Grid Item #${
+        num + 1
+      }.`,
+    };
+  });
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+
+    return () => clearTimeout(timeout);
+  }, []);
+
+  const onDataRequested = (request: AppGridDataRequest): void => {
+    setDataRequest(request);
+  };
+
   return (
     <Box width={800}>
       <Typography variant="h5">Grids</Typography>
       <AppGrid
         data={{
-          pages: [
-            {
-              items: Array.from(Array(12).keys()).map((num: number) => {
-                return {
-                  title: `Grid Item #${num + 1}`,
-                  description: `This right here is the description for Grid Item #${
-                    num + 1
-                  }.`,
-                };
-              }),
-              pageIndex: 0,
-              pageSize: 12,
-              isLoading: false,
-            },
-          ],
-          totalItemCount: 12,
-          totalPageCount: 1,
-          pagingMode: "none",
+          pages: loading
+            ? [
+                {
+                  items: [],
+                  pageIndex: 0,
+                  pageSize: dataRequest.pageSize,
+                  isLoading: true,
+                },
+              ]
+            : [
+                {
+                  items: items.slice(
+                    dataRequest.pageNumber * dataRequest.pageSize,
+                    Math.min(
+                      dataRequest.pageNumber * dataRequest.pageSize +
+                        dataRequest.pageSize,
+                      totalItems
+                    )
+                  ),
+                  pageIndex: dataRequest.pageNumber,
+                  pageSize: dataRequest.pageSize,
+                  isLoading: false,
+                },
+              ],
+          totalItemCount: totalItems,
+          totalPageCount: Math.ceil(totalItems / dataRequest.pageSize),
+          pagingMode: "pagination",
         }}
+        pagination={{ pageSizeOptions: [4, 8, 12] }}
         cardView={{
           xs: {
             virtualizedProps: {
@@ -60,6 +99,24 @@ const Grids: FC = () => {
                 </Box>
               );
             },
+            loadingPlaceholder: (
+              <Box
+                sx={{
+                  p: 1,
+                  width: 184,
+                  height: 200,
+                  backgroundColor: (theme) => theme.palette.grey[300],
+                  border: (theme) => `1px solid ${theme.palette.grey[600]}`,
+                }}
+              >
+                <TypographySkeleton charCount={12} variant="h6" />
+                <Box mt={2}>
+                  <TypographySkeleton charCount={15} variant="paragraph" />
+                  <TypographySkeleton charCount={15} variant="paragraph" />
+                  <TypographySkeleton charCount={15} variant="paragraph" />
+                </Box>
+              </Box>
+            ),
             columnCount: 4,
             columnSpacing: 3,
             rowSpacing: 3,
@@ -90,7 +147,8 @@ const Grids: FC = () => {
             showHeader: true,
           },
         }}
-        displayMode="table"
+        displayMode="card"
+        onDataRequested={onDataRequested}
       />
     </Box>
   );

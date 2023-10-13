@@ -9,7 +9,7 @@ import {
 } from "./AppGrid.props";
 import { AppGridPagination } from "./common/AppGridPagination";
 import { AppGridTableView } from "./table/AppGridTableView";
-import { getLastPage } from "./utility/grid-helpers";
+import { getIsLoading, getLastPage } from "./utility/grid-helpers";
 import { AppGridCardView } from "./card/AppGridCardView";
 import { AppGridLoadMore } from "./common/AppGridLoadMore";
 import { useBreakpoint } from "@benbeck764/react-components-common";
@@ -21,6 +21,7 @@ import {
 
 function AppGrid<TItem>(props: AppGridProps<TItem>): JSX.Element {
   const breakpointProperties = useBreakpoint();
+
   const filterInputRef = useRef<HTMLInputElement | null>(null);
   const sortInputRef = useRef<HTMLInputElement | null>(null);
 
@@ -30,6 +31,7 @@ function AppGrid<TItem>(props: AppGridProps<TItem>): JSX.Element {
   const pagingMode = props.data.pagingMode;
   const totalPageCount = props.data.totalPageCount;
 
+  const loading = getIsLoading(props);
   const lastPage = getLastPage(props);
   const pageSize = lastPage?.pageSize ?? 25;
 
@@ -178,12 +180,16 @@ function AppGrid<TItem>(props: AppGridProps<TItem>): JSX.Element {
           breakpointProperties={breakpointProperties}
         />
       )}
-      {props.componentContainers?.paginationContainer
-        ? ReactDOM.createPortal(
-            pagination,
-            props.componentContainers.paginationContainer
-          )
-        : pagination}
+      {!loading && (
+        <>
+          {props.componentContainers?.paginationContainer
+            ? ReactDOM.createPortal(
+                pagination,
+                props.componentContainers.paginationContainer
+              )
+            : pagination}
+        </>
+      )}
     </>
   );
 }
