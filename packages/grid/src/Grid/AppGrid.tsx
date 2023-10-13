@@ -128,7 +128,7 @@ function AppGrid<TItem>(props: AppGridProps<TItem>): JSX.Element {
         dataGridProps={props}
         onInit={handlePagingChange}
         onChange={handlePagingChange}
-        sx={{ width: "100%", mt: 1 }}
+        sx={{ width: "100%", my: 1 }}
       />
     );
   } else if (
@@ -169,6 +169,16 @@ function AppGrid<TItem>(props: AppGridProps<TItem>): JSX.Element {
             <Box sx={{ width: "50%" }}>{sortInput}</Box>
           </Box>
         ))}
+      {!loading && props.pagination?.paginationTop && (
+        <>
+          {props.componentContainers?.paginationContainer
+            ? ReactDOM.createPortal(
+                pagination,
+                props.componentContainers.paginationContainer
+              )
+            : pagination}
+        </>
+      )}
       {props.displayMode === "card" ? (
         <AppGridCardView
           dataGridProps={props}

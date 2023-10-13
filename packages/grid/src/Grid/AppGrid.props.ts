@@ -214,6 +214,7 @@ interface AppGridPropsBase<TItem> {
   hover?: boolean;
   pagination?: {
     pageSizeOptions?: number[];
+    paginationTop?: boolean;
   };
   filterInputSx?: SxProps<Theme>;
   filterInputIcon?: React.ReactNode;

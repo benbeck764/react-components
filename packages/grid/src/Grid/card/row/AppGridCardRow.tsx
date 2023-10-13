@@ -15,6 +15,7 @@ export function AppGridCardRow<TItem>(props: {
     <Grid
       container
       columnSpacing={baseProps.cardViewDefinition.columnSpacing ?? 2}
+      pb={baseProps.lastRow ? 0 : baseProps.cardViewDefinition.rowSpacing ?? 2}
     >
       {items.map((item: TItem | undefined, index: number) => (
         <AppGridCard

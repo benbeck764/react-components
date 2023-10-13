@@ -11,13 +11,14 @@ type GridData = {
 };
 
 const Grids: FC = () => {
+  const totalItems = 12;
+
   const [loading, setLoading] = useState<boolean>(true);
   const [dataRequest, setDataRequest] = useState<AppGridDataRequest>({
     pageNumber: 0,
-    pageSize: 4,
+    pageSize: totalItems,
   });
 
-  const totalItems = 12;
   const items = Array.from(Array(totalItems).keys()).map((num: number) => {
     return {
       title: `Grid Item #${num + 1}`,
@@ -135,12 +136,18 @@ const Grids: FC = () => {
                 value: (props) => (
                   <Typography variant="paragraph">{`Column 1: ${props.itemIndex}`}</Typography>
                 ),
+                loadingPlaceholder: (
+                  <TypographySkeleton charCount={15} variant="paragraph" />
+                ),
               },
               {
                 title: "Column 2",
                 width: "50%",
                 value: (props) => (
                   <Typography variant="paragraph">{`Column 2: ${props.itemIndex}`}</Typography>
+                ),
+                loadingPlaceholder: (
+                  <TypographySkeleton charCount={15} variant="paragraph" />
                 ),
               },
             ],

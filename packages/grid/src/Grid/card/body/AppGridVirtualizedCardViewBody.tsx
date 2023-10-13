@@ -60,6 +60,7 @@ export function AppGridCardViewVirtualizedBody<TItem>(props: {
           {
             rowIndex,
             cardViewDefinition: props.cardViewDefinition,
+            lastRow: rowIndex === rowItems.length - 1,
           },
           items.map((i) => i.item),
           dataGridProps
@@ -76,7 +77,7 @@ export function AppGridCardViewVirtualizedBody<TItem>(props: {
       useWindowScroll={virtualizedProps?.useWindowScroll}
       data={rows}
       itemContent={(_index: number, row: AppRowData) => (
-        <Box mb={props.cardViewDefinition.rowSpacing ?? 2}>{row.content}</Box>
+        <Box>{row.content}</Box>
       )}
     />
   );

@@ -54,6 +54,10 @@ export const StyledLabel = styled("label")(({ theme }) => ({
 export const StyledSelect = styled(Select)(({ theme }) => ({
   ...theme.typography.paragraphSmallBold,
   color: theme.palette.coolGrey[800],
+  "& .MuiSelect-select": {
+    paddingBottom: "0px !important",
+    paddingTop: "6px !important",
+  },
 }));
 
 export const StyledMenuItem = styled(MenuItem)(({ theme }) => ({
