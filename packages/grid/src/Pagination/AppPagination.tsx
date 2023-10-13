@@ -40,7 +40,6 @@ export interface AppPaginationProps {
 
 const AppPagination: FC<AppPaginationProps> = (props: AppPaginationProps) => {
   const { breakpoint } = useBreakpoint();
-  console.log(`pagination: ${breakpoint}`);
 
   const pageSizeOptions = props.pageSizeOptions ?? defaultPageSizeOptions;
   const selectedPageSize =
@@ -66,7 +65,7 @@ const AppPagination: FC<AppPaginationProps> = (props: AppPaginationProps) => {
 
   const resultsPerPageText = ["lg", "xl"].includes(breakpoint)
     ? "Results Per Page:"
-    : "Per Page:";
+    : "Results Per Page:";
   const ResultPerPage = (
     <Stack direction="row" alignItems="center" justifyContent="flex-start">
       <StyledLabel sx={{ mr: 1 }}>{resultsPerPageText}</StyledLabel>
@@ -135,22 +134,28 @@ const AppPagination: FC<AppPaginationProps> = (props: AppPaginationProps) => {
     </Stack>
   );
 
-  const totalItemsText = ["lg", "xl"].includes(breakpoint)
-    ? `Showing 
-  ${Math.min(selectedPageSize * props.pageIndex + 1, props.totalItemCount)}
-  -
-  ${Math.min(selectedPageSize * (props.pageIndex + 1), props.totalItemCount)}
-  of ${props.totalItemCount} Item${props.totalItemCount === 1 ? "" : "s"}`
-    : `(${Math.min(
-        selectedPageSize * props.pageIndex + 1,
-        props.totalItemCount
-      )}
-      -
-      ${Math.min(
-        selectedPageSize * (props.pageIndex + 1),
-        props.totalItemCount
-      )}
-      of ${props.totalItemCount})`;
+  // const totalItemsText = ["lg", "xl"].includes(breakpoint)
+  //   ? `Showing
+  // ${Math.min(selectedPageSize * props.pageIndex + 1, props.totalItemCount)}
+  // -
+  // ${Math.min(selectedPageSize * (props.pageIndex + 1), props.totalItemCount)}
+  // of ${props.totalItemCount} Item${props.totalItemCount === 1 ? "" : "s"}`
+  //   : `(${Math.min(
+  //       selectedPageSize * props.pageIndex + 1,
+  //       props.totalItemCount
+  //     )}
+  //     -
+  //     ${Math.min(
+  //       selectedPageSize * (props.pageIndex + 1),
+  //       props.totalItemCount
+  //     )}
+  //     of ${props.totalItemCount})`;
+
+  const totalItemsText = `Showing 
+   ${Math.min(selectedPageSize * props.pageIndex + 1, props.totalItemCount)}
+   -
+   ${Math.min(selectedPageSize * (props.pageIndex + 1), props.totalItemCount)}
+   of ${props.totalItemCount} Item${props.totalItemCount === 1 ? "" : "s"}`;
 
   const TotalItems = (
     <Stack
@@ -170,7 +175,20 @@ const AppPagination: FC<AppPaginationProps> = (props: AppPaginationProps) => {
 
   return (
     <Grid container pt={1} px={2} sx={props.sx}>
-      {["xs", "sm", "md"].includes(breakpoint) && (
+      <>
+        <Grid item lg={3} xl={3}>
+          {ResultPerPage}
+        </Grid>
+
+        <Grid item lg={6} xl={6}>
+          {PaginationButtons}
+        </Grid>
+
+        <Grid item lg={3} xl={3}>
+          {TotalItems}
+        </Grid>
+      </>
+      {/* {["xs", "sm", "md"].includes(breakpoint) && (
         <>
           <Grid item xs={6} sm={6} md={6}>
             {ResultPerPage}
@@ -200,7 +218,7 @@ const AppPagination: FC<AppPaginationProps> = (props: AppPaginationProps) => {
             {TotalItems}
           </Grid>
         </>
-      )}
+      )} */}
     </Grid>
   );
 };

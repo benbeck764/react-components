@@ -8,7 +8,7 @@ const Search = async ({
 }: {
   searchParams: { [key: string]: string | string[] | undefined };
 }) => {
-  // Fake API call (?)
+  // Mock API call
   const promise = new Promise((resolve) => setTimeout(resolve, 2000));
 
   return (

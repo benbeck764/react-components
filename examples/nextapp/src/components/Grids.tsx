@@ -18,7 +18,6 @@ const Grids: FC<GridProps> = (props: GridProps) => {
   const { loading } = props;
   const totalItems = 12;
 
-  //const [loading, setLoading] = useState<boolean>(true);
   const [dataRequest, setDataRequest] = useState<AppGridDataRequest>({
     pageNumber: 0,
     pageSize: totalItems,
@@ -32,14 +31,6 @@ const Grids: FC<GridProps> = (props: GridProps) => {
       }.`,
     };
   });
-
-  // useEffect(() => {
-  //   const timeout = setTimeout(() => {
-  //     setLoading(false);
-  //   }, 2000);
-
-  //   return () => clearTimeout(timeout);
-  // }, []);
 
   const onDataRequested = (request: AppGridDataRequest): void => {
     setDataRequest(request);

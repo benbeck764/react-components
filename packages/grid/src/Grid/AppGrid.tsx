@@ -31,8 +31,8 @@ function AppGrid<TItem>(props: AppGridProps<TItem>): JSX.Element {
   const pagingMode = props.data.pagingMode;
   const totalPageCount = props.data.totalPageCount;
 
-  const loading = getIsLoading(props);
   const lastPage = getLastPage(props);
+  const loading = getIsLoading(props);
   const pageSize = lastPage?.pageSize ?? 25;
 
   const triggerOnDataRequested = (
@@ -122,7 +122,7 @@ function AppGrid<TItem>(props: AppGridProps<TItem>): JSX.Element {
   );
 
   let pagination: JSX.Element = <></>;
-  if (pagingMode === "pagination" && lastPage?.isLoading === false) {
+  if (pagingMode === "pagination" && !loading) {
     pagination = (
       <AppGridPagination
         dataGridProps={props}
@@ -133,13 +133,13 @@ function AppGrid<TItem>(props: AppGridProps<TItem>): JSX.Element {
     );
   } else if (
     pagingMode === "load-more" &&
+    !loading &&
     lastPage &&
-    lastPage.isLoading === false &&
     lastPage.pageIndex + 1 < totalPageCount
   ) {
     pagination = (
       <AppGridLoadMore
-        pageEndIndex={lastPage?.pageIndex ?? 0}
+        pageEndIndex={lastPage.pageIndex ?? 0}
         onNextPageRequested={handleNextPageRequested}
       />
     );
@@ -190,16 +190,14 @@ function AppGrid<TItem>(props: AppGridProps<TItem>): JSX.Element {
           breakpointProperties={breakpointProperties}
         />
       )}
-      {!loading && (
-        <>
-          {props.componentContainers?.paginationContainer
-            ? ReactDOM.createPortal(
-                pagination,
-                props.componentContainers.paginationContainer
-              )
-            : pagination}
-        </>
-      )}
+      <>
+        {props.componentContainers?.paginationContainer
+          ? ReactDOM.createPortal(
+              pagination,
+              props.componentContainers.paginationContainer
+            )
+          : pagination}
+      </>
     </>
   );
 }
