@@ -1,13 +1,15 @@
 "use client";
 import Button, { ButtonProps } from "@mui/material/Button";
-import { FC } from "react";
+import { forwardRef, ForwardedRef } from "react";
 
 export interface AppButtonProps extends ButtonProps {}
 
-const AppButton: FC<AppButtonProps> = (props: AppButtonProps) => {
-  const { ...buttonProps } = props;
+const AppButton = forwardRef<HTMLButtonElement, AppButtonProps>(
+  (props: AppButtonProps, ref: ForwardedRef<HTMLButtonElement>) => {
+    const { ...buttonProps } = props;
 
-  return <Button {...buttonProps}></Button>;
-};
+    return <Button ref={ref} {...buttonProps}></Button>;
+  }
+);
 
 export default AppButton;

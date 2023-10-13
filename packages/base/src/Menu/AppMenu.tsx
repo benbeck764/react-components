@@ -56,6 +56,7 @@ export const AppMenu: FC<PropsWithChildren<AppMenuProps>> = (
   props: PropsWithChildren<AppMenuProps>
 ) => {
   const {
+    children,
     mode = "menu",
     displayCaret = false,
     displayDividers = true,
@@ -81,21 +82,18 @@ export const AppMenu: FC<PropsWithChildren<AppMenuProps>> = (
   const [arrowRef, setArrowRef] = useState<HTMLElement | null>(null);
 
   const listRef = useRef<HTMLUListElement>(null);
-  const anchorRef = (props.popperProps?.anchorEl as HTMLElement) ?? null;
-  // eslint-disable-next-line  @typescript-eslint/no-explicit-any
-  const buttonRef = useRef<any>(null);
+  const anchorRef = (popperProps?.anchorEl as HTMLElement) ?? null;
 
-  const numChildren = React.Children.count(props.children);
+  const numChildren = React.Children.count(children);
   const buttonWidth = buttonAnchor?.offsetWidth ?? 0;
-  const width =
-    props.menuWidth ?? buttonWidth * (props.menuWidthRelativeToInput ?? 1);
+  const width = menuWidth ?? buttonWidth * (menuWidthRelativeToInput ?? 1);
 
   let arrowSX = {};
-  if (props.popperProps?.placement === "bottom") {
+  if (popperProps?.placement === "bottom") {
     arrowSX = { left: width / 2 - 10 };
-  } else if (props.popperProps?.placement === "bottom-start") {
+  } else if (popperProps?.placement === "bottom-start") {
     arrowSX = { left: buttonWidth / 2 };
-  } else if (props.popperProps?.placement === "bottom-end") {
+  } else if (popperProps?.placement === "bottom-end") {
     arrowSX = { left: width - buttonWidth / 2 - 10 };
   }
 
@@ -107,15 +105,15 @@ export const AppMenu: FC<PropsWithChildren<AppMenuProps>> = (
   const handleClick = (
     event: React.MouseEvent<HTMLButtonElement | HTMLDivElement>
   ) => {
-    if (props.stopPropagation) event.stopPropagation();
+    if (stopPropagation) event.stopPropagation();
 
     if (buttonAnchor != null) {
       handleMenuClose();
     } else {
       handleMenuOpen(event.currentTarget);
     }
-    if (props.onButtonClick) {
-      props.onButtonClick(event);
+    if (onButtonClick) {
+      onButtonClick(event);
     }
   };
 
@@ -129,7 +127,7 @@ export const AppMenu: FC<PropsWithChildren<AppMenuProps>> = (
     event: React.MouseEvent<HTMLLIElement> | undefined
   ) => {
     if (buttonAnchor != null) {
-      if (props.stopPropagation && event) event.stopPropagation();
+      if (stopPropagation && event) event.stopPropagation();
       handleMenuClose();
     }
   };
@@ -137,12 +135,8 @@ export const AppMenu: FC<PropsWithChildren<AppMenuProps>> = (
   const handleKeyDown = (
     event: React.KeyboardEvent<HTMLUListElement>
   ): void => {
-    if (props.stopPropagation) event.stopPropagation();
-    if (
-      props.mode === "menu" &&
-      props.closeOnSelect === true &&
-      event.key === "Enter"
-    )
+    if (stopPropagation) event.stopPropagation();
+    if (mode === "menu" && closeOnSelect === true && event.key === "Enter")
       handleMenuClose();
     if (event.key === "Escape") handleMenuClose();
   };
@@ -150,26 +144,26 @@ export const AppMenu: FC<PropsWithChildren<AppMenuProps>> = (
   const handleButtonKeyDown = (
     event: React.KeyboardEvent<HTMLButtonElement>
   ): void => {
-    if (props.stopPropagation) event.stopPropagation();
+    if (stopPropagation) event.stopPropagation();
   };
 
   const handleMenuClose = () => {
     setButtonAnchor(null);
-    if (props.onMenuClose) {
-      props.onMenuClose();
+    if (onMenuClose) {
+      onMenuClose();
     }
   };
 
   const handleMenuOpen = (target: EventTarget) => {
-    if (props.disabled) return;
+    if (disabled) return;
 
     setButtonAnchor(anchorRef ?? target);
-    props.onMenuOpen?.();
+    onMenuOpen?.();
   };
 
   const buttonPropsAugmented = {
-    ...props.buttonProps,
-    disabled: props.disabled,
+    ...buttonProps,
+    disabled: disabled,
   };
   buttonPropsAugmented.onClick = handleClick;
 
@@ -177,10 +171,10 @@ export const AppMenu: FC<PropsWithChildren<AppMenuProps>> = (
   return (
     <ClickAwayListener onClickAway={handleClickAway}>
       <Box>
-        <Tooltip title={props.toolTipTitle} disableHoverListener={menuOpen}>
+        <Tooltip title={toolTipTitle} disableHoverListener={menuOpen}>
           <AppButton {...buttonPropsAugmented} onKeyDown={handleButtonKeyDown}>
-            {props.buttonProps?.children}
-            {props.displayCaret &&
+            {buttonProps?.children}
+            {displayCaret &&
               (buttonAnchor ? (
                 <KeyboardArrowUpIcon />
               ) : (
@@ -191,23 +185,23 @@ export const AppMenu: FC<PropsWithChildren<AppMenuProps>> = (
 
         <Fade in={menuOpen}>
           <StyledPopper
-            {...props.popperProps}
+            {...popperProps}
             anchorEl={buttonAnchor}
             keepMounted
-            disablePortal={props.disablePortal ?? false}
+            disablePortal={disablePortal ?? false}
             open={menuOpen}
-            sx={{ width: width ?? "unset", ...props.popperSx }}
+            sx={{ width: width ?? "unset", ...popperSx }}
             modifiers={[
               {
                 name: "arrow",
-                enabled: Boolean(props.displayArrow),
+                enabled: Boolean(displayArrow),
                 options: {
                   element: arrowRef,
                 },
               },
               {
                 name: "offset",
-                enabled: Boolean(props.displayArrow),
+                enabled: Boolean(displayArrow),
                 options: { offset: [0, 22] },
               },
               {
@@ -219,7 +213,7 @@ export const AppMenu: FC<PropsWithChildren<AppMenuProps>> = (
               },
             ]}
           >
-            {props.displayArrow && (
+            {displayArrow && (
               <StyledPopperArrow
                 ref={setArrowRef}
                 sx={{
@@ -230,41 +224,38 @@ export const AppMenu: FC<PropsWithChildren<AppMenuProps>> = (
               />
             )}
 
-            {props.mode === "menu" && (
+            {mode === "menu" && (
               <StyledContainerMenu
-                {...props.listProps}
+                {...listProps}
                 onKeyDown={handleKeyDown}
                 ref={listRef}
                 tabIndex={0}
               >
-                {React.Children.map(props.children, (child, index) => {
+                {React.Children.map(children, (child, index) => {
                   return (
                     <>
-                      {props.closeOnSelect === true && (
+                      {closeOnSelect === true && (
                         <li onClick={handleItemClick}>{child}</li>
                       )}
-                      {props.closeOnSelect !== true && <li>{child}</li>}
-                      {props.displayDividers === true &&
-                        index < numChildren - 1 && (
-                          <Box
-                            sx={{
-                              padding:
-                                props.dividerVariant === "flush"
-                                  ? ""
-                                  : "0px 16px",
-                            }}
-                          >
-                            <Divider variant="fullWidth" />
-                          </Box>
-                        )}
+                      {closeOnSelect !== true && <li>{child}</li>}
+                      {displayDividers === true && index < numChildren - 1 && (
+                        <Box
+                          sx={{
+                            padding:
+                              dividerVariant === "flush" ? "" : "0px 16px",
+                          }}
+                        >
+                          <Divider variant="fullWidth" />
+                        </Box>
+                      )}
                     </>
                   );
                 })}
               </StyledContainerMenu>
             )}
-            {props.mode === "panel" && (
+            {mode === "panel" && (
               <StyledContainerPanel ref={listRef} tabIndex={0}>
-                {props.children}
+                {children}
               </StyledContainerPanel>
             )}
           </StyledPopper>
