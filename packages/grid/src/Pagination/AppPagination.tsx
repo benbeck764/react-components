@@ -13,12 +13,12 @@ import {
   StyledSelect,
   StyledUnderline,
 } from "./AppPagination.styles";
-import { useBreakpoint } from "@benbeck764/react-components-common";
 import Stack from "@mui/material/Stack";
 import { SelectChangeEvent } from "@mui/material/Select";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
-import { Breakpoint, SxProps, Theme } from "@mui/material/styles";
+import { SxProps, Theme } from "@mui/material/styles";
+import Box from "@mui/material/Box";
 
 export const defaultPageSizeOptions = [25, 50, 100, 250];
 
@@ -39,8 +39,6 @@ export interface AppPaginationProps {
 }
 
 const AppPagination: FC<AppPaginationProps> = (props: AppPaginationProps) => {
-  const { breakpoint } = useBreakpoint();
-
   const pageSizeOptions = props.pageSizeOptions ?? defaultPageSizeOptions;
   const selectedPageSize =
     pageSizeOptions.find((pageSize: number) => props.pageSize <= pageSize) ??
@@ -63,12 +61,14 @@ const AppPagination: FC<AppPaginationProps> = (props: AppPaginationProps) => {
     props.onInit?.(props.pageIndex, props.pageSize);
   }, []);
 
-  const resultsPerPageText = ["lg", "xl"].includes(breakpoint)
-    ? "Results Per Page:"
-    : "Results Per Page:";
   const ResultPerPage = (
     <Stack direction="row" alignItems="center" justifyContent="flex-start">
-      <StyledLabel sx={{ mr: 1 }}>{resultsPerPageText}</StyledLabel>
+      <StyledLabel sx={{ mr: 1, display: { xs: "none", lg: "block" } }}>
+        Results Per Page:
+      </StyledLabel>
+      <StyledLabel sx={{ mr: 1, display: { xs: "block", lg: "none" } }}>
+        Per Page:
+      </StyledLabel>
       <StyledSelect
         variant="standard"
         disableUnderline
@@ -134,29 +134,6 @@ const AppPagination: FC<AppPaginationProps> = (props: AppPaginationProps) => {
     </Stack>
   );
 
-  // const totalItemsText = ["lg", "xl"].includes(breakpoint)
-  //   ? `Showing
-  // ${Math.min(selectedPageSize * props.pageIndex + 1, props.totalItemCount)}
-  // -
-  // ${Math.min(selectedPageSize * (props.pageIndex + 1), props.totalItemCount)}
-  // of ${props.totalItemCount} Item${props.totalItemCount === 1 ? "" : "s"}`
-  //   : `(${Math.min(
-  //       selectedPageSize * props.pageIndex + 1,
-  //       props.totalItemCount
-  //     )}
-  //     -
-  //     ${Math.min(
-  //       selectedPageSize * (props.pageIndex + 1),
-  //       props.totalItemCount
-  //     )}
-  //     of ${props.totalItemCount})`;
-
-  const totalItemsText = `Showing 
-   ${Math.min(selectedPageSize * props.pageIndex + 1, props.totalItemCount)}
-   -
-   ${Math.min(selectedPageSize * (props.pageIndex + 1), props.totalItemCount)}
-   of ${props.totalItemCount} Item${props.totalItemCount === 1 ? "" : "s"}`;
-
   const TotalItems = (
     <Stack
       direction="row"
@@ -166,16 +143,55 @@ const AppPagination: FC<AppPaginationProps> = (props: AppPaginationProps) => {
     >
       <Typography
         variant="paragraphSmallBold"
-        sx={{ color: (theme) => theme.palette.coolGrey[500] }}
+        sx={{
+          color: (theme) => theme.palette.coolGrey[500],
+          display: { xs: "block", lg: "none" },
+        }}
       >
-        {totalItemsText}
+        {`(${Math.min(
+          selectedPageSize * props.pageIndex + 1,
+          props.totalItemCount
+        )}
+      -
+      ${Math.min(
+        selectedPageSize * (props.pageIndex + 1),
+        props.totalItemCount
+      )}
+      of ${props.totalItemCount})`}
+      </Typography>
+      <Typography
+        variant="paragraphSmallBold"
+        sx={{
+          color: (theme) => theme.palette.coolGrey[500],
+          display: { xs: "none", lg: "block" },
+        }}
+      >
+        {`Showing
+  ${Math.min(selectedPageSize * props.pageIndex + 1, props.totalItemCount)}
+  -
+  ${Math.min(selectedPageSize * (props.pageIndex + 1), props.totalItemCount)}
+  of ${props.totalItemCount} Item${props.totalItemCount === 1 ? "" : "s"}`}
       </Typography>
     </Stack>
   );
 
   return (
     <Grid container pt={1} px={2} sx={props.sx}>
-      <>
+      <Box width="100%" sx={{ display: { xs: "contents", lg: "none" } }}>
+        <Grid item xs={6} sm={6} md={6}>
+          {ResultPerPage}
+        </Grid>
+
+        <Grid item xs={6} sm={6} md={6}>
+          {TotalItems}
+        </Grid>
+
+        <Grid item xs={12} sm={12} md={12} my={1}>
+          {PaginationButtons}
+        </Grid>
+      </Box>
+
+      <Box width="100%" sx={{ display: { xs: "none", lg: "contents" } }}>
         <Grid item lg={3} xl={3}>
           {ResultPerPage}
         </Grid>
@@ -187,38 +203,7 @@ const AppPagination: FC<AppPaginationProps> = (props: AppPaginationProps) => {
         <Grid item lg={3} xl={3}>
           {TotalItems}
         </Grid>
-      </>
-      {/* {["xs", "sm", "md"].includes(breakpoint) && (
-        <>
-          <Grid item xs={6} sm={6} md={6}>
-            {ResultPerPage}
-          </Grid>
-
-          <Grid item xs={6} sm={6} md={6}>
-            {TotalItems}
-          </Grid>
-
-          <Grid item xs={12} sm={12} md={12} my={1}>
-            {PaginationButtons}
-          </Grid>
-        </>
-      )}
-
-      {["lg", "xl"].includes(breakpoint) && (
-        <>
-          <Grid item lg={3} xl={3}>
-            {ResultPerPage}
-          </Grid>
-
-          <Grid item lg={6} xl={6}>
-            {PaginationButtons}
-          </Grid>
-
-          <Grid item lg={3} xl={3}>
-            {TotalItems}
-          </Grid>
-        </>
-      )} */}
+      </Box>
     </Grid>
   );
 };

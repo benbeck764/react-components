@@ -4,36 +4,18 @@ import { AppGrid, AppGridDataRequest } from "@benbeck764/react-components-grid";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import { TypographySkeleton } from "@benbeck764/react-components";
-
-type GridData = {
-  title: string;
-  description: string;
-};
+import { GridData, ResponseDto } from "../app/grid/models";
 
 type GridProps = {
+  data: ResponseDto | undefined;
   loading: boolean;
 };
 
 const Grids: FC<GridProps> = (props: GridProps) => {
-  const { loading } = props;
-  const totalItems = 12;
-
-  const [dataRequest, setDataRequest] = useState<AppGridDataRequest>({
-    pageNumber: 0,
-    pageSize: totalItems,
-  });
-
-  const items = Array.from(Array(totalItems).keys()).map((num: number) => {
-    return {
-      title: `Grid Item #${num + 1}`,
-      description: `This right here is the description for Grid Item #${
-        num + 1
-      }.`,
-    };
-  });
+  const { data, loading } = props;
 
   const onDataRequested = (request: AppGridDataRequest): void => {
-    setDataRequest(request);
+    //setDataRequest(request);
   };
 
   return (
@@ -41,32 +23,26 @@ const Grids: FC<GridProps> = (props: GridProps) => {
       <Typography variant="h5">Grids</Typography>
       <AppGrid
         data={{
-          pages: loading
-            ? [
-                {
-                  items: [],
-                  pageIndex: 0,
-                  pageSize: dataRequest.pageSize,
-                  isLoading: true,
-                },
-              ]
-            : [
-                {
-                  items: items.slice(
-                    dataRequest.pageNumber * dataRequest.pageSize,
-                    Math.min(
-                      dataRequest.pageNumber * dataRequest.pageSize +
-                        dataRequest.pageSize,
-                      totalItems
-                    )
-                  ),
-                  pageIndex: dataRequest.pageNumber,
-                  pageSize: dataRequest.pageSize,
-                  isLoading: false,
-                },
-              ],
-          totalItemCount: totalItems,
-          totalPageCount: Math.ceil(totalItems / dataRequest.pageSize),
+          pages:
+            !data || loading
+              ? [
+                  {
+                    items: [],
+                    pageIndex: 0,
+                    pageSize: 12,
+                    isLoading: true,
+                  },
+                ]
+              : [
+                  {
+                    items: data.items,
+                    pageIndex: data.currentPageNumber,
+                    pageSize: data.pageSize,
+                    isLoading: false,
+                  },
+                ],
+          totalItemCount: data?.totalItems ?? 0,
+          totalPageCount: data?.numberOfPages ?? 0,
           pagingMode: "pagination",
         }}
         pagination={{ pageSizeOptions: [4, 8, 12] }}
@@ -114,9 +90,9 @@ const Grids: FC<GridProps> = (props: GridProps) => {
                 </Box>
               </Box>
             ),
-            columnCount: 1,
-            columnSpacing: 3,
-            rowSpacing: 3,
+            columnCount: 2,
+            columnSpacing: 2,
+            rowSpacing: 2,
           },
           xl: {
             virtualizedProps: {

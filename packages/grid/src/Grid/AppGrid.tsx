@@ -190,14 +190,16 @@ function AppGrid<TItem>(props: AppGridProps<TItem>): JSX.Element {
           breakpointProperties={breakpointProperties}
         />
       )}
-      <>
-        {props.componentContainers?.paginationContainer
-          ? ReactDOM.createPortal(
-              pagination,
-              props.componentContainers.paginationContainer
-            )
-          : pagination}
-      </>
+      {!loading && (
+        <>
+          {props.componentContainers?.paginationContainer
+            ? ReactDOM.createPortal(
+                pagination,
+                props.componentContainers.paginationContainer
+              )
+            : pagination}
+        </>
+      )}
     </>
   );
 }
