@@ -10,10 +10,15 @@ type GridData = {
   description: string;
 };
 
-const Grids: FC = () => {
+type GridProps = {
+  loading: boolean;
+};
+
+const Grids: FC<GridProps> = (props: GridProps) => {
+  const { loading } = props;
   const totalItems = 12;
 
-  const [loading, setLoading] = useState<boolean>(true);
+  //const [loading, setLoading] = useState<boolean>(true);
   const [dataRequest, setDataRequest] = useState<AppGridDataRequest>({
     pageNumber: 0,
     pageSize: totalItems,
@@ -28,13 +33,13 @@ const Grids: FC = () => {
     };
   });
 
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      setLoading(false);
-    }, 2000);
+  // useEffect(() => {
+  //   const timeout = setTimeout(() => {
+  //     setLoading(false);
+  //   }, 2000);
 
-    return () => clearTimeout(timeout);
-  }, []);
+  //   return () => clearTimeout(timeout);
+  // }, []);
 
   const onDataRequested = (request: AppGridDataRequest): void => {
     setDataRequest(request);
@@ -76,6 +81,53 @@ const Grids: FC = () => {
         pagination={{ pageSizeOptions: [4, 8, 12] }}
         cardView={{
           xs: {
+            virtualizedProps: {
+              enabled: true,
+              useWindowScroll: true,
+            },
+            getContent: (item: GridData) => {
+              return (
+                <Box
+                  sx={{
+                    p: 1,
+                    width: 184,
+                    height: 200,
+                    backgroundColor: (theme) => theme.palette.grey[300],
+                    border: (theme) => `1px solid ${theme.palette.grey[600]}`,
+                  }}
+                >
+                  <Typography variant="h6" sx={{ color: "black" }}>
+                    {item.title}
+                  </Typography>
+                  <Typography variant="paragraph" mt={2}>
+                    {item.description}
+                  </Typography>
+                </Box>
+              );
+            },
+            loadingPlaceholder: (
+              <Box
+                sx={{
+                  p: 1,
+                  width: 184,
+                  height: 200,
+                  backgroundColor: (theme) => theme.palette.grey[300],
+                  border: (theme) => `1px solid ${theme.palette.grey[600]}`,
+                }}
+              >
+                <TypographySkeleton charCount={12} variant="h6" />
+                <Box mt={2}>
+                  <TypographySkeleton charCount={15} variant="paragraph" />
+                  <TypographySkeleton charCount={15} variant="paragraph" />
+                  <TypographySkeleton charCount={15} variant="paragraph" />
+                </Box>
+              </Box>
+            ),
+            columnCount: 1,
+            columnSpacing: 3,
+            rowSpacing: 3,
+          },
+          xl: {
             virtualizedProps: {
               enabled: true,
               useWindowScroll: true,

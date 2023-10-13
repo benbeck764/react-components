@@ -50,9 +50,7 @@ export function getLastPage<TItem>(
   return [...pages].sort((a, b) => a.pageIndex - b.pageIndex).pop();
 }
 
-export function getIsLoading<TItem, TAppState>(
-  props: AppGridProps<TItem>
-): boolean {
+export function getIsLoading<TItem>(props: AppGridProps<TItem>): boolean {
   const page = getLastPage(props);
   return page?.isLoading === true;
 }

@@ -2,7 +2,7 @@
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import usePagination from "@mui/material/usePagination/usePagination";
-import { FC, useEffect, useState } from "react";
+import { FC, useEffect } from "react";
 import {
   StyledEllipsis,
   StyledLabel,
@@ -39,8 +39,8 @@ export interface AppPaginationProps {
 }
 
 const AppPagination: FC<AppPaginationProps> = (props: AppPaginationProps) => {
-  const { breakpoint: appBreakpoint } = useBreakpoint();
-  const [breakpoint, setBreakpoint] = useState<Breakpoint>(appBreakpoint);
+  const { breakpoint } = useBreakpoint();
+  console.log(`pagination: ${breakpoint}`);
 
   const pageSizeOptions = props.pageSizeOptions ?? defaultPageSizeOptions;
   const selectedPageSize =
@@ -63,10 +63,6 @@ const AppPagination: FC<AppPaginationProps> = (props: AppPaginationProps) => {
   useEffect(() => {
     props.onInit?.(props.pageIndex, props.pageSize);
   }, []);
-
-  useEffect(() => {
-    setBreakpoint(appBreakpoint);
-  }, [appBreakpoint]);
 
   const resultsPerPageText = ["lg", "xl"].includes(breakpoint)
     ? "Results Per Page:"
