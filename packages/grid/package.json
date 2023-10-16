@@ -1,6 +1,6 @@
 {
   "name": "@benbeck764/react-components-grid",
-  "version": "1.4.0-beta.8",
+  "version": "1.4.0-beta.9",
   "description": "Grid components built utilizing MUI v5 & react-virtuoso.",
   "author": "Ben Beck",
   "license": "ISC",
@@ -31,7 +31,7 @@
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 0",
     "clean": "rimraf dist && rimraf node_modules",
-    "clean:dist": "rimraf dist && rimraf node_modules"
+    "clean:dist": "rimraf dist"
   },
   "dependencies": {
     "@benbeck764/react-components": "workspace:*",

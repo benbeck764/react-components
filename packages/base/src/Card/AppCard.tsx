@@ -5,7 +5,6 @@ import Card, { CardProps } from "@mui/material/Card";
 import { StyledPaper } from "./AppCard.styles";
 
 export interface AppCardProps extends CardProps {
-  elevateOnHover?: boolean;
   paperSx?: SxProps<Theme>;
   cardSx?: SxProps<Theme>;
 }
@@ -13,24 +12,10 @@ export interface AppCardProps extends CardProps {
 const AppCard: FC<PropsWithChildren<AppCardProps>> = (
   props: PropsWithChildren<AppCardProps>
 ) => {
-  const [elevation, setElevation] = useState<number | undefined>(undefined);
-
-  const { elevateOnHover, paperSx, cardSx, ...rest } = { ...props };
-
-  const handleOnMouseOver = (): void => {
-    if (elevateOnHover === true) setElevation(5);
-  };
-  const handleOnMouseOut = (): void => {
-    if (elevateOnHover === true) setElevation(2);
-  };
+  const { paperSx, cardSx, ...rest } = { ...props };
 
   return (
-    <StyledPaper
-      sx={{ ...paperSx }}
-      elevation={elevation}
-      onMouseOver={() => handleOnMouseOver()}
-      onMouseOut={() => handleOnMouseOut()}
-    >
+    <StyledPaper sx={{ ...paperSx }} elevation={0}>
       <Card sx={cardSx} {...rest}>
         {props.children}
       </Card>

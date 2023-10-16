@@ -4,9 +4,9 @@ import Checkbox from "@mui/material/Checkbox";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import { styled } from "@mui/material/styles";
 
-interface CheckboxSizeProps {
+type CheckboxSizeProps = {
   checkboxSize: number;
-}
+};
 
 export const StyledFormControlLabel = styled(FormControlLabel)({
   "& .MuiFormControlLabel-label": {},
@@ -74,16 +74,5 @@ export const StyledMinusIcon = styled(RemoveIcon, {
     textAlign: "center",
     position: "relative",
     top: 1,
-  },
-}));
-
-export const StyledLabel = styled("span")(({ theme }) => ({
-  [theme.breakpoints.up("xs")]: {
-    ...theme.typography.paragraphLarge,
-    lineHeight: "18px",
-  },
-  [theme.breakpoints.up("xl")]: {
-    ...theme.typography.paragraphSmall,
-    lineHeight: "18px",
   },
 }));

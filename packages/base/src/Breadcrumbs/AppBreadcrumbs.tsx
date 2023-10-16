@@ -3,11 +3,7 @@ import { FC } from "react";
 import Typography from "@mui/material/Typography";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import { StyledBreadcrumbs, StyledLink } from "./AppBreadcrumbs.styles";
-import {
-  isString,
-  BreakpointDevice,
-  useBreakpoint,
-} from "@benbeck764/react-components-common";
+import { isString } from "@benbeck764/react-components-common";
 import { AppBreadcrumbsProps, BreadcrumbItem } from "./AppBreadcrumbs.props";
 
 const AppBreadcrumbs: FC<AppBreadcrumbsProps> = (
@@ -15,7 +11,6 @@ const AppBreadcrumbs: FC<AppBreadcrumbsProps> = (
 ) => {
   const { breadcrumbs, sx, allowLinkableFirst, homeSettings, onNavigate } =
     props;
-  const { device } = useBreakpoint();
 
   const replaceParams = (
     path: string,
@@ -65,30 +60,42 @@ const AppBreadcrumbs: FC<AppBreadcrumbsProps> = (
       aria-label="breadcrumb"
       sx={sx}
     >
-      {homeSettings?.include === true &&
-        ((homeSettings?.mobile && device !== BreakpointDevice.Desktop) ||
-          device === BreakpointDevice.Desktop) &&
-        !allowLinkableFirst && (
-          <Typography variant="paragraphBold">
-            {homeSettings.displayName ?? "Home"}
-          </Typography>
-        )}
-      {homeSettings?.include === true &&
-        ((homeSettings?.mobile && device !== BreakpointDevice.Desktop) ||
-          device === BreakpointDevice.Desktop) &&
-        allowLinkableFirst && (
-          <StyledLink
-            variant="paragraph"
-            onClick={() =>
-              handleLinkClick({
-                displayName: homeSettings.displayName ?? "Home",
-                path: homeSettings.path ?? "",
-              })
-            }
-          >
-            {homeSettings.displayName ?? "Home"}
-          </StyledLink>
-        )}
+      {homeSettings?.include === true && (
+        <>
+          {allowLinkableFirst ? (
+            <StyledLink
+              variant="paragraph"
+              onClick={() =>
+                handleLinkClick({
+                  displayName: homeSettings.displayName ?? "Home",
+                  path: homeSettings.path ?? "",
+                })
+              }
+              sx={{
+                display: {
+                  xs: homeSettings?.mobile ? "inline" : "none",
+                  lg: "inline",
+                },
+              }}
+            >
+              {homeSettings.displayName ?? "Home"}
+            </StyledLink>
+          ) : (
+            <Typography
+              variant="paragraphBold"
+              sx={{
+                display: {
+                  xs: homeSettings?.mobile ? "block" : "none",
+                  lg: "block",
+                },
+              }}
+            >
+              {homeSettings.displayName ?? "Home"}
+            </Typography>
+          )}
+        </>
+      )}
+
       {breadcrumbs.map((breadcrumb: BreadcrumbItem, index: number) => {
         const isLast = index === breadcrumbs.length - 1;
         const key = isString(breadcrumb.displayName)
@@ -112,4 +119,4 @@ const AppBreadcrumbs: FC<AppBreadcrumbsProps> = (
   );
 };
 
-export { AppBreadcrumbs };
+export default AppBreadcrumbs;

@@ -1,6 +1,6 @@
 "use client";
 import { FC } from "react";
-import { AppCheckbox } from "../AppCheckbox";
+import AppCheckbox from "../AppCheckbox";
 import { AppCheckboxSize } from "../AppCheckbox.props";
 import { SxProps, Theme } from "@mui/material/styles";
 import Box from "@mui/material/Box";

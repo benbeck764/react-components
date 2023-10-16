@@ -5,7 +5,6 @@ import {
   StyledDialog,
   StyledDialogContainer,
   StyledDialogFooter,
-  StyledDialogButton,
 } from "./AppDialog.styles";
 import AppContentLoader from "../Loader/AppContentLoader";
 import { ButtonProps } from "@mui/material/Button";
@@ -15,6 +14,7 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import IconButton from "@mui/material/IconButton";
 import { SxProps, Theme } from "@mui/material/styles";
+import AppButton from "../Button/AppButton";
 
 type AppDialogProps = {
   open: boolean;
@@ -123,24 +123,24 @@ const AppDialog: FC<PropsWithChildren<AppDialogProps>> = (
           {(primaryButtonProps || secondaryButtonProps) && (
             <StyledDialogFooter sx={{ padding: 0, pt: 2 }}>
               {(secondaryButtonProps || secondaryButton) && (
-                <StyledDialogButton
+                <AppButton
                   variant="contained"
                   color="secondary"
                   {...secondaryButtonProps}
                   onClick={debouncedSecondaryBtnClick}
                 >
                   {secondaryButtonProps?.children ?? "No"}
-                </StyledDialogButton>
+                </AppButton>
               )}
               {(primaryButtonProps || primaryButton) && (
-                <StyledDialogButton
+                <AppButton
                   variant="contained"
                   color="primary"
                   {...primaryButtonProps}
                   onClick={debouncedPrimaryBtnClick}
                 >
                   {primaryButtonProps?.children ?? "Yes"}
-                </StyledDialogButton>
+                </AppButton>
               )}
             </StyledDialogFooter>
           )}

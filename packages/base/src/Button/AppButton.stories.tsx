@@ -1,9 +1,11 @@
+import React from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import AppButton, { AppButtonProps } from "./AppButton";
 import CustomThemeProvider from "../_theme/CustomThemeProvider";
 import { createTheme } from "@mui/material/styles";
 import Stack from "@mui/material/Stack";
-import { getMUITheme, defaultThemeOptions } from "../_theme";
+import { defaultThemeOptions } from "../_theme/base.theme";
+import { getMUITheme } from "../_theme/mui.theme";
 
 type AppButtonStoryProps = Pick<
   AppButtonProps,

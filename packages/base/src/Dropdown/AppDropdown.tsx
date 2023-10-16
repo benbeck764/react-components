@@ -12,9 +12,9 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Collapse from "@mui/material/Collapse";
 
-export type AppDropdownVariant = "header" | "subheader";
+type AppDropdownVariant = "header" | "subheader";
 
-export interface AppDropdownProps {
+type AppDropdownProps = {
   variant?: AppDropdownVariant;
   title?: string | React.ReactNode;
   subTitle?: React.ReactNode;
@@ -31,7 +31,7 @@ export interface AppDropdownProps {
   sx?: SxProps<Theme>;
   onOpen?: () => void;
   disableHeaderClick?: boolean;
-}
+};
 
 const AppDropdown: FC<PropsWithChildren<AppDropdownProps>> = (
   props: PropsWithChildren<AppDropdownProps>

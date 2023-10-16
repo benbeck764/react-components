@@ -14,9 +14,9 @@ export const StyledPanelBox = styled(Box)({
   "&:focus": { outline: "none" },
 });
 
-interface AppDrawerDisplayMode {
+type AppDrawerDisplayMode = {
   displayAboveHeader?: boolean;
-}
+};
 
 export const StyledDrawer = styled(Drawer, {
   shouldForwardProp: (prop) => prop !== "displayAboveHeader",

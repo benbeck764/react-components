@@ -1,5 +1,4 @@
 import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
 import { styled, Theme } from "@mui/material/styles";
 
@@ -37,17 +36,6 @@ export const StyledDialogFooter = styled(Box)(
     justifyContent: "flex-end",
     "& > button:not(:last-of-type)": {
       marginRight: theme.spacing(1),
-    },
-  })
-);
-
-export const StyledDialogButton = styled(Button)(
-  ({ theme }: { theme: Theme }) => ({
-    [theme.breakpoints.up("xs")]: {
-      height: "40px",
-    },
-    [theme.breakpoints.up("xl")]: {
-      height: "32px",
     },
   })
 );

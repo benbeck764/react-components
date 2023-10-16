@@ -1,3 +1,4 @@
+import React from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import AppTabs from "./AppTabs";
 import CustomThemeProvider from "../_theme/CustomThemeProvider";

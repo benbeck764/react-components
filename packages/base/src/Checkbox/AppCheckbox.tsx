@@ -4,13 +4,13 @@ import {
   StyledCheckbox,
   StyledFormControlLabel,
   StyledCheckIcon,
-  StyledLabel,
   StyledMinusIcon,
 } from "./AppCheckbox.styles";
 import { AppLoadingCheckbox } from "./components/AppLoadingCheckbox";
 import { isString } from "@benbeck764/react-components-common";
 import { AppCheckboxProps, CheckboxItem } from "./AppCheckbox.props";
 import { Theme } from "@mui/material/styles";
+import Typography from "@mui/material/Typography";
 
 const AppCheckbox: FC<AppCheckboxProps> = (props: AppCheckboxProps) => {
   const [isChecked, setIsChecked] = useState<boolean>(
@@ -82,7 +82,12 @@ const AppCheckbox: FC<AppCheckboxProps> = (props: AppCheckboxProps) => {
     );
 
   const label = isString(props.item.label) ? (
-    <StyledLabel>{props.item.label}</StyledLabel>
+    <Typography
+      component="span"
+      sx={{ typography: { xs: "paragraphLarge", xl: "paragraphSmall" } }}
+    >
+      {props.item.label}
+    </Typography>
   ) : (
     props.item.label ?? <></>
   );
@@ -131,4 +136,4 @@ const AppCheckbox: FC<AppCheckboxProps> = (props: AppCheckboxProps) => {
   );
 };
 
-export { AppCheckbox };
+export default AppCheckbox;

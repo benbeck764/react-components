@@ -1,3 +1,4 @@
+"use client";
+export { default } from "./AppCheckbox";
 export * from "./AppCheckbox.props";
-export * from "./AppCheckbox";
-export * from "./CheckboxList/AppCheckboxList";
+export * from "./components";

@@ -7,16 +7,15 @@ import {
   AppCheckboxVariant,
   AppCheckboxIcon,
   AppCheckboxSize,
-} from "../AppCheckbox.props";
+} from "../Checkbox/AppCheckbox.props";
 import { StyledFormGroup, StyledViewMore } from "./AppCheckboxList.styles";
-import { AppSelectAllCheckbox } from "../components/AppSelectAllCheckbox";
-import { StyledLabel } from "../AppCheckbox.styles";
-import StyledLabelBox from "../../_common/LabelBox";
+import { AppSelectAllCheckbox } from "../Checkbox/components/AppSelectAllCheckbox";
+import StyledLabelBox from "../_common/LabelBox";
 import { SxProps, Theme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Collapse from "@mui/material/Collapse";
-import { AppCheckbox } from "../AppCheckbox";
+import AppCheckbox from "../Checkbox/AppCheckbox";
 
 export type AppCheckboxListProps = {
   items: CheckboxItem[];
@@ -103,7 +102,16 @@ const AppCheckboxList: FC<AppCheckboxListProps> = (
             selectedLinesCount={
               items.filter((i: CheckboxItem) => i.checked).length
             }
-            label={<StyledLabel>Select All</StyledLabel>}
+            label={
+              <Typography
+                component="span"
+                sx={{
+                  typography: { xs: "paragraphLarge", xl: "paragraphSmall" },
+                }}
+              >
+                Select All
+              </Typography>
+            }
             onCheckedChanged={(i: CheckboxItem) => onSelectAll?.(i.checked)}
           />
         </Box>
@@ -144,4 +152,4 @@ const AppCheckboxList: FC<AppCheckboxListProps> = (
   );
 };
 
-export default { AppCheckboxList };
+export default AppCheckboxList;
