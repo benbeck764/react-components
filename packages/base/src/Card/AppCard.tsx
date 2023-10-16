@@ -15,8 +15,8 @@ const AppCard: FC<PropsWithChildren<AppCardProps>> = (
   const { paperSx, cardSx, ...rest } = { ...props };
 
   return (
-    <StyledPaper sx={{ ...paperSx }} elevation={0}>
-      <Card sx={cardSx} {...rest}>
+    <StyledPaper sx={{ ...paperSx }}>
+      <Card sx={cardSx} {...rest} elevation={0}>
         {props.children}
       </Card>
     </StyledPaper>

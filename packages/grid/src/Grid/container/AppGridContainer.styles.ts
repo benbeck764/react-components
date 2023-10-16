@@ -1,9 +1,9 @@
+import { AppCard } from "@benbeck764/react-components";
 import Box from "@mui/material/Box";
-import Card from "@mui/material/Card";
 import Paper from "@mui/material/Paper";
 import { styled } from "@mui/material/styles";
 
-export const StyledCard = styled(Card)(({ theme }) => ({
+export const StyledCard = styled(AppCard)(({ theme }) => ({
   borderTopLeftRadius: theme.shape.borderRadius * 2,
   borderTopRightRadius: theme.shape.borderRadius * 2,
   borderBottomLeftRadius: 0,

@@ -60,9 +60,6 @@ export const getMUITheme = (themeBaseOptions: ThemeOptions): ThemeOptions => {
         },
       },
       MuiCard: {
-        defaultProps: {
-          elevation: 0,
-        },
         styleOverrides: {
           root: {
             borderRadius: 2 * themeBase.shape.borderRadius,

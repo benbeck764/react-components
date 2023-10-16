@@ -61,7 +61,7 @@ function AppGridContainer<TItem>(
   return (
     <>
       <StyledCard
-        sx={{
+        cardSx={{
           ...props.sx,
         }}
       >
