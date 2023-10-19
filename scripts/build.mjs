@@ -38,17 +38,18 @@ function build() {
   // Temporarily Modify tsconfig.{moduleType}.json file
   modifyTSConfig(moduleType, false);
 
-  exec(`pnpm build:${moduleType}`, (error, stdout) => {
-    if (error) {
+  exec(`pnpm build:${moduleType}`, (err, stdout) => {
+    if (err) {
       console.error(err);
-      console.log(`Build failed :(`);
+      console.log(`Build ${process.cwd()} (${moduleType}) failed :(`);
+      modifyTSConfig(moduleType, true);
+      process.exit(1);
     } else {
       console.log(stdout);
-      console.log(`Build success!`);
+      console.log(`Build ${process.cwd()} (${moduleType}) success!`);
+      modifyTSConfig(moduleType, true);
+      process.exit(0);
     }
-
-    // Cleanup tsconfig
-    modifyTSConfig(moduleType, true);
   });
 }
 

@@ -24,10 +24,10 @@
     "!src"
   ],
   "scripts": {
-    "build": "tsc --project tsconfig.esm.json && tsc --project tsconfig.common.json",
-    "build:prod": "pnpm build:esm && pnpm build:common",
-    "build:esm": "node ../../scripts/build.mjs esm && tsc --project tsconfig.esm.json",
-    "build:common": "node ../../scripts/build.mjs common && tsc --project tsconfig.common.json",
+    "build": "pnpm build:esm && pnpm build:common",
+    "build:prod": "node ../../scripts/build.mjs esm && node ../../scripts/build.mjs common",
+    "build:esm": "tsc --project tsconfig.esm.json",
+    "build:common": "tsc --project tsconfig.common.json",
     "test": "echo \"Error: no test specified\" && exit 0",
     "clean": "rimraf dist && rimraf node_modules",
     "clean:dist": "rimraf dist"
