@@ -1,12 +1,9 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "module": "ESNext",
-    "outDir": "dist",
-    "rootDir": "src",
-    "declarationDir": "dist",
-    "declaration": true,
-    "emitDeclarationOnly": false
+    "module": "CommonJS",
+    "outDir": "dist/node",
+    "declaration": false
   },
   "include": ["src/**/*.ts*"],
   "exclude": ["node_modules", "dist", "src/**/*.stories.tsx"]

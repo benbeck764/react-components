@@ -16,14 +16,14 @@
     "url": "https://github.com/benbeck764/react-components/issues"
   },
   "homepage": "https://github.com/benbeck764/react-components#readme",
-  "main": "dist/index.js",
+  "main": "dist/node/index.js",
   "module": "dist/index.js",
   "types:": "dist/index.d.ts",
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && tsc --project tsconfig.common.json",
     "test": "echo \"Error: no test specified\" && exit 0",
     "clean": "rimraf dist && rimraf node_modules",
     "clean:dist": "rimraf dist"
