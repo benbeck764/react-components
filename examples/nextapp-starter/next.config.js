@@ -4,16 +4,8 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
 });
 
 const nextConfig = {
-  modularizeImports: {
-    // "@benbeck764/react-components": {
-    //   transform: "@benbeck764/react-components/{{member}}",
-    // },
-    "@mui/material": {
-      transform: "@mui/material/{{member}}",
-    },
-    "@mui/icons-material": {
-      transform: "@mui/icons-material/{{member}}",
-    },
+  experimental: {
+    optimizePackageImports: ["@benbeck764/react-components"],
   },
 };
 module.exports = withBundleAnalyzer(nextConfig);

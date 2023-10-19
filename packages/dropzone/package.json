@@ -1,6 +1,6 @@
 {
   "name": "@benbeck764/react-components-dropzone",
-  "version": "1.4.0-beta.10",
+  "version": "1.4.0-beta.11",
   "description": "Dropzone component built utilizing MUI v5 & react-dropzone.",
   "repository": {
     "type": "git",
