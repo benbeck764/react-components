@@ -1,5 +1,5 @@
 {
-  "name": "@benbeck764/react-components-example-nextapp",
+  "name": "@benbeck764/react-components-example-nextapp-starter",
   "private": true,
   "version": "0.0.0",
   "scripts": {
@@ -11,7 +11,6 @@
   },
   "dependencies": {
     "@benbeck764/react-components": "workspace:*",
-    "@benbeck764/react-components-grid": "workspace:*",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.14.12",

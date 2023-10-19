@@ -1,10 +1,10 @@
 "use client";
-import { FC, useEffect, useState } from "react";
-import { AppGrid, AppGridDataRequest } from "@benbeck764/react-components-grid";
+import { FC } from "react";
+import { AppGrid } from "@benbeck764/react-components-grid";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import { TypographySkeleton } from "@benbeck764/react-components";
 import { GridData, ResponseDto } from "../app/grid/models";
+import { TypographySkeleton } from "@benbeck764/react-components/_common";
 
 type GridProps = {
   data: ResponseDto | undefined;
@@ -13,10 +13,6 @@ type GridProps = {
 
 const Grids: FC<GridProps> = (props: GridProps) => {
   const { data, loading } = props;
-
-  const onDataRequested = (request: AppGridDataRequest): void => {
-    //setDataRequest(request);
-  };
 
   return (
     <Box width={800}>
@@ -174,7 +170,6 @@ const Grids: FC<GridProps> = (props: GridProps) => {
           },
         }}
         displayMode="card"
-        onDataRequested={onDataRequested}
       />
     </Box>
   );

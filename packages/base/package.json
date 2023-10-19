@@ -19,16 +19,18 @@
   "exports": {
     ".": {
       "import": "./dist/index.js",
+      "require": "./dist/node/index.js",
       "types": "./dist/index.d.ts"
     }
   },
-  "main": "dist/index.js",
+  "main": "dist/node/index.js",
+  "module": "dist/index.js",
   "types:": "dist/index.d.ts",
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && tsc --project tsconfig.common.json",
     "test": "echo \"Error: no test specified\" && exit 0",
     "clean": "rimraf dist && rimraf node_modules",
     "clean:dist": "rimraf dist"
@@ -59,5 +61,6 @@
   },
   "publishConfig": {
     "@benbeck764:registry": "https://npm.pkg.github.com"
-  }
+  },
+  "sideEffects": false
 }

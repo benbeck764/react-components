@@ -1,4 +1,4 @@
-import { AppCard } from "@benbeck764/react-components";
+import AppCard from "@benbeck764/react-components/Card";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import { styled } from "@mui/material/styles";

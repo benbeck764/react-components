@@ -1,8 +1,8 @@
-import { AppCard } from "@benbeck764/react-components";
 import Grids from "../../components/Grids";
 import { Suspense } from "react";
 import Await from "./Await";
 import { ResponseDto } from "./models";
+import AppCard from "@benbeck764/react-components/Card";
 
 const Search = async ({
   searchParams,

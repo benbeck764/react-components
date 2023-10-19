@@ -3,8 +3,8 @@ import { FC } from "react";
 import Typography from "@mui/material/Typography";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import { StyledBreadcrumbs, StyledLink } from "./AppBreadcrumbs.styles";
-import { isString } from "@benbeck764/react-components-common";
 import { AppBreadcrumbsProps, BreadcrumbItem } from "./AppBreadcrumbs.props";
+import { isString } from "@benbeck764/react-components-common/utilities";
 
 const AppBreadcrumbs: FC<AppBreadcrumbsProps> = (
   props: AppBreadcrumbsProps

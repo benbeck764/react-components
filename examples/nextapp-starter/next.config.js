@@ -5,6 +5,9 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
 
 const nextConfig = {
   modularizeImports: {
+    // "@benbeck764/react-components": {
+    //   transform: "@benbeck764/react-components/{{member}}",
+    // },
     "@mui/material": {
       transform: "@mui/material/{{member}}",
     },
@@ -12,15 +15,5 @@ const nextConfig = {
       transform: "@mui/icons-material/{{member}}",
     },
   },
-  // webpack: (config, { dev }) => {
-  //   config.module.rules = [
-  //     ...config.module.rules,
-  //     {
-  //       test: /libs\/.*src\/index.ts/i,
-  //       sideEffects: false,
-  //     },
-  //   ];
-  //   return config;
-  // },
 };
 module.exports = withBundleAnalyzer(nextConfig);

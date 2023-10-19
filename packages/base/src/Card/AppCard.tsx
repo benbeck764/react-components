@@ -1,5 +1,5 @@
 "use client";
-import { FC, PropsWithChildren, useState } from "react";
+import { FC, PropsWithChildren } from "react";
 import { SxProps, Theme } from "@mui/material/styles";
 import Card, { CardProps } from "@mui/material/Card";
 import { StyledPaper } from "./AppCard.styles";

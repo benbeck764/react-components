@@ -1,8 +1,8 @@
 "use client";
 
 // Export Theme
-export * from "./_theme";
 export { default as CustomThemeProvider } from "./_theme";
+export * from "./_theme";
 
 // Common
 export { default as CloseButton } from "./_common/CloseButton";
@@ -65,5 +65,5 @@ export { default as AppChipTextField } from "./TextField/ChipTextField/AppChipTe
 
 export { default as AppToast } from "./Toast/AppToast";
 
-// // Re-export from @benbeck764/react-components-common
+// Re-export from @benbeck764/react-components-common
 export * from "@benbeck764/react-components-common";
