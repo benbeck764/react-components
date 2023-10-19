@@ -1,6 +1,6 @@
 {
   "name": "@benbeck764/react-components",
-  "version": "1.4.0-beta.11",
+  "version": "1.4.0-beta.12",
   "description": "Base components built utilizing MUI v5.",
   "author": "Ben Beck",
   "license": "ISC",
@@ -24,6 +24,8 @@
   ],
   "scripts": {
     "build": "tsc && tsc --project tsconfig.common.json",
+    "publish": "pnpm publish ./dist",
+    "publish:copy": "cp package.json dist/package.json && pnpm pack ./dist",
     "test": "echo \"Error: no test specified\" && exit 0",
     "clean": "rimraf dist && rimraf node_modules",
     "clean:dist": "rimraf dist"
