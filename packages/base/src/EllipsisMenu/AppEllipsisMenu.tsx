@@ -5,7 +5,7 @@ import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { AppMenu, AppMenuDividerVariant, AppMenuMode } from "../Menu/AppMenu";
 import { PopperPlacementType } from "@mui/material/Popper";
 
-type AppEllipsisMenuProps = {
+export type AppEllipsisMenuProps = {
   mode: AppMenuMode;
   iconSize: "small" | "inherit" | "medium" | "large";
   menuWidth?: number;

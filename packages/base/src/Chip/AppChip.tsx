@@ -4,7 +4,7 @@ import { SxProps, Theme } from "@mui/material/styles";
 import CancelIcon from "@mui/icons-material/Cancel";
 import Chip from "@mui/material/Chip";
 
-type AppChipProps = {
+export type AppChipProps = {
   label?: string | React.ReactNode;
   index?: number;
   sx?: SxProps<Theme>;

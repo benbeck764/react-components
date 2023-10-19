@@ -9,7 +9,7 @@ import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 import IconButton from "@mui/material/IconButton";
 
-type AppEditableTitleProps = {
+export type AppEditableTitleProps = {
   defaultEditState?: boolean;
   defaultValue?: string;
   size?: "small" | "medium";

@@ -12,9 +12,9 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Collapse from "@mui/material/Collapse";
 
-type AppDropdownVariant = "header" | "subheader";
+export type AppDropdownVariant = "header" | "subheader";
 
-type AppDropdownProps = {
+export type AppDropdownProps = {
   variant?: AppDropdownVariant;
   title?: string | React.ReactNode;
   subTitle?: React.ReactNode;

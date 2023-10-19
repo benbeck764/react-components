@@ -1,7 +1,7 @@
 "use client";
 import { SxProps, Theme } from "@mui/material/styles";
 import { PropsWithChildren } from "react";
-import { StyledMenuItem } from "../Select/AppSelect.styles";
+import { StyledMenuItem } from "../AppSelect.styles";
 import { SelectItem } from "./SelectItem";
 
 export type AppSelectMenuItemProps<TItem> = {

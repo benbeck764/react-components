@@ -2,15 +2,15 @@
 import { SxProps, Theme } from "@mui/material/styles";
 import { Ref, useEffect, useImperativeHandle, useState } from "react";
 import AppMultiSelectMenuItem from "./AppMultiSelectMenuItem";
-import AppChip from "../../Chip/AppChip";
-import { SelectItem } from "../common/SelectItem";
-import StyledLabelBox from "../../_common/LabelBox";
+import AppChip from "../Chip/AppChip";
+import { SelectItem } from "../Select/common/SelectItem";
+import StyledLabelBox from "../_common/LabelBox";
 import FormControl from "@mui/material/FormControl";
 import Typography from "@mui/material/Typography";
 import Select from "@mui/material/Select";
 import Box from "@mui/material/Box";
 
-type AppSelectProps<TItem> = {
+export type AppSelectProps<TItem> = {
   inputRef?: React.MutableRefObject<HTMLInputElement | null>;
   resetRef?: Ref<{ reset: (defaultValues?: SelectItem<TItem>[]) => void }>;
   items: SelectItem<TItem>[];

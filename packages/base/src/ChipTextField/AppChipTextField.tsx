@@ -4,14 +4,14 @@ import WarningAmberIcon from "@mui/icons-material/WarningAmber";
 import {
   AppTextFieldRefProps,
   AppTextFieldPropSizes,
-} from "../AppTextField.common.props";
+} from "../TextField/AppTextField.props";
 import {
   StyledChipsInput,
   StyledChipsInputEndAdornment,
   StyledInputAdornment,
-} from "../AppTextField.styles";
-import AppChip from "../../Chip/AppChip";
-import { CloseButton, StyledLabelBox } from "../../_common";
+} from "../TextField/AppTextField.styles";
+import AppChip from "../Chip/AppChip";
+import { CloseButton, StyledLabelBox } from "../_common";
 import { InputProps } from "@mui/material/Input";
 import { Theme, useTheme } from "@mui/material/styles";
 import ClickAwayListener from "@mui/material/ClickAwayListener";

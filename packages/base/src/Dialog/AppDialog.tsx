@@ -6,7 +6,7 @@ import {
   StyledDialogContainer,
   StyledDialogFooter,
 } from "./AppDialog.styles";
-import AppContentLoader from "../Loader/AppContentLoader";
+import AppContentLoader from "../ContentLoader/AppContentLoader";
 import { ButtonProps } from "@mui/material/Button";
 import debounce from "@mui/material/utils/debounce";
 import Stack from "@mui/material/Stack";
@@ -16,7 +16,7 @@ import IconButton from "@mui/material/IconButton";
 import { SxProps, Theme } from "@mui/material/styles";
 import AppButton from "../Button/AppButton";
 
-type AppDialogProps = {
+export type AppDialogProps = {
   open: boolean;
   onClose?: () => void;
   title?: string;

@@ -6,7 +6,7 @@ import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import {
   AppTextFieldRefProps,
   AppTextFieldPropSizes,
-} from "./AppTextField.common.props";
+} from "./AppTextField.props";
 import StyledLabelBox from "../_common/LabelBox";
 import { CloseButton } from "../_common";
 import { InputProps } from "@mui/material/Input";

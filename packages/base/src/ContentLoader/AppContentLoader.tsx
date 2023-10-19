@@ -1,8 +1,7 @@
 "use client";
 import { FC } from "react";
 import { SxProps, Theme } from "@mui/material/styles";
-import { StyledOverlayBox, StyledCenteredBox } from "./Loader.styles";
-import { circularProgressPropsBase } from "./constants";
+import { StyledOverlay, StyledLoaderWrapper } from "./ContentLoader.styles";
 import CircularProgress from "@mui/material/CircularProgress";
 
 export interface AppContentLoaderProps {
@@ -14,11 +13,16 @@ const AppContentLoader: FC<AppContentLoaderProps> = (
   props: AppContentLoaderProps
 ) => {
   return (
-    <StyledOverlayBox hidden={!props.loading} sx={props.sx}>
-      <StyledCenteredBox>
-        <CircularProgress {...circularProgressPropsBase} />
-      </StyledCenteredBox>
-    </StyledOverlayBox>
+    <StyledOverlay hidden={!props.loading} sx={props.sx}>
+      <StyledLoaderWrapper>
+        <CircularProgress
+          color="secondary"
+          variant="indeterminate"
+          size="3.25em"
+          thickness={4}
+        />
+      </StyledLoaderWrapper>
+    </StyledOverlay>
   );
 };
 

@@ -1,7 +1,7 @@
 import Box from "@mui/material/Box";
 import { styled } from "@mui/material/styles";
 
-export const StyledOverlayBox = styled(Box)({
+export const StyledOverlay = styled(Box)({
   position: "fixed",
   top: 0,
   left: 0,
@@ -11,7 +11,7 @@ export const StyledOverlayBox = styled(Box)({
   zIndex: 100,
 });
 
-export const StyledCenteredBox = styled(Box)({
+export const StyledLoaderWrapper = styled(Box)({
   position: "absolute",
   top: "50%",
   left: "50%",
