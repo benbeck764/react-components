@@ -1,6 +1,6 @@
 {
   "name": "@benbeck764/react-components",
-  "version": "1.4.0-beta.15",
+  "version": "1.4.0-beta.16",
   "description": "Base components built utilizing MUI v5.",
   "author": "Ben Beck",
   "license": "ISC",
@@ -21,7 +21,9 @@
   "types:": "index.d.ts",
   "files": [
     "!dist",
-    "!src"
+    "!src",
+    "./**/*.js",
+    "./**/*.d.ts"
   ],
   "scripts": {
     "build": "pnpm build:esm && pnpm build:common",
