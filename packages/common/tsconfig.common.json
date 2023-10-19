@@ -6,10 +6,5 @@
     "declaration": false
   },
   "include": ["src/**/*.ts*"],
-  "exclude": [
-    "node_modules",
-    "dist",
-    "src/_stories/**/*",
-    "src/**/*.stories.tsx"
-  ]
+  "exclude": ["node_modules", "dist"]
 }
