@@ -1,6 +1,6 @@
 {
   "name": "@benbeck764/react-components-imagecropper",
-  "version": "1.4.0-beta.12",
+  "version": "1.4.0-beta.13",
   "description": "Image cropper component built utilizing MUI v5 & react-image-crop.",
   "repository": {
     "type": "git",
@@ -24,7 +24,6 @@
   ],
   "scripts": {
     "build": "tsc && tsc --project tsconfig.common.json",
-    "publish": "pnpm publish",
     "test": "echo \"Error: no test specified\" && exit 0",
     "clean": "rimraf dist && rimraf node_modules",
     "clean:dist": "rimraf dist"
