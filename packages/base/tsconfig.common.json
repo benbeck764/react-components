@@ -2,18 +2,8 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "module": "CommonJS",
-    "target": "ES2019",
-    "moduleResolution": "node",
-    "declaration": false,
-    "esModuleInterop": true,
-    "strict": true,
-    "skipLibCheck": true,
-    "jsx": "react-jsx",
-    "emitDeclarationOnly": false,
     "outDir": "dist/node",
-    "allowSyntheticDefaultImports": true,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true
+    "declaration": false
   },
   "include": ["src/**/*.ts*"],
   "exclude": [
