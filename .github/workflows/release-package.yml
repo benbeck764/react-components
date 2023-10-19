@@ -34,7 +34,7 @@ jobs:
         with:
           version: 8
       - run: pnpm install --no-frozen-lockfile
-      - run: pnpm -r --filter="./packages/*" run build
+      - run: pnpm -r --filter="./packages/*" run build:prod
       - run: pnpm -r --filter="./packages/*" publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
