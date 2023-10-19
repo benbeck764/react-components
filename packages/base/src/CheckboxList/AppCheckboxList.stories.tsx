@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Meta, StoryObj } from "@storybook/react";
-import CustomThemeProvider from "../_theme/CustomThemeProvider";
+import CustomThemeProvider from "../theme/CustomThemeProvider";
 import { createTheme } from "@mui/material/styles";
-import { defaultThemeOptions } from "../_theme/base.theme";
-import { getMUITheme } from "../_theme/mui.theme";
+import { defaultThemeOptions } from "../theme/base.theme";
+import { getMUITheme } from "../theme/mui.theme";
 import AppCheckboxList, { AppCheckboxListProps } from "./AppCheckboxList";
 import { CheckboxItem } from "../Checkbox/AppCheckbox.props";
 

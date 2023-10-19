@@ -3,9 +3,9 @@ import { Meta, StoryObj } from "@storybook/react";
 import { createTheme } from "@mui/material/styles";
 import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
-import CustomThemeProvider from "../_theme/CustomThemeProvider";
-import { defaultThemeOptions } from "../_theme/base.theme";
-import { getMUITheme } from "../_theme/mui.theme";
+import CustomThemeProvider from "../theme/CustomThemeProvider";
+import { defaultThemeOptions } from "../theme/base.theme";
+import { getMUITheme } from "../theme/mui.theme";
 import AppCard, { AppCardProps } from "./AppCard";
 
 type AppCardStoryProps = AppCardProps;

@@ -16,13 +16,6 @@
     "url": "https://github.com/benbeck764/react-components/issues"
   },
   "homepage": "https://github.com/benbeck764/react-components#readme",
-  "exports": {
-    ".": {
-      "import": "./dist/index.js",
-      "require": "./dist/node/index.js",
-      "types": "./dist/index.d.ts"
-    }
-  },
   "main": "dist/node/index.js",
   "module": "dist/index.js",
   "types:": "dist/index.d.ts",

@@ -1,11 +1,14 @@
 import Box from "@mui/material/Box";
 import Test from "./test";
+import AppCard from "@benbeck764/react-components/Card";
 
 const Home = () => {
   return (
-    <Box>
-      <Test />
-    </Box>
+    <AppCard>
+      <Box>
+        <Test />
+      </Box>
+    </AppCard>
   );
 };
 

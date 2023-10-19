@@ -1,7 +1,7 @@
 import React from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import AppMenu, { AppMenuProps } from "./AppMenu";
-import CustomThemeProvider from "../_theme/CustomThemeProvider";
+import CustomThemeProvider from "../theme/CustomThemeProvider";
 import AppMenuItem from "./components/AppMenuItem/AppMenuItem";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import CardMembershipIcon from "@mui/icons-material/CardMembership";
@@ -10,8 +10,8 @@ import Typography from "@mui/material/Typography";
 import { Theme, createTheme } from "@mui/material/styles";
 import Avatar from "@mui/material/Avatar";
 import { useState } from "react";
-import { defaultThemeOptions } from "../_theme/base.theme";
-import { getMUITheme } from "../_theme/mui.theme";
+import { defaultThemeOptions } from "../theme/base.theme";
+import { getMUITheme } from "../theme/mui.theme";
 
 type AppMenuStoryProps = AppMenuProps;
 type Story = StoryObj<typeof AppMenu>;

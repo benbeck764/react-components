@@ -1,7 +1,7 @@
 import React from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import AppDatePicker, { AppDatePickerProps } from "./AppDatePicker";
-import CustomThemeProvider from "@benbeck764/react-components/_theme";
+import CustomThemeProvider from "@benbeck764/react-components/theme";
 import { createTheme } from "@mui/material/styles";
 import Stack from "@mui/material/Stack";
 
