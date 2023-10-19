@@ -1,6 +1,6 @@
 {
   "name": "@benbeck764/react-components-imagecropper",
-  "version": "1.4.0-beta.14",
+  "version": "1.4.0-beta.15",
   "description": "Image cropper component built utilizing MUI v5 & react-image-crop.",
   "repository": {
     "type": "git",
