@@ -1,11 +1,10 @@
 {
   "compilerOptions": {
-    "baseUrl": "./",
     "paths": {
       "@benbeck764/react-components": ["./packages/base/dist"],
       "@benbeck764/react-components/*": ["./packages/base/dist/*"],
-      "@benbeck764/react-components-common": ["./packages/common/src"],
-      "@benbeck764/react-components-common/*": ["./packages/common/src/*"],
+      "@benbeck764/react-components-common": ["./packages/common/dist"],
+      "@benbeck764/react-components-common/*": ["./packages/common/dist/*"],
       "@benbeck764/react-components-datepicker": ["./packages/date-picker/src"],
       "@benbeck764/react-components-datepicker/*": [
         "./packages/date-picker/src/*"
