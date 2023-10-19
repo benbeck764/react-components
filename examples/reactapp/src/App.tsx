@@ -1,5 +1,5 @@
+import CustomThemeProvider from "@benbeck764/react-components/_theme";
 import AppContent from "./AppContent";
-import { CustomThemeProvider } from "@benbeck764/react-components";
 import { theme } from "./theme/theme";
 import CssBaseline from "@mui/material/CssBaseline";
 

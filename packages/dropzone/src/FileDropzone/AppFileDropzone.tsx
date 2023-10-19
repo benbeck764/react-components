@@ -11,13 +11,13 @@ import {
 } from "./AppFileDropzone.styles";
 import AppFileDropzoneImageTooltip from "./components/AppFileDropzoneImageTooltip";
 import { DropzoneDefaultFile, DropzoneFile } from "./AppFileDropzone.types";
-import { StyledLabelBox } from "@benbeck764/react-components";
+import { StyledLabelBox } from "@benbeck764/react-components/common";
 import { SxProps, Theme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
 
-type AppFileDropzoneProps = DropzoneOptions & {
+export type AppFileDropzoneProps = DropzoneOptions & {
   defaultFiles?: DropzoneDefaultFile[];
   resetRef?: Ref<{ reset: (defaultFiles?: DropzoneDefaultFile[]) => void }>;
   inputLabel?: string | React.ReactNode;

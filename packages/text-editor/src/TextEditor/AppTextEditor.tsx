@@ -3,11 +3,11 @@ import { FC, useState, Ref, useImperativeHandle } from "react";
 import ReactQuill, { UnprivilegedEditor } from "react-quill";
 import { editorFormats, toolbarOptions } from "./AppTextEditor.config";
 import { StyledQuillWrapper } from "./AppTextEditor.styles";
-import { StyledLabelBox } from "@benbeck764/react-components";
+import { StyledLabelBox } from "@benbeck764/react-components/common";
 import { SxProps, Theme } from "@mui/material/styles";
 import Typography from "@mui/material/Typography";
 
-type AppTextEditorProps = {
+export type AppTextEditorProps = {
   defaultValue?: string;
   resetRef?: Ref<{ reset: (defaultValue?: string) => void }>;
   inputLabel?: string | React.ReactNode;

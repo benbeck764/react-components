@@ -1,4 +1,3 @@
-import { AppMenu, AppMenuItem } from "@benbeck764/react-components";
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
@@ -6,6 +5,8 @@ import { FC } from "react";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import CardMembershipIcon from "@mui/icons-material/CardMembership";
 import { Theme } from "@mui/material/styles";
+import AppMenuItem from "@benbeck764/react-components/Menu/AppMenuItem";
+import { AppMenu } from "@benbeck764/react-components/Menu";
 
 const MenuOptions = (
   <>

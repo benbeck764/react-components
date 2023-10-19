@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import { Theme, SxProps } from "@mui/material/styles";
 import * as CSS from "csstype";
-import { SelectItem } from "@benbeck764/react-components";
+import { SelectItem } from "@benbeck764/react-components/Select";
 import { TableCellProps } from "@mui/material/TableCell";
 import { TableProps } from "@mui/material/Table";
 import { TableRowProps } from "@mui/material/TableRow";

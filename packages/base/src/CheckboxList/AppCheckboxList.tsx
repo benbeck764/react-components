@@ -10,7 +10,7 @@ import {
 } from "../Checkbox/AppCheckbox.props";
 import { StyledFormGroup, StyledViewMore } from "./AppCheckboxList.styles";
 import { AppSelectAllCheckbox } from "../Checkbox/components/AppSelectAllCheckbox";
-import StyledLabelBox from "../_common/LabelBox";
+import { StyledLabelBox } from "../common";
 import { SxProps, Theme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";

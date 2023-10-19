@@ -2,7 +2,7 @@
 import Box from "@mui/material/Box";
 import { styled } from "@mui/material/styles";
 
-type EllipsingTextContainerProps = {
+export type EllipsingTextContainerProps = {
   lines: number;
 } & (
   | {
@@ -13,7 +13,7 @@ type EllipsingTextContainerProps = {
     }
 );
 
-const StyledEllipsingTextContainer = styled(Box, {
+export const StyledEllipsingTextContainer = styled(Box, {
   shouldForwardProp: (prop) =>
     prop !== "lines" && prop !== "reserveHeight" && prop !== "variant",
 })<EllipsingTextContainerProps>(
@@ -31,5 +31,3 @@ const StyledEllipsingTextContainer = styled(Box, {
       : {}),
   })
 );
-
-export default StyledEllipsingTextContainer;

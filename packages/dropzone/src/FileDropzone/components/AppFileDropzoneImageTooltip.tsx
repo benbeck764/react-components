@@ -1,6 +1,6 @@
 "use client";
 import { FC, ReactElement } from "react";
-import { AppCard } from "@benbeck764/react-components";
+import AppCard from "@benbeck764/react-components/Card";
 import Tooltip from "@mui/material/Tooltip";
 import Box from "@mui/material/Box";
 

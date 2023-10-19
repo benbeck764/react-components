@@ -3,7 +3,7 @@ import * as React from "react";
 import CssBaseline from "@mui/material/CssBaseline";
 import NextAppDirEmotionCacheProvider from "./EmotionCache";
 import { theme } from "./theme";
-import { CustomThemeProvider } from "@benbeck764/react-components";
+import CustomThemeProvider from "@benbeck764/react-components/_theme";
 
 // https://github.com/mui/material-ui/blob/master/examples/material-ui-nextjs-ts
 export default function ThemeRegistry({

@@ -13,7 +13,7 @@ import {
   StyledPanelBox,
   StyledDrawer,
 } from "./AppDrawer.styles";
-import { CloseButton } from "../_common";
+import { CloseButton } from "../common";
 import { DrawerProps } from "@mui/material/Drawer";
 import { ButtonProps } from "@mui/material/Button";
 import { SxProps, Theme } from "@mui/material/styles";

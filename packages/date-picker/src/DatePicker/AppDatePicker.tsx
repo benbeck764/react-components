@@ -8,10 +8,8 @@ import {
 } from "@mui/x-date-pickers";
 import { AdapterMoment } from "@mui/x-date-pickers/AdapterMoment";
 import { Moment } from "moment";
-import {
-  StyledLabelBox,
-  AppTextFieldPropSizes,
-} from "@benbeck764/react-components";
+import { StyledLabelBox } from "@benbeck764/react-components/common";
+import { AppTextFieldPropSizes } from "@benbeck764/react-components/TextField";
 import {
   useBreakpoint,
   BreakpointDevice,

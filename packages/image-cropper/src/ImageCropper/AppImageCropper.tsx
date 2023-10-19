@@ -11,7 +11,7 @@ import {
 import ReactCrop, { Crop, PixelCrop, ReactCropProps } from "react-image-crop";
 import "react-image-crop/dist/ReactCrop.css";
 
-type AppImageCropperProps = Omit<ReactCropProps, "crop" | "onChange"> & {
+export type AppImageCropperProps = Omit<ReactCropProps, "crop" | "onChange"> & {
   image: Blob;
   cropImageRef?: Ref<{ cropImage: () => Promise<Blob | null> }>;
   cropConfig?: Crop;

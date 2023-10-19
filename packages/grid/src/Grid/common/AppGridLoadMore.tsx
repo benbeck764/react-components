@@ -1,7 +1,7 @@
 "use client";
-import { FC, RefObject } from "react";
+import { FC } from "react";
 import { Theme, SxProps } from "@mui/material/styles";
-import { AppButton } from "@benbeck764/react-components";
+import AppButton from "@benbeck764/react-components/Button";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 

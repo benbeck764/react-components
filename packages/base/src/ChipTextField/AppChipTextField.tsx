@@ -11,7 +11,7 @@ import {
   StyledInputAdornment,
 } from "../TextField/AppTextField.styles";
 import AppChip from "../Chip/AppChip";
-import { CloseButton, StyledLabelBox } from "../_common";
+import { CloseButton, StyledLabelBox } from "../common";
 import { InputProps } from "@mui/material/Input";
 import { Theme, useTheme } from "@mui/material/styles";
 import ClickAwayListener from "@mui/material/ClickAwayListener";

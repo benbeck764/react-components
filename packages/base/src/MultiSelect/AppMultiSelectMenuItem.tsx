@@ -3,7 +3,7 @@ import { SxProps, Theme } from "@mui/material/styles";
 import { StyledMultiSelectMenuItem } from "./AppMultiSelect.styles";
 import { CheckboxItem } from "../Checkbox/AppCheckbox.props";
 import AppCheckbox from "../Checkbox/AppCheckbox";
-import { SelectItem } from "../Select/common/SelectItem";
+import { SelectItem } from "../Select/SelectItem";
 
 export type AppMultiSelectMenuItemProps<TItem> = {
   item: SelectItem<TItem>;

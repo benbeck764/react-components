@@ -2,7 +2,7 @@ import React from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import AppGrid from "./AppGrid";
 import { AppGridProps } from "./AppGrid.props";
-import { CustomThemeProvider } from "@benbeck764/react-components";
+import CustomThemeProvider from "@benbeck764/react-components/theme";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import { createTheme } from "@mui/material/styles";

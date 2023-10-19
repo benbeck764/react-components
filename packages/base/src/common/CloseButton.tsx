@@ -21,5 +21,3 @@ export const CloseButton: FC<CloseButtonProps> = (props: CloseButtonProps) => {
     </IconButton>
   );
 };
-
-export default CloseButton;

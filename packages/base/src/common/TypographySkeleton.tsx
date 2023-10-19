@@ -9,7 +9,7 @@ import Typography, {
 } from "@mui/material/Typography";
 import Skeleton from "@mui/material/Skeleton";
 
-type TypographySkeletonProps = {
+export type TypographySkeletonProps = {
   charCount: number;
   charCountVariance?: number;
   variant?: OverridableStringUnion<Variant, TypographyPropsVariantOverrides>;
@@ -17,7 +17,7 @@ type TypographySkeletonProps = {
   sx?: SxProps<Theme>;
 };
 
-const TypographySkeleton: FC<TypographySkeletonProps> = (
+export const TypographySkeleton: FC<TypographySkeletonProps> = (
   props: TypographySkeletonProps
 ) => {
   const { charCount, charCountVariance, variant, lines, sx } = props;
@@ -42,5 +42,3 @@ const TypographySkeleton: FC<TypographySkeletonProps> = (
     </>
   );
 };
-
-export default TypographySkeleton;

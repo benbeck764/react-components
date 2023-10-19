@@ -7,8 +7,7 @@ import {
   AppTextFieldRefProps,
   AppTextFieldPropSizes,
 } from "./AppTextField.props";
-import StyledLabelBox from "../_common/LabelBox";
-import { CloseButton } from "../_common";
+import { CloseButton, StyledLabelBox } from "../common";
 import { InputProps } from "@mui/material/Input";
 import FormControl from "@mui/material/FormControl";
 import Typography from "@mui/material/Typography";

@@ -1,7 +1,7 @@
 "use client";
 import Grid from "@mui/material/Grid";
 import { AppGridCardViewDefinition } from "../../AppGrid.props";
-import { AppCard } from "@benbeck764/react-components";
+import AppCard from "@benbeck764/react-components/Card";
 
 export function AppGridSkeletonCard<TItem>(props: {
   cardViewDefinition: AppGridCardViewDefinition<TItem>;

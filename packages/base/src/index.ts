@@ -1,14 +1,11 @@
 "use client";
 
-// Export Theme
-export { default as CustomThemeProvider } from "./_theme";
-export * from "./_theme";
-
 // Common
-export { default as CloseButton } from "./_common/CloseButton";
-export { default as StyledEllipsingTextContainer } from "./_common/EllipsingText";
-export { default as StyledLabelBox } from "./_common/LabelBox";
-export { default as TypographySkeleton } from "./_common/TypographySkeleton";
+export * from "./common";
+
+// Export Theme
+export { default as CustomThemeProvider } from "./theme";
+export * from "./theme";
 
 // Base Components
 export { default as AppBreadcrumbs } from "./Breadcrumbs";
