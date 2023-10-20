@@ -1,4 +1,3 @@
-import React from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import AppDatePicker, { AppDatePickerProps } from "./AppDatePicker";
 import CustomThemeProvider from "@benbeck764/react-components/theme";

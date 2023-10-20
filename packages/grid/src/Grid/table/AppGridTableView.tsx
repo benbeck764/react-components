@@ -1,6 +1,6 @@
 "use client";
 import Box from "@mui/material/Box";
-import { AppBreakpoint } from "@benbeck764/react-components-common";
+import { AppBreakpoint } from "@benbeck764/react-components-common/hooks";
 import {
   AppGridColumnDefinition,
   AppGridProps,

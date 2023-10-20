@@ -45,12 +45,7 @@ const AppEllipsisMenu: FC<PropsWithChildren<AppEllipsisMenuProps>> = (
           placement: placement ?? "bottom",
           open: false,
         }}
-        popperSx={{
-          borderRadius: 0,
-          boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.15)",
-          border: "none",
-          ...popperSx,
-        }}
+        popperSx={popperSx}
       >
         {children}
       </AppMenu>

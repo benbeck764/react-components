@@ -13,7 +13,7 @@ import { AppTextFieldPropSizes } from "@benbeck764/react-components/TextField";
 import {
   useBreakpoint,
   BreakpointDevice,
-} from "@benbeck764/react-components-common";
+} from "@benbeck764/react-components-common/hooks";
 import { SxProps, Theme, useTheme } from "@mui/material/styles";
 import FormControl from "@mui/material/FormControl";
 import Typography from "@mui/material/Typography";

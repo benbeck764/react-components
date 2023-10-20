@@ -11,6 +11,7 @@ import Avatar from "@mui/material/Avatar";
 import { defaultThemeOptions } from "../theme/base.theme";
 import { getMUITheme } from "../theme/mui.theme";
 import { AppMenuItem } from "./AppMenuItem";
+import AppButton from "../Button/AppButton";
 
 type AppMenuStoryProps = AppMenuProps;
 type Story = StoryObj<typeof AppMenu>;
@@ -42,7 +43,7 @@ export const ButtonMenu: Story = (args: AppMenuStoryProps) => {
   const theme = createTheme(getMUITheme(defaultThemeOptions));
   return (
     <CustomThemeProvider theme={theme}>
-      <Stack direction="row" gap={1}>
+      <Stack direction="row" gap={1} ml={20}>
         <AppMenu {...args}>{MenuOptions}</AppMenu>
       </Stack>
     </CustomThemeProvider>
@@ -103,6 +104,33 @@ export const PanelMenu: Story = (args: AppMenuStoryProps) => {
 PanelMenu.args = {
   mode: "panel",
   buttonProps: { children: "Panel Menu" },
+  menuWidth: 150,
+};
+
+export const ControlledMenu: Story = (args: AppMenuStoryProps) => {
+  const theme = createTheme(getMUITheme(defaultThemeOptions));
+  const [open, setOpen] = useState<boolean>(false);
+  return (
+    <CustomThemeProvider theme={theme}>
+      <Stack direction="row" gap={1}>
+        <AppButton onClick={() => setOpen(!open)}>Open/Close</AppButton>
+        <AppMenu
+          {...args}
+          onMenuOpen={() => setOpen(true)}
+          onMenuClose={() => setOpen(false)}
+          forcedToggleState={open}
+        >
+          <Typography textAlign="center" variant="h6">
+            Hello World!
+          </Typography>
+        </AppMenu>
+      </Stack>
+    </CustomThemeProvider>
+  );
+};
+ControlledMenu.args = {
+  mode: "panel",
+  buttonProps: { children: "Controlled Menu" },
   menuWidth: 150,
 };
 

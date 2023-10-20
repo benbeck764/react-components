@@ -7,7 +7,7 @@ import {
   StyledMinusIcon,
 } from "./AppCheckbox.styles";
 import { AppLoadingCheckbox } from "./components/AppLoadingCheckbox";
-import { isString } from "@benbeck764/react-components-common";
+import { isString } from "@benbeck764/react-components-common/utilities";
 import { AppCheckboxProps, CheckboxItem } from "./AppCheckbox.props";
 import { Theme } from "@mui/material/styles";
 import Typography from "@mui/material/Typography";

@@ -2,7 +2,7 @@
 import { Theme, styled, SxProps } from "@mui/material/styles";
 import { ReactNode } from "react";
 import { AppGridDisplayMode } from "../AppGrid.props";
-import { isString } from "@benbeck764/react-components-common";
+import { isString } from "@benbeck764/react-components-common/utilities";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 

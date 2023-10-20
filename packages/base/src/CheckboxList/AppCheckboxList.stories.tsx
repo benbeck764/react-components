@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import CustomThemeProvider from "../theme/CustomThemeProvider";
 import { createTheme } from "@mui/material/styles";

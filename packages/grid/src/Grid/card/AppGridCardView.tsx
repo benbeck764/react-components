@@ -1,7 +1,7 @@
 "use client";
 import Box from "@mui/material/Box";
 import { AppGridCardViewDefinition, AppGridProps } from "../AppGrid.props";
-import { AppBreakpoint } from "@benbeck764/react-components-common";
+import { AppBreakpoint } from "@benbeck764/react-components-common/hooks";
 import { getPropertyByBreakpoint } from "../utility/grid-breakpoint";
 import { AppGridCardViewBody } from "./body/AppGridCardViewBody";
 import { AppGridCardViewVirtualizedBody } from "./body/AppGridVirtualizedCardViewBody";

@@ -12,7 +12,7 @@ import { AppGridTableView } from "./table/AppGridTableView";
 import { getIsLoading, getLastPage } from "./utility/grid-helpers";
 import { AppGridCardView } from "./card/AppGridCardView";
 import { AppGridLoadMore } from "./common/AppGridLoadMore";
-import { useBreakpoint } from "@benbeck764/react-components-common";
+import { useBreakpoint } from "@benbeck764/react-components-common/hooks";
 import AppSelect, { SelectItem } from "@benbeck764/react-components/Select";
 import AppTextField from "@benbeck764/react-components/TextField";
 
