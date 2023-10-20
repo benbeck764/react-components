@@ -19,6 +19,7 @@ import { ButtonProps } from "@mui/material/Button";
 import { SxProps, Theme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Divider from "@mui/material/Divider";
+import ListItem from "@mui/material/ListItem";
 
 export type AppDrawerMode = "menu" | "panel";
 
@@ -30,27 +31,41 @@ export interface AppDrawerProps {
   drawerProps?: DrawerProps;
   displayAboveHeader?: boolean;
   forcedToggleState?: boolean;
-  onDrawerOpen?: () => void;
   listProps?: React.ButtonHTMLAttributes<HTMLUListElement>;
   panelSx?: SxProps<Theme>;
   prefix?: ReactNode | string;
   closeButtonContainer?: HTMLElement | null;
+  onDrawerOpen?: () => void;
 }
 
 const AppDrawer: FC<PropsWithChildren<AppDrawerProps>> = (
   props: PropsWithChildren<AppDrawerProps>
 ) => {
+  const {
+    children,
+    mode,
+    displayDividers,
+    closeOnSelect,
+    buttonProps,
+    drawerProps,
+    displayAboveHeader,
+    forcedToggleState,
+    listProps,
+    panelSx,
+    prefix,
+    closeButtonContainer,
+    onDrawerOpen,
+  } = props;
+
   const [open, setOpen] = useState<boolean>(
-    typeof props.forcedToggleState !== "undefined"
-      ? props.forcedToggleState
-      : false
+    typeof forcedToggleState !== "undefined" ? forcedToggleState : false
   );
 
   useEffect(() => {
-    if (typeof props.forcedToggleState !== "undefined") {
-      setOpen(props.forcedToggleState);
+    if (typeof forcedToggleState !== "undefined") {
+      setOpen(forcedToggleState);
     }
-  }, [props.forcedToggleState]);
+  }, [forcedToggleState]);
 
   const handleClose = (
     event: React.KeyboardEvent | React.MouseEvent,
@@ -69,17 +84,17 @@ const AppDrawer: FC<PropsWithChildren<AppDrawerProps>> = (
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setOpen(!open);
-    props.buttonProps?.onClick?.(event);
+    buttonProps?.onClick?.(event);
   };
 
   const handleItemClick = () => {
     setOpen(false);
   };
 
-  const buttonPropsAugmented = { ...props.buttonProps };
+  const buttonPropsAugmented = { ...buttonProps };
   buttonPropsAugmented.onClick = handleClick;
 
-  const numChildren = React.Children.count(props.children);
+  const numChildren = React.Children.count(children);
 
   const closeButton = (
     <CloseButton
@@ -93,65 +108,70 @@ const AppDrawer: FC<PropsWithChildren<AppDrawerProps>> = (
 
   return (
     <>
-      {props.closeButtonContainer &&
-        ReactDOM.createPortal(closeButton, props.closeButtonContainer)}
-      {props.buttonProps && (
+      {closeButtonContainer &&
+        ReactDOM.createPortal(closeButton, closeButtonContainer)}
+      {buttonProps && (
         <StyledButton {...buttonPropsAugmented}>
-          {props.buttonProps?.children}
+          {buttonProps?.children}
         </StyledButton>
       )}
 
       <StyledDrawer
-        displayAboveHeader={props.displayAboveHeader}
-        {...props.drawerProps}
+        displayAboveHeader={displayAboveHeader}
+        {...drawerProps}
         open={open}
         onClose={handleClose}
         SlideProps={{
           addEndListener: () => {
             if (open) {
-              props.onDrawerOpen?.();
+              onDrawerOpen?.();
             }
           },
         }}
       >
-        {props.mode === "menu" && (
+        {mode === "menu" && (
           <StyledList
             sx={
-              props.displayAboveHeader
+              displayAboveHeader
                 ? {}
                 : {
                     marginBottom: (theme) =>
                       `${theme.headerHeights?.[`xs`]}px` ?? 0,
                   }
             }
-            {...props.listProps}
+            {...listProps}
           >
             <>
-              {props.prefix && props.prefix}
-              {React.Children.map(props.children, (child, index) => {
+              {prefix && prefix}
+              {React.Children.map(children, (child, index) => {
                 return (
                   <>
-                    {props.closeOnSelect === true && (
-                      <li onClick={handleItemClick}>{child}</li>
+                    {closeOnSelect === true && (
+                      <ListItem
+                        disableGutters
+                        onClick={handleItemClick}
+                        sx={{ display: "list-item", py: 0 }}
+                      >
+                        {child}
+                      </ListItem>
                     )}
-                    {props.closeOnSelect !== true && <li>{child}</li>}
-                    {props.displayDividers === true &&
-                      index < numChildren - 1 && (
-                        <Box sx={{ padding: "0px 16px" }}>
-                          <Divider variant="fullWidth" />
-                        </Box>
-                      )}
+                    {closeOnSelect !== true && <li>{child}</li>}
+                    {displayDividers === true && index < numChildren - 1 && (
+                      <Box sx={{ padding: "0px 16px" }}>
+                        <Divider variant="fullWidth" />
+                      </Box>
+                    )}
                   </>
                 );
               })}
             </>
           </StyledList>
         )}
-        {props.mode === "panel" && (
-          <StyledPanelBox sx={props.panelSx}>
+        {mode === "panel" && (
+          <StyledPanelBox sx={panelSx}>
             <>
-              {props.prefix && props.prefix}
-              {props.children}
+              {prefix && prefix}
+              {children}
             </>
           </StyledPanelBox>
         )}

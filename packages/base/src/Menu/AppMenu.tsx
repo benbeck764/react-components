@@ -16,6 +16,7 @@ import Popper, { PopperProps } from "@mui/material/Popper";
 import Box from "@mui/material/Box";
 import Tooltip from "@mui/material/Tooltip";
 import Divider from "@mui/material/Divider";
+import ListItem from "@mui/material/ListItem";
 
 export type AppMenuMode = "menu" | "panel";
 export type AppMenuDividerVariant = "flush" | undefined;
@@ -198,11 +199,13 @@ export const AppMenu: FC<PropsWithChildren<AppMenuProps>> = (
             {React.Children.map(children, (child, index) => {
               return (
                 <>
-                  <li
+                  <ListItem
+                    disableGutters
                     onClick={closeOnSelect === true ? handleItemClick : void 0}
+                    sx={{ display: "list-item", py: 0 }}
                   >
                     {child}
-                  </li>
+                  </ListItem>
                   {displayDividers === true && index < numChildren - 1 && (
                     <Box
                       sx={{
