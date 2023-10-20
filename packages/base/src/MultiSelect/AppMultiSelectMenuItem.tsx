@@ -12,7 +12,7 @@ export type AppMultiSelectMenuItemProps<TItem> = {
   sx?: SxProps<Theme>;
 };
 
-function AppMultiSelectMenuItem<TItem>(
+export function AppMultiSelectMenuItem<TItem>(
   props: AppMultiSelectMenuItemProps<TItem>
 ) {
   const { item, checked, onChange, sx } = props;
@@ -49,5 +49,3 @@ function AppMultiSelectMenuItem<TItem>(
     </StyledMultiSelectMenuItem>
   );
 }
-
-export default AppMultiSelectMenuItem;

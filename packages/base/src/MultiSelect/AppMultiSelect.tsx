@@ -1,7 +1,6 @@
 "use client";
 import { SxProps, Theme } from "@mui/material/styles";
 import { Ref, useEffect, useImperativeHandle, useState } from "react";
-import AppMultiSelectMenuItem from "./AppMultiSelectMenuItem";
 import AppChip from "../Chip/AppChip";
 import { SelectItem } from "../Select/SelectItem";
 import { StyledLabelBox } from "../common";
@@ -9,8 +8,9 @@ import FormControl from "@mui/material/FormControl";
 import Typography from "@mui/material/Typography";
 import Select from "@mui/material/Select";
 import Box from "@mui/material/Box";
+import { AppMultiSelectMenuItem } from "./AppMultiSelectMenuItem";
 
-export type AppSelectProps<TItem> = {
+export type AppMultiSelectProps<TItem> = {
   inputRef?: React.MutableRefObject<HTMLInputElement | null>;
   resetRef?: Ref<{ reset: (defaultValues?: SelectItem<TItem>[]) => void }>;
   items: SelectItem<TItem>[];
@@ -22,7 +22,7 @@ export type AppSelectProps<TItem> = {
   sx?: SxProps<Theme>;
 };
 
-function AppMultiSelect<TItem>(props: AppSelectProps<TItem>): JSX.Element {
+function AppMultiSelect<TItem>(props: AppMultiSelectProps<TItem>): JSX.Element {
   const {
     inputRef,
     resetRef,

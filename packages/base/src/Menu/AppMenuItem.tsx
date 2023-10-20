@@ -18,7 +18,7 @@ export type AppMenuItemProps = {
   selected?: boolean;
 };
 
-const AppMenuItem: FC<PropsWithChildren<AppMenuItemProps>> = (
+export const AppMenuItem: FC<PropsWithChildren<AppMenuItemProps>> = (
   props: PropsWithChildren<AppMenuItemProps>
 ) => {
   const {
@@ -78,5 +78,3 @@ const AppMenuItem: FC<PropsWithChildren<AppMenuItemProps>> = (
     </StyledMenuItem>
   );
 };
-
-export default AppMenuItem;

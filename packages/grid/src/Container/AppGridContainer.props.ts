@@ -1,6 +1,6 @@
 import { Theme, SxProps } from "@mui/material/styles";
 import { ReactNode } from "react";
-import { AppGridProps } from "../AppGrid.props";
+import { AppGridProps } from "../Grid/AppGrid.props";
 
 type AppGridContainerPropsConditional =
   | {

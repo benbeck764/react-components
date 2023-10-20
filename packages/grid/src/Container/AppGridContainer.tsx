@@ -1,7 +1,7 @@
 "use client";
 import { useCallback, useRef, useState } from "react";
-import AppGrid from "../AppGrid";
-import { AppGridComponentContainers } from "../AppGrid.props";
+import AppGrid from "../Grid/AppGrid";
+import { AppGridComponentContainers } from "../Grid/AppGrid.props";
 import { AppGridContainerProps } from "./AppGridContainer.props";
 import {
   StyledCard,

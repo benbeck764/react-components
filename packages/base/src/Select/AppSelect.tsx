@@ -1,6 +1,5 @@
 "use client";
 import { Ref, useEffect, useImperativeHandle, useState } from "react";
-import AppSelectMenuItem from "./AppSelectMenuItem";
 import { SelectItem } from "./SelectItem";
 import { StyledLabelBox } from "../common";
 import Select, { SelectProps } from "@mui/material/Select";
@@ -8,10 +7,11 @@ import { Theme } from "@mui/material/styles";
 import FormControl from "@mui/material/FormControl";
 import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
+import { AppSelectMenuItem } from "./AppSelectMenuItem";
 
 export type AppSelectInputSizes = "small" | "medium" | "large";
 
-type AppSelectProps<TItem> = Omit<
+export type AppSelectProps<TItem> = Omit<
   SelectProps<SelectItem<TItem>>,
   "onSelect" | "value"
 > & {
