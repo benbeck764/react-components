@@ -92,7 +92,12 @@ export const PanelMenu: Story = (args: AppMenuStoryProps) => {
   return (
     <CustomThemeProvider theme={theme}>
       <Stack direction="row" gap={1}>
-        <AppMenu {...args}>
+        <AppMenu
+          {...args}
+          onMenuOpen={() => setOpen(true)}
+          onMenuClose={() => setOpen(false)}
+          forcedToggleState={open}
+        >
           <Typography textAlign="center" variant="h6">
             Hello World!
           </Typography>

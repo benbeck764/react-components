@@ -17,6 +17,7 @@ import Box from "@mui/material/Box";
 import Tooltip from "@mui/material/Tooltip";
 import Divider from "@mui/material/Divider";
 import ListItem from "@mui/material/ListItem";
+import ClickAwayListener from "@mui/material/ClickAwayListener";
 
 export type AppMenuMode = "menu" | "panel";
 export type AppMenuDividerVariant = "flush" | undefined;
@@ -117,6 +118,12 @@ export const AppMenu: FC<PropsWithChildren<AppMenuProps>> = (
     onMenuClose?.();
   };
 
+  const handleClickAway = () => {
+    if (anchorEl != null) {
+      handleMenuClose();
+    }
+  };
+
   const handleItemClick = (
     event: React.MouseEvent<HTMLLIElement> | undefined
   ) => {
@@ -150,83 +157,87 @@ export const AppMenu: FC<PropsWithChildren<AppMenuProps>> = (
   const menuOpen = numChildren > 0 && Boolean(anchorEl);
 
   return (
-    <Box>
-      <Tooltip title={toolTipTitle} disableHoverListener={menuOpen}>
-        <AppButton
-          {...buttonPropsAugmented}
-          onKeyDown={handleButtonKeyDown}
-          ref={buttonRef}
-        >
-          {buttonProps?.children}
-          {displayCaret &&
-            (anchorEl ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />)}
-        </AppButton>
-      </Tooltip>
-
-      <Popper
-        {...popperProps}
-        open={menuOpen}
-        anchorEl={anchorEl}
-        disablePortal={disablePortal ?? false}
-        keepMounted
-        sx={{
-          zIndex: (theme) => theme.zIndex.tooltip,
-          backgroundColor: (theme) => theme.palette.common.white,
-          border: (theme) => `1px solid ${theme.palette.coolGrey[200]}`,
-          borderRadius: "8px",
-          boxSizing: "border-box",
-          boxShadow: "none",
-          width: width ?? "unset",
-          ...popperSx,
-        }}
-        modifiers={[
-          {
-            name: "preventOverflow",
-            enabled: true,
-            options: {
-              rootBoundary: "window",
-            },
-          },
-        ]}
-      >
-        {mode === "menu" && (
-          <StyledContainerMenu
-            {...listProps}
-            onKeyDown={handleKeyDown}
-            ref={listRef}
-            tabIndex={0}
+    <ClickAwayListener onClickAway={handleClickAway}>
+      <Box>
+        <Tooltip title={toolTipTitle} disableHoverListener={menuOpen}>
+          <AppButton
+            {...buttonPropsAugmented}
+            onKeyDown={handleButtonKeyDown}
+            ref={buttonRef}
           >
-            {React.Children.map(children, (child, index) => {
-              return (
-                <>
-                  <ListItem
-                    disableGutters
-                    onClick={closeOnSelect === true ? handleItemClick : void 0}
-                    sx={{ display: "list-item", py: 0 }}
-                  >
-                    {child}
-                  </ListItem>
-                  {displayDividers === true && index < numChildren - 1 && (
-                    <Box
-                      sx={{
-                        padding: dividerVariant === "flush" ? "" : "0px 16px",
-                      }}
+            {buttonProps?.children}
+            {displayCaret &&
+              (anchorEl ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />)}
+          </AppButton>
+        </Tooltip>
+
+        <Popper
+          {...popperProps}
+          open={menuOpen}
+          anchorEl={anchorEl}
+          disablePortal={disablePortal ?? false}
+          keepMounted
+          sx={{
+            zIndex: (theme) => theme.zIndex.tooltip,
+            backgroundColor: (theme) => theme.palette.common.white,
+            border: (theme) => `1px solid ${theme.palette.coolGrey[200]}`,
+            borderRadius: "8px",
+            boxSizing: "border-box",
+            boxShadow: "none",
+            width: width ?? "unset",
+            ...popperSx,
+          }}
+          modifiers={[
+            {
+              name: "preventOverflow",
+              enabled: true,
+              options: {
+                rootBoundary: "window",
+              },
+            },
+          ]}
+        >
+          {mode === "menu" && (
+            <StyledContainerMenu
+              {...listProps}
+              onKeyDown={handleKeyDown}
+              ref={listRef}
+              tabIndex={0}
+            >
+              {React.Children.map(children, (child, index) => {
+                return (
+                  <>
+                    <ListItem
+                      disableGutters
+                      onClick={
+                        closeOnSelect === true ? handleItemClick : void 0
+                      }
+                      sx={{ display: "list-item", py: 0 }}
                     >
-                      <Divider variant="fullWidth" />
-                    </Box>
-                  )}
-                </>
-              );
-            })}
-          </StyledContainerMenu>
-        )}
-        {mode === "panel" && (
-          <StyledContainerPanel ref={listRef} tabIndex={0}>
-            {children}
-          </StyledContainerPanel>
-        )}
-      </Popper>
-    </Box>
+                      {child}
+                    </ListItem>
+                    {displayDividers === true && index < numChildren - 1 && (
+                      <Box
+                        sx={{
+                          padding: dividerVariant === "flush" ? "" : "0px 16px",
+                        }}
+                      >
+                        <Divider variant="fullWidth" />
+                      </Box>
+                    )}
+                  </>
+                );
+              })}
+            </StyledContainerMenu>
+          )}
+          {mode === "panel" && (
+            <StyledContainerPanel ref={listRef} tabIndex={0}>
+              {children}
+            </StyledContainerPanel>
+          )}
+        </Popper>
+      </Box>
+    </ClickAwayListener>
   );
 };
 
