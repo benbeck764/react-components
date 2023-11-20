@@ -102,7 +102,11 @@ export const AppMenu: FC<PropsWithChildren<AppMenuProps>> = (
   ) => {
     if (stopPropagation) event.stopPropagation();
 
-    setAnchorEl(event.currentTarget);
+    if (anchorEl != null) {
+      handleMenuClose();
+    } else {
+      handleMenuOpen(event.currentTarget);
+    }
     onButtonClick?.(event);
   };
 
