@@ -10,6 +10,7 @@ import { createValueGetters, getRowData } from "./common";
 import { AppGridNoResultsFound } from "../../common/AppGridNoResultsFound";
 import { getHasItems, getItems } from "../../utility/grid-helpers";
 import { useEffect, useState } from "react";
+import { AppGridSkeletonRow } from "../rows/AppGridSkeletonRow";
 
 export function AppGridTableViewVirtualizedBody<TItem>(props: {
   dataGridProps: AppGridProps<TItem>;
@@ -19,6 +20,7 @@ export function AppGridTableViewVirtualizedBody<TItem>(props: {
   const virtualizedProps = props.tableViewDefinition?.virtualizedProps;
 
   const [Virtuoso, setVirtuso] = useState<any>();
+  const [scrolling, setScrolling] = useState<boolean>(false);
 
   useEffect(() => {
     try {
@@ -94,9 +96,20 @@ export function AppGridTableViewVirtualizedBody<TItem>(props: {
       style={{ height: virtualizedProps?.height }}
       useWindowScroll={virtualizedProps?.useWindowScroll}
       data={rows}
-      itemContent={(_index: number, row: AppRowData) => (
-        <Box>{row.content}</Box>
+      itemContent={(index: number, row: AppRowData) => (
+        <>
+          {virtualizedProps?.loadingPlaceholderOnScroll === true &&
+          scrolling ? (
+            <AppGridSkeletonRow
+              tableViewDefinition={props.tableViewDefinition}
+              itemIndex={index}
+            />
+          ) : (
+            <Box>{row.content}</Box>
+          )}
+        </>
       )}
+      isScrolling={setScrolling}
     />
   );
 }

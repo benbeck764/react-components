@@ -45,6 +45,7 @@ export interface AppGridVirtualizedProps {
   enabled: true;
   useWindowScroll?: boolean;
   height?: number | string;
+  loadingPlaceholderOnScroll?: boolean;
 }
 
 /**

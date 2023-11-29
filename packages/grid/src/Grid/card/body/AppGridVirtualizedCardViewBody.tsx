@@ -19,6 +19,7 @@ export function AppGridCardViewVirtualizedBody<TItem>(props: {
   const dataGridProps = props.dataGridProps;
 
   const [Virtuoso, setVirtuso] = useState<any>();
+  const [scrolling, setScrolling] = useState<boolean>(false);
 
   useEffect(() => {
     try {
@@ -36,7 +37,7 @@ export function AppGridCardViewVirtualizedBody<TItem>(props: {
   }, []);
 
   // Grid Rows
-  const rows: AppRowData[] = [];
+  let rows: AppRowData[] = [];
   if (!getHasItems(dataGridProps)) {
     rows.push({
       type: "row",
@@ -48,7 +49,11 @@ export function AppGridCardViewVirtualizedBody<TItem>(props: {
         />
       ),
     });
-  } else {
+  } else if (
+    virtualizedProps?.loadingPlaceholderOnScroll === true &&
+    scrolling
+  ) {
+    rows = [];
     const items = getItems(dataGridProps.data);
     const rowItems = getChunks(items, props.cardViewDefinition.columnCount);
     rowItems.forEach(
@@ -63,7 +68,30 @@ export function AppGridCardViewVirtualizedBody<TItem>(props: {
             lastRow: rowIndex === rowItems.length - 1,
           },
           items.map((i) => i.item),
-          dataGridProps
+          dataGridProps,
+          "row-skeleton"
+        );
+        if (newRow) rows.push(newRow);
+      }
+    );
+  } else {
+    rows = [];
+    const items = getItems(dataGridProps.data);
+    const rowItems = getChunks(items, props.cardViewDefinition.columnCount);
+    rowItems.forEach(
+      (
+        items: { item: TItem | undefined; isLoading: boolean }[],
+        rowIndex: number
+      ) => {
+        const newRow = getCardRowData(
+          {
+            rowIndex,
+            cardViewDefinition: props.cardViewDefinition,
+            lastRow: rowIndex === rowItems.length - 1,
+          },
+          items.map((i) => i.item),
+          dataGridProps,
+          "card-row"
         );
         if (newRow) rows.push(newRow);
       }
@@ -74,11 +102,13 @@ export function AppGridCardViewVirtualizedBody<TItem>(props: {
 
   return (
     <Virtuoso
+      style={{ height: virtualizedProps?.height }}
       useWindowScroll={virtualizedProps?.useWindowScroll}
       data={rows}
       itemContent={(_index: number, row: AppRowData) => (
         <Box>{row.content}</Box>
       )}
+      isScrolling={setScrolling}
     />
   );
 }
